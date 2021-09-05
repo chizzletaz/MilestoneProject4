@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background-color: #000;
+	margin-top:  110px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    letter-spacing: 0.5rem;
+}
+
+header li {
+    padding: 5px 10px;
+}
+
+#topnav * {
+    color: grey;
+}
+
+#topnav.col-12 .navlink li:hover {
+    color: #fff;
+}
