@@ -1,0 +1,58 @@
+<ul class="d-block d-lg-none text-center my-0">
+    <li class="list-inline-item dropdown">
+        <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="text-center">
+                <i class="fas fa-user"></i>
+                <p>My Account</p>
+            </div>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+            {% endif %}
+            <a href="" class="dropdown-item">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+            <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+            {% endif %}
+        </div>
+    </li>
+    <li class="list-inline-item">
+        <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link"
+            href="">
+            <div class="text-center">
+                <div><i class="fas fa-shopping-bag"></i></div>
+                <p class="my-0">
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                    $0.00
+                    {% endif %}
+                </p>
+            </div>
+        </a>
+    </li>
+    <!-- Open search bar via javascript toggle -->
+    <li class="list-inline-item">
+        <a class="nav-link icon-search" href="#">
+            <i class="fas fa-search"></i>
+            <p class="my-0">Search</p>
+        </a>
+        <div class="form-search">
+            <form method="GET" action="">
+                <div class="input-group mb-3">
+                    <input class="form-control rounded-0" type="text" name="q"
+                        placeholder="Search our site" aria-label="Search our site"
+                        aria-describedby="button-addon">
+                    <button class="btn btn-outline-secondary rounded-0" type="submit" id="button-addon">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </li>
+</ul>

@@ -19,7 +19,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,400&family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -51,22 +52,22 @@
 <body>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row d-none d-lg-flex">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 my-auto text-center text-lg-left my-auto py-1 py-lg-0 my-0">
                 <a href="{% url 'home' %}" class="nav-link">
                     <h3><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
                 </a>
             </div>
-            <div class="col-12 col-lg-6 text-end">
-                <ul class="nav justify-content-end">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+                <ul class="list-inline-item text-center text-lg-right w-100 my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <div class="text-center">
-                                <i class="fas fa-user fa-lg"></i>
+                                <i class="fas fa-user"></i>
                                 <p>My Account</p>
                             </div>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="user-options">
+                        <div class="dropdown-menu" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
@@ -77,13 +78,12 @@
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
                             {% endif %}
-                        </ul>
+                        </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link" href="">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-
+                                <div><i class="fas fa-shopping-bag"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
@@ -94,10 +94,13 @@
                             </div>
                         </a>
                     </li>
-                    <!-- Open search bar via javscript toggle -->
-                    <li class="nav-item">
-                        <a id="icon-search" class="nav-link" href="#"><i class="fas fa-search fa-lg"></i></a>
-                        <div id="form-search">
+                    <!-- Open search bar via javascript toggle -->
+                    <li class="list-inline-item">
+                        <a class="nav-link icon-search" href="#">
+                            <i class="fas fa-search"></i>
+                            <p class="my-0">Search</p>
+                        </a>
+                        <div class="form-search">
                             <form method="GET" action="">
                                 <div class="input-group mb-3">
                                     <input class="form-control rounded-0" type="text" name="q"
@@ -115,8 +118,17 @@
                 </ul>
             </div>
         </div>
+        <div id="lowernav" class="row">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
     </header>
-
     {% if messages %}
     <div class="message-container"></div>
     {% endif%}
@@ -126,6 +138,13 @@
 
     {% block content %}
     {% endblock %}
+
+    <!-- display/hide search bar -->
+    <script type="text/javascript">
+        $(".icon-search").click(function () {
+            $(".form-search").toggle();
+        })
+    </script>
 
     {% block postloadjs%}
     {% endblock %}
