@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount.providers.google',
 
     'home',
-    'trips',
+    'products',
 ]
 
 MIDDLEWARE = [
