@@ -5,9 +5,10 @@
 }
 
 body {
-	background-color: #000;
-	margin-top:  146px;
-    color: #fff;
+    background: url('/media/space-background.jpg') no-repeat center center fixed;
+    background-color: #000;
+    background-size: cover;
+	margin-top:  150px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -51,7 +52,15 @@ header li {
     z-index: 2000;
 }
 
-/* #hero-image {
-    background: url('/media/earthview1.jpg') no-repeat center;
-    background-size: cover;
-} */
+
+/* white overlay for products page */
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-top: 138px;
+    position: fixed;
+    background: rgb(0,0,0,0.4);
+    z-index: -1;
+}
