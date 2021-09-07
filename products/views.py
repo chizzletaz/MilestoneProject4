@@ -1,27 +1,32 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, reverse, redirect, render
+from django.contrib import messages
+from django.db.models import Q
+
 from .models import Product
 
 # Create your views here.
 from django.shortcuts import render
 
 
-def all_trips(request):
-    """ A view to show all space trips """
-
-    trips = Product.objects.all().filter(category__name='trip')
-
-    context = {
-        'trips': trips,
-    }
-    return render(request, 'products/trips.html', context)
-
 def all_products(request):
     """ A view to show all products without space trips """
 
     products = Product.objects.all().exclude(category__name='trip')
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter a search term.")
+                return redirect(reverse('products'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     context = {
         'products': products,
+        'search_term': query,
     }
 
     return render(request, 'products/products.html', context)
@@ -37,3 +42,14 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+def all_trips(request):
+    """ A view to show all space trips """
+
+    trips = Product.objects.all().filter(category__name='trip')
+
+    context = {
+        'trips': trips,
+    }
+    return render(request, 'products/trips.html', context)
