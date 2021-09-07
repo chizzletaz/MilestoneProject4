@@ -1,5 +1,5 @@
 # 
-![Preview image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/preview.png)
+![Preview image]()
 
 Who hasn’t looked at the stars and thought, I wonder what it’s like out there.
 Now with XXX you can see for your self.

@@ -5,7 +5,7 @@
 }
 
 body {
-    background: url('/media/space-background.jpg') no-repeat center center fixed;
+    /* background: url('/media/space-background.jpg') no-repeat center center fixed; */
     background-color: #000;
     background-size: cover;
 	padding-top:  138px;
@@ -19,13 +19,6 @@ h1, h2, h3, h4, h5 {
 h1 {
     letter-spacing: 0.5rem;
 }
-
-/* #hero-image {
-    background-image: url('/media/earthview1_dzJo7mr.jpg');
-    background-size: cover;
-    background-position: center;
-    
-} */
 
 header li {
     padding: 5px 10px 0;
@@ -94,6 +87,38 @@ header li {
     z-index: -1;
 }
 
+.rtl {
+	animation:  slidein-right 2s ease;
+}
+
+.ltr {
+	animation:  slidein-left 2s ease;
+}
+
+/* Text slide in from the side */
+/* Credit:  Adapted from Menucool- http://www.menucool.com/ui/slide-in-when-scrolling */
+@keyframes slidein-right {
+    0% {
+    	opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+    	opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidein-left {
+    0% {
+    	opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+    	opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 991px) {
     .header-container,
     body,
@@ -120,3 +145,4 @@ header li {
     }
 
 }
+
