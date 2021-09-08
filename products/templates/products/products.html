@@ -17,8 +17,11 @@
     <div class="row">
         <div class="col text-center">
             <h2 class="text-white">PRODUCTS</h2>
-            <hr class="w-50 text-white mx-auto">
+
+            <!-- Categories display only on large and extra large size > 992px -->
             <div class="d-none d-lg-block">
+                <a class="btn btn-outline-light rounded-0"
+                    href="{% url 'products' %}">All Products</a>
                 <a class="btn btn-outline-light rounded-0"
                     href="{% url 'products' %}?category=accessories">Accessories</a>
                 <a class="btn btn-outline-light rounded-0"
@@ -30,14 +33,17 @@
                 <a class="btn btn-outline-light rounded-0" href="{% url 'products' %}?category=deals">Deals</a>
             </div>
 
+            <!-- Categories display only on small and medium size < 992px -->
             <div class="d-block d-lg-none text-right">
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-secondary dropdown-toggle rounded-0" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
-
-                    <ul class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuLink">
+                    
+                    <ul class="dropdown-menu bg-secondary bg-gradient" aria-labelledby="dropdownMenuLink">
+                        <li><a class="btn btn-outline-light rounded-0"
+                            href="{% url 'products' %}">All Products</a></li>
                         <li><a class="dropdown-item"
                                 href="{% url 'products' %}?category=accessories">Accessories</a></li>
                         <li><a class="dropdown-item"
@@ -51,10 +57,38 @@
                     </ul>
                 </div>
             </div>
+
+            <hr class="w-75 text-white mx-auto">
+
         </div>
     </div>
-    <div class="row">
-        <div class="row"></div>
+        <div class="row">
+            <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                <div class="sort-select-wrapper">
+                    <select id="sort-selector" class="rounded-0 border border-{% if current_sorting != 'None_None' %}secondary{% else %}black{% endif %}">
+                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-3 text-center text-white text-md-left">
+                    {% if search_term or current_categories or current_sorting != 'None_None' %}
+                        {% for c in current_categories %}
+                            <span class="text-white">{{ c.friendly_name }} | </span>
+                        {% endfor %}
+                    {% endif %}
+                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+        </div>
         <div class="row">
             {% for product in products %}
             <div class="col-md-6 col-lg-4 col-xl-3 my-5 mx-auto">
@@ -76,9 +110,11 @@
                         <div class="row">
                             <div class="col">
                                 <p class="lead my-2 text-left font-weight-bold">$ {{ product.price }}</p>
-
-                                <p class="mb-0"><small class="text-muted"><i class="fas fa-tag"></i> {{
-                                        product.category.friendly_name }}</small></p>
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                    </a>
+                                </p>
                                 {% if product.rating %}
                                 <small class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} /
                                     5</small>
@@ -92,6 +128,5 @@
             </div>
             {% endfor %}
         </div>
-    </div>
 </div>
 {% endblock %}

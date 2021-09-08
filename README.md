@@ -1,4 +1,4 @@
-# 
+# Space Travel Agency
 ![Preview image]()
 
 Who hasn’t looked at the stars and thought, I wonder what it’s like out there.
@@ -432,11 +432,12 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 ---
 # **Credits**
 ### code
-- Specific time representation of [datetime](https://www.programiz.com/python-programming/datetime/current-datetime)  
-- Jinja condition depending on route [yuxiaoy](https://stackoverflow.com/questions/62853545/if-statement-to-determine-which-route-is-used-in-jinja-template-flask)  
-- Better aligning the recipe cards [bilalkhan891](https://github.com/Dogfalo/materialize/issues/2089)  
-- [Hide](https://jinja.palletsprojects.com/en/3.0.x/tricks/) navbar and footer on error handler pages.
-- Correct child element of `<ul>`, [Mike Hanslo](https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context) 
+- Text slide in from left and right - [Menucool](http://www.menucool.com/ui/slide-in-when-scrolling)
+
+- Show and hide search bar - [W3schools](https://www.w3schools.com/jquery/eff_toggle.asp)
+
+- Disable dates in bootstrap date picker - [Manoj](https://stackoverflow.com/questions/44236542/disable-friday-and-saturday-in-datepicker)
+ 
 
 ### Content
 Recipes:
@@ -447,9 +448,41 @@ Recipes:
 The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
 
 ### Media
-- Shop items and [links](https://www.lecreuset.ie/en_IE/)  
-- Pink background on landing page - Photo by <a href="https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon McCutcheon</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Bake background - Photo by <a href="https://unsplash.com/@nate_dumlao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Dumlao</a> on <a href="https://unsplash.com/s/photos/baking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>  
+earthview1.jpg 
+	https://earth.google.com/
+
+earthview2.jpg
+	https://besthqwallpapers.com/download/148672/1440x900
+space-hotel-room.jpg
+	https://www.architecturaldigest.com/story/worlds-first-space-hotel-open-2027
+space-hotel.jpg
+	Architectual digest (https://www.architecturaldigest.com/story/worlds-first-space-hotel-open-2027)
+moon.jpg
+	https://en.wikipedia.org/wiki/Moon
+moon2.jpg
+	https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Helping_Heracles_EL3_to_survive_the_long_cold_dark_nights_on_the_Moon
+moon3.jpg
+	https://www.cloudynights.com/topic/640527-34-moon-with-an-old-friend/
+mars.webp
+	https://www.ad.nl/wetenschap/vanavond-ideaal-weer-om-mars-te-spotten~a230ac057/?referrer=https%3A%2F%2Fwww.google.com%2F
+mars2.jpg
+	scienties(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.scientias.nl%2Fmars-lijkt-in-ieder-geval-ondergronds-over-een-belangrijk-ingredient-voor-leven-te-beschikken%2F&psig=AOvVaw2whrgOVXpChlJ9U2zj8qug&ust=1630530459121000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOjbobmV3PICFQAAAAAdAAAAABAQ)
+spacewalk.jpg
+	https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace
+spacewalk2.jpg
+	https://www.dawn.com/news/1472001
+
+space-background.jpg
+	https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg
+
+space-background2.jpg
+	https://wallpaperaccess.com/dark-space-desktop
+no-image.png
+	https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png
+sleep-mask.jpg
+	https://m.media-amazon.com/images/I/A1OyV3YHI4L._SY450_.jpg
+clipon-lens.jpg
+	https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg  
 
 - Error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
 - Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  

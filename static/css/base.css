@@ -76,7 +76,7 @@ header li {
     z-index: -1;
 }
 
-.dark-overlay {
+.light-overlay {
     height: 100%;
     width: 100%;
     top: 0;
@@ -127,7 +127,11 @@ header li {
         padding-top: 74px;
     }
 
-    p {
+    #topnav a {
+        font-size: 0.7rem;
+    }
+    
+    i ~ p {
         font-size: 0.7rem;
     }
 
