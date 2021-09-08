@@ -14,26 +14,26 @@
 {% block content %}
 <div class="container-fluid">
     <h1>Space Trips</h1>
-    {% for trip in trips %}
+    {% for product in products %}
     {% if forloop.counter|divisibleby:2 %}
     <div class="row text-white">
         <div class="col-12 col-md-7 order-md-last">
-            <img class="img-fluid" src="{{ trip.image.url }}">
+            <img class="img-fluid" src="{{ product.image.url }}">
         </div>
         <div class="col-12 col-md-5 my-auto text-center text-lg-start rtl">
-            <h1 class="display-4"><strong>{{ trip.name }}</strong></h1>
-            <h4><a href="" class="btn btn-lg btn-outline-light rounded-0">Read More</a></h4>
+            <h1 class="display-4"><strong>{{ product.name }}</strong></h1>
+            <h4><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read More</a></h4>
         </div>
     </div>
 </div>
 {% else %}
 <div class="row text-white">
     <div class="col-12 col-md-7">
-        <img class="img-fluid" src="{{ trip.image.url }}">
+        <img class="img-fluid" src="{{ product.image.url }}">
     </div>
     <div class="col-12 col-md-5 my-auto text-center text-lg-start ltr">
-        <h1 class="display-4"><strong>{{ trip.name }}</strong></h1>
-        <h4><a href="" class="btn btn-lg btn-outline-light rounded-0">Read More</a></h4>
+        <h1 class="display-4"><strong>{{ product.name }}</strong></h1>
+        <h4><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read More</a></h4>
     </div>
 </div>
 {% endif %}

@@ -73,21 +73,21 @@ def product_detail(request, product_id):
 def all_trips(request):
     """ A view to show all space trips """
 
-    trips = Product.objects.all().filter(category__name='trip')
+    products = Product.objects.all().filter(category__name='trip')
 
     context = {
-        'trips': trips,
+        'products': products,
     }
     return render(request, 'products/trips.html', context)
 
 
-# def trip_detail(request, product_id):
-#     """ A view to show an individual product details """
+def trip_detail(request, product_id):
+    """ A view to show an individual trip details """
 
-#     product = get_object_or_404(Product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
 
-#     context = {
-#         'product': product,
-#     }
+    context = {
+        'product': product,
+    }
 
-#     return render(request, 'products/trip_detail.html', context)
+    return render(request, 'products/trip_detail.html', context)

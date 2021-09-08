@@ -147,17 +147,23 @@ All the elements on each page were checked.
 No issues arrose.
 
 ## Bugs and problems
+Issue: Solved
+When trying to set up the link to the trip_detail page from the trips page using:
 
-Issue: SOLVED  
-The 'Recipes' dropdown menu in the navbar doesn't adapt to the width of the text inside and a vertical scroll bar is displayed.  
-Furthermore, when clicking on the 'Recipes', the name disappears.  
+<a href="{% url 'trip_detail' product.id %}" 
 
-Fix:  
-According to the documentation of Materialize, you can change the ![constrainWidth](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/contrainwidth.png).  
-add: { constrainWidth: false } as an option to $(".dropdown-trigger").dropdown() (the dropdown trigger in the javascript file).  
+It gives an error:
+![trip detail page error](https://github.com/chizzletaz/MilestoneProject4/blob/master/README/images/T-trip-detail.png)
 
-Extra: looking at the other options, I added ![coverTrigger](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/covertrigger.png), so the dropdown menu will display below the trigger.   
-And ![hover](https://github.com/chizzletaz/GrandmasBakingCollection/blob/master/README/images/hover.png), so the dropdown menu will open on hover.  
+Try:
+I've tried to change the url path in urls.py to have a different path then the trip path:
+So path('trips/<int:product_id>/' --> path('detail/<int:product_id>/'.
+This didn't work.
 
-> UPDATE: I removed hover from the dropdown menu, cause on mobile devices the dropdown didn't work.
+Fix:
+In the all_trips and trip_detail functions in views.py I changed the parameters to products, product respectively.
+trips = Product.objects.all().filter(category__name='trip') --> products = Product.objects.all().filter(category__name='trip')
+
+---
+
   
