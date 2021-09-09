@@ -51,12 +51,13 @@
 
 <body>
     <header class="container-fluid fixed-top bg-black">
-        <div id="delivery-banner" class="row text-center">
+        
+        <div id="topnav" class="row d-none d-lg-flex">
+            <div id="delivery-banner" class="row text-center">
             <div class="col bg-info">
                 <h5 class="my-1 text-uppercase">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>                
             </div>            
         </div>
-        <div id="topnav" class="row d-none d-lg-flex">
             <div class="col-12 col-lg-6 my-auto text-center text-lg-left my-auto my-0">
                 <a href="{% url 'home' %}" class="nav-link">
                     <h3><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>

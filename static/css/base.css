@@ -32,9 +32,9 @@ header li {
     padding-top: 138px;
 }
 
-#topnav {
+/* #topnav {
     max-height: 70px;
-}
+} */
 
 #topnav * {
     color: grey;
