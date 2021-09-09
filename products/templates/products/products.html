@@ -12,11 +12,11 @@
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
+<div class="dark-overlay"></div>
 <div class="container">
     <div class="row">
         <div class="col text-center">
-            <h2 class="text-white">PRODUCTS</h2>
+            <h2>PRODUCTS</h2>
 
             <!-- Categories display only on large and extra large size > 992px -->
             <div class="d-none d-lg-block">
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <hr class="w-75 text-white mx-auto">
+            <hr class="w-75 mx-auto">
 
         </div>
     </div>
@@ -79,17 +79,17 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 order-md-first">
-                <p class="text-muted mt-3 text-center text-white text-md-left">
+                <p class="text-muted mt-3 text-center text-md-left">
                     {% if search_term or current_categories or current_sorting != 'None_None' %}
                         {% for c in current_categories %}
-                            <span class="text-white">{{ c.friendly_name }} | </span>
+                            <span class="text-off-white">{{ c.friendly_name }} | </span>
                         {% endfor %}
                     {% endif %}
                     {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
             </div>
         </div>
-        <div class="row">
+        <div class="row text-off-black">
             {% for product in products %}
             <div class="col-md-6 col-lg-4 col-xl-3 my-5 mx-auto">
                 <div class="card h-100 rounded-0">
@@ -132,7 +132,7 @@
 <!-- back to top icon -->
 <div class="btt-button shadow-sm rounded-0 border border-white">
     <a class="btt-link d-flex h-100">
-        <i class="fas fa-chevron-up text-white mx-auto my-auto"></i>
+        <i class="fas fa-chevron-up text-off-white mx-auto my-auto"></i>
     </a>	
 </div>
 {% endblock %}

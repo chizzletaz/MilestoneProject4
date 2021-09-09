@@ -12,11 +12,12 @@
 {% endblock %}
 
 {% block content %}
+<div class="black-overlay"></div>
 <div class="container-fluid">
     <h1>Space Trips</h1>
     {% for product in products %}
     {% if forloop.counter|divisibleby:2 %}
-    <div class="row text-white">
+    <div class="row">
         <div class="col-12 col-md-7 order-md-last">
             <img class="img-fluid" src="{{ product.image.url }}">
         </div>
@@ -27,7 +28,7 @@
     </div>
 </div>
 {% else %}
-<div class="row text-white">
+<div class="row ">
     <div class="col-12 col-md-7">
         <img class="img-fluid" src="{{ product.image.url }}">
     </div>

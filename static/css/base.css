@@ -5,9 +5,10 @@
 }
 
 body {
-    /* background: url('/media/space-background.jpg') no-repeat center center fixed; */
+    background: url('/media/space-background.jpg') no-repeat center center fixed;
     background-color: #000;
     background-size: cover;
+    color: #f1f1f1;
 	padding-top:  138px;
     font-family: "Montserrat", sans-serif;
 }
@@ -20,6 +21,7 @@ h1 {
     letter-spacing: 0.5rem;
 }
 
+/* Header */
 header li {
     padding: 5px 10px 0;
     font-size: 16px;
@@ -64,8 +66,29 @@ header li {
     z-index: 10000;
 }
 
-/* white overlay for products page */
-.overlay {
+/* Colours */
+
+.text-off-white {
+    color: #f1f1f1;
+}
+
+.text-off-black {
+    color: #262626;
+}
+
+/* dark overlay for products page */
+.black-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 138px;
+    position: fixed;
+    background: #000;
+    z-index: -1;
+}
+
+.dark-overlay {
     height: 100%;
     width: 100%;
     top: 0;
@@ -164,3 +187,7 @@ header li {
 
 }
 
+/* Shopping Bag */
+/* .bag-content {
+    background-color: rgb(23,23,23);
+} */
