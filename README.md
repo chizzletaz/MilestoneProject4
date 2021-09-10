@@ -438,6 +438,7 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 
 - Disable dates in bootstrap date picker - [Manoj](https://stackoverflow.com/questions/44236542/disable-friday-and-saturday-in-datepicker)
  
+- Format numbers in Django to Display prices with commas. [Ned Batchelder](https://stackoverflow.com/questions/346467/format-numbers-in-django-templates)
 
 ### Content
 Recipes:
