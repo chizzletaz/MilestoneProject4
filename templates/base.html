@@ -50,7 +50,7 @@
 
 <body>
     <header class="container-fluid fixed-top bg-black">
-        <div id="topnav" class="row d-none d-lg-flex">
+        <div class="row d-none d-lg-flex">
             <!-- <div class="col-12 text-center px-0 my-0">
                 <div class="col bg-info">
                     <h5 class="text-uppercase">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>
@@ -58,7 +58,7 @@
             </div> -->
             <div class="col-12 col-lg-6 my-auto text-center text-lg-left my-auto my-0">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <h3><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
+                    <h3 class="link-secondary"><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-lg-0">
@@ -67,11 +67,11 @@
                         <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <div class="text-center">
-                                <i class="fas fa-user"></i>
-                                <p>My Account</p>
+                                <i class="fas fa-user link-secondary"></i>
+                                <p class="link-secondary">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="user-options">
+                        <div class="dropdown-menu text-grey" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="" class="dropdown-item">Product Management</a>
@@ -102,8 +102,8 @@
                     <!-- Open search bar via javascript toggle -->
                     <li class="list-inline-item">
                         <a class="nav-link icon-search" href="#">
-                            <i class="fas fa-search"></i>
-                            <p class="my-0">Search</p>
+                            <i class="fas fa-search link-secondary"></i>
+                            <p class="my-0 link-secondary">Search</p>
                         </a>
                         <div class="form-search">
                             <form method="GET" action="{% url 'products' %}">
@@ -113,7 +113,7 @@
                                         aria-describedby="button-addon">
                                     <button class="btn btn-outline-secondary rounded-0" type="submit" id="button-addon">
                                         <span class="icon">
-                                            <i class="fas fa-search"></i>
+                                            <i class="fas fa-search "></i>
                                         </span>
                                     </button>
                                 </div>
@@ -136,7 +136,21 @@
 
     </header>
     {% if messages %}
-    <div class="message-container"></div>
+    <div class="message-container">
+        {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+    </div>
     {% endif%}
 
     {% block page_header %}
@@ -153,6 +167,10 @@
     </script>
 
     {% block postloadjs%}
+    <script type="text/javascript">
+        $(document).ready(function(){ 
+            $('.toast').toast('show'); });
+    </script>
     {% endblock %}
 
 </body>

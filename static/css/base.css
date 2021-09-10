@@ -36,15 +36,6 @@ header li {
     max-height: 80px;
 }
 
-#topnav * {
-    color: grey;
-    z-index: 10000;
-}
-
-#lowernav * {
-    color: grey;
-    /* z-index: 1; */
-}
 #topnav.col-12 .navlink li:hover {
     color: #fff;
 }
@@ -60,10 +51,6 @@ header li {
 	margin: 15px;
 	display: none;
     z-index: 2000;
-}
-
-#message-container {
-    z-index: 10000;
 }
 
 /* Colours */
@@ -110,6 +97,7 @@ header li {
     z-index: -1;
 }
 
+/* Text animation */
 .rtl {
 	animation:  slidein-right 2s ease;
 }
@@ -132,6 +120,22 @@ header li {
 .remove-item {
     cursor: pointer;
     text-decoration: none;
+}
+
+/* Bootstrap toasts */
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 3px;
 }
 
 /* Text slide in from the side */
@@ -158,6 +162,7 @@ header li {
     }
 }
 
+/* Media Queries */
 @media (max-width: 991px) {
     .header-container,
     body,
@@ -189,7 +194,3 @@ header li {
 
 }
 
-/* Shopping Bag */
-/* .bag-content {
-    background-color: rgb(23,23,23);
-} */
