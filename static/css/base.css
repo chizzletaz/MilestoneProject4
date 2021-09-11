@@ -63,6 +63,10 @@ header li {
     color: #262626;
 }
 
+.text-muted {
+    color: #b8bac0 !important;
+}
+
 /* dark overlay for products page */
 .black-overlay {
     height: 100%;
@@ -75,6 +79,16 @@ header li {
     z-index: -1;
 }
 
+.grey-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 162px;
+    position: fixed;
+    background: #1e1f27;
+    z-index: -1;
+}
 .dark-overlay {
     height: 100%;
     width: 100%;
