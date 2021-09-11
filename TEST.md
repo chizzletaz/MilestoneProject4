@@ -149,9 +149,9 @@ No issues arrose.
 ## Bugs and problems
 Issue: Solved
 When trying to set up the link to the trip_detail page from the trips page using:
-
-<a href="{% url 'trip_detail' product.id %}" 
-
+```
+    <a href="{% url 'trip_detail' product.id %}" 
+```
 It gives an error:
 ![trip detail page error](https://github.com/chizzletaz/MilestoneProject4/blob/master/README/images/T-trip-detail.png)
 
@@ -163,7 +163,36 @@ This didn't work.
 Fix:
 In the all_trips and trip_detail functions in views.py I changed the parameters to products, product respectively.
 trips = Product.objects.all().filter(category__name='trip') --> products = Product.objects.all().filter(category__name='trip')
-
 ---
+Issue: Solved
+When using toasts with a dark background (bg-dark), the button-close icon remained dark.
+![Button Close Toast Error Image](/close-btn-toast-error.png)
+Try:
+Applying css to the btn-close class:
+```
+    .btn-close {
+        color: #f1f1f1 !important;
+    }
+```
+This didn't work.
 
-  
+Fix: According to the Bootstrap docs, you have to add the btn-close-white class to button.
+This works.
+![Button Close Toast Fix Image](/close-btn-toast-fix.png)
+---
+Issue:
+When creating the checkout bag inside the success toast, the checkout button does not take the full width of the toast.
+![Checkout Button Toast Error](/checkout-btn-toast-error.png)
+
+Fix:
+According to the Bootstrap documentation, you have to wrap the button in a div with class d-grid:
+```
+    <div class="d-grid">
+        <a href="{% url 'view_bag' %}" class="btn btn-light rounded-0">
+            <span class="text-uppercase text-center">Go To Secure Checkout</span>             
+        </a>
+    </div>
+```
+This works
+![Checkout Button Toast Error](/checkout-btn-toast-fix.png)
+---
