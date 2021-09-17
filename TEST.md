@@ -147,7 +147,7 @@ All the elements on each page were checked.
 No issues arrose.
 
 ## Bugs and problems
-Issue: Solved
+Issue: Solved  
 When trying to set up the link to the trip_detail page from the trips page using:
 ```
     <a href="{% url 'trip_detail' product.id %}" 
@@ -155,16 +155,17 @@ When trying to set up the link to the trip_detail page from the trips page using
 It gives an error:
 ![trip detail page error](https://github.com/chizzletaz/MilestoneProject4/blob/master/README/images/T-trip-detail.png)
 
-Try:
+Try:  
 I've tried to change the url path in urls.py to have a different path then the trip path:
-So path('trips/<int:product_id>/' --> path('detail/<int:product_id>/'.
+So `path('trips/<int:product_id>/' --> path('detail/<int:product_id>/'`.
 This didn't work.
 
-Fix:
+Fix:  
 In the all_trips and trip_detail functions in views.py I changed the parameters to products, product respectively.
-trips = Product.objects.all().filter(category__name='trip') --> products = Product.objects.all().filter(category__name='trip')
+`trips = Product.objects.all().filter(category__name='trip') --> products = Product.objects.all().filter(category__name='trip')`
+
 ---
-Issue: Solved
+Issue: Solved  
 When using toasts with a dark background (bg-dark), the button-close icon remained dark.
 ![Button Close Toast Error Image](/close-btn-toast-error.png)
 Try:
@@ -176,15 +177,17 @@ Applying css to the btn-close class:
 ```
 This didn't work.
 
-Fix: According to the Bootstrap docs, you have to add the btn-close-white class to button.
+Fix:  
+According to the Bootstrap docs, you have to add the btn-close-white class to button.
 This works.
 ![Button Close Toast Fix Image](/close-btn-toast-fix.png)
+
 ---
-Issue:
+Issue:  
 When creating the checkout bag inside the success toast, the checkout button does not take the full width of the toast.
 ![Checkout Button Toast Error](/checkout-btn-toast-error.png)
 
-Fix:
+Fix:  
 According to the Bootstrap documentation, you have to wrap the button in a div with class d-grid:
 ```
     <div class="d-grid">
@@ -193,6 +196,28 @@ According to the Bootstrap documentation, you have to wrap the button in a div w
         </a>
     </div>
 ```
-This works
+This works  
 ![Checkout Button Toast Error](/checkout-btn-toast-fix.png)
+
+---
+Issue:  
+In the dropdown menu in the topnav, the link to 'Sign Up' doesn't work. The link below (sign in) does.
+![sign up dropdown error](/signup-error-dropdown.png)
+
+Try:   
+It could have something to do the lowernav having a higher z-index and therefore blocking the link.
+Upon inspecting the lowernav, the div with class=offcanvas, has an attribute for visibility: visible !important.
+Therefore changing the z-index of the topnav should work. 
+However this doesn't work.
+
+Fix:  
+Target the dropdown menu itself and add a z-index to that.
+I added an id of nav-drop to the dropdown menu:
+![navdrop id](/nav-drop.png)
+And added a css in base.css:
+```
+#nav-drop {
+    z-index: 999999;
+}
+```
 ---
