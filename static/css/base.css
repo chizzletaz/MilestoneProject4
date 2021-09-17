@@ -250,11 +250,11 @@ input[name='q']::placeholder {
     }
 
     #topnav a {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     i ~ p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     .nav-link {
