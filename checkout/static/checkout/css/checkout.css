@@ -40,6 +40,18 @@
     border-bottom: 1px solid #b8bac0 !important;
 }
 
+select,
+select option {
+    color: #f1f1f1;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #b8bac0 !important;
+    border: none;
+    border-bottom: 1px solid #b8bac0 !important;
+}
+
 #loading-overlay {
 	display: none;
 	position: fixed;

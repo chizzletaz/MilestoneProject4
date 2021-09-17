@@ -10,7 +10,7 @@ body {
     background-size: cover;
     color: #f1f1f1;
 	padding-top:  162px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
@@ -41,7 +41,7 @@ header li {
 }
 
 .form-search {
-	border: 0.01rem solid #fff;
+	border: 0.01rem solid #f1f1f1;
 	left: auto;
 	right: 0;
 	text-align: center;
@@ -65,6 +65,12 @@ header li {
 
 .text-muted {
     color: #b8bac0 !important;
+}
+
+.text-space {
+    color: rgb(42, 98, 112);
+    /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); */
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 /* dark overlay for products page */
