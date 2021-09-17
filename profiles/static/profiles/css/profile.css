@@ -35,3 +35,8 @@
 .profile-form-input::placeholder {
     color: #b8bac0;
 }
+
+.order-history {
+    max-height: 456px;
+    overflow-y: auto;
+}
