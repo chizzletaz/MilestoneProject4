@@ -54,19 +54,19 @@
 
 <body>
     <header class="container-fluid fixed-top bg-black">
-        <div class="row d-none d-lg-flex">
+        <div id="topnav" class="row d-none d-lg-flex">
             <!-- <div class="col-12 text-center px-0 my-0">
                 <div class="col bg-info">
                     <h5 class="text-uppercase">Free delivery on orders over ${{ free_delivery_threshold }}!</h5>
                 </div>
             </div> -->
-            <div class="col-12 col-lg-6 my-auto text-center text-lg-left my-auto my-0">
+            <div class="col-12 col-lg-6 my-auto text-center text-lg-start my-auto my-0">
                 <a href="{% url 'home' %}" class="nav-link">
                     <h3 class="link-secondary text-space"><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-lg-0">
-                <ul class="list-inline-item text-center text-lg-right w-100 my-0">
+                <ul class="list-inline-item text-center text-lg-end w-100 my-0">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -75,12 +75,12 @@
                                 <p class="link-secondary">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu text-grey" aria-labelledby="user-options">
+                        <div id="nav-drop" class="dropdown-menu text-grey" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="" class="dropdown-item">Product Management</a>
                             {% endif %}
-                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'profile'  %}" class="dropdown-item">My Profile</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
