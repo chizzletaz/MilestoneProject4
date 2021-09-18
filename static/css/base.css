@@ -21,6 +21,10 @@ h1, h2 {
     letter-spacing: 0.3rem;
 }
 
+h2 {
+    text-transform: uppercase;
+}
+
 /* Header */
 header li {
     padding: 5px 10px 0;
@@ -75,6 +79,10 @@ header li {
     color: rgb(42, 98, 112);
     /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); */
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.text-up {
+    text-transform: uppercase;
 }
 
 /* dark overlay for products page */

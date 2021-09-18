@@ -440,6 +440,8 @@ For more info on how to clone a repository check [here](https://docs.github.com/
  
 - Format numbers in Django to Display prices with commas. [Ned Batchelder](https://stackoverflow.com/questions/346467/format-numbers-in-django-templates)
 
+- Change the scrollbar css - [CSS-tricks](https://css-tricks.com/almanac/properties/s/scrollbar/)
+
 ### Content
 Recipes:
 - [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  

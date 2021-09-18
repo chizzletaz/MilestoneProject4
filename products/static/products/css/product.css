@@ -1,0 +1,26 @@
+#product-add-form .form-control,
+.product-form-input::-webkit-scrollbar,
+.product-form-input::-webkit-scrollbar-corner {
+    color: #f1f1f1;
+    background-color: inherit;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #b8bac0;
+}
+
+.product-form-input {
+    border: none;
+    border-bottom: 1px solid #b8bac0;
+    background-color: inherit;
+}
+
+.product-form-input:focus,
+.product-form-input:active {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    background-color: #31333a;
+}
+
+.product-form-input::placeholder {
+    color: #b8bac0;
+}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+{% endblock %}
+
+{% block page_header%}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="grey-overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2>Product Management</h2>
+            <h5 class="text-muted">Add a new Product</h5>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col12 col-md-6">
+            <form id="product-add-form" action="{% url 'add_product' %}" method="POST" class="form" enctype="multipart/form-data">
+                {{ form|crispy }}
+                <div class="text-end">
+                    <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0">Cancel</a>
+                    <button class="btn btn-light rounded-0" type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
