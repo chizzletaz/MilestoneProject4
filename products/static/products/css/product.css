@@ -24,3 +24,7 @@
 .product-form-input::placeholder {
     color: #b8bac0;
 }
+
+#id_category {
+    color: #b8bac0;
+}

@@ -30,6 +30,7 @@
     <div class="row">
         <div class="col12 col-md-6">
             <form id="product-add-form" action="{% url 'add_product' %}" method="POST" class="form" enctype="multipart/form-data">
+                {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-end">
                     <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0">Cancel</a>
@@ -39,4 +40,22 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    let categorySelected = $('#id_category').val();
+if(!categorySelected) {
+    $('#id_category').css('color', '#b8bac0');
+};
+$('#id_category').change(function() {
+    categorySelected = $(this).val();
+    if(!categorySelected) {
+        $(this).css('color', '#b8bac0');
+    } else {
+        $(this).css('color', '#f1f1f1');
+    }
+});
+</script>
 {% endblock %}
