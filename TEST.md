@@ -227,3 +227,19 @@ When adding the profile functionality (saving/updating order and/or delivery det
 Fix:  
 After checking the code, I realized that in order for stripe webhookhandler to work, the IDE has to have access to it.
 Since I'm working with VSCode, I have to be logged in to Stripe every time I want to be able to listen to messages from Stripe. (After deployment, this isn't necessary and will be done automatically, as was shown in the video with GitPod).
+
+---  
+Issue:  
+When adding/editing a product, the standard redirect is to the products page. But since I have a different page for trips,
+if the product is a trip. the redirect should be redirected to the individual trip page.  
+
+Try:  
+use condition on rendering in the products view. For instance: 
+```
+if product.category.friendly_name == 'trip':
+    return redirect(reverse('trip_detail', args=[product.id]))
+else: 
+    return redirect(reverse('product_detail', args=[product.id]))
+```
+This syntax doesn't work.
+What syntax do I have to you for this...?

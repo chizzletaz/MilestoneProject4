@@ -21,19 +21,19 @@
     <div class="row mb-5">
         <div class="col-12 col-lg-6 mx-auto">
             <h2 class="mb-3">Product Management</h2>
-            <h5 class="text-muted">Add a new Product</h5>
+            <h5 class="text-muted">Edit a Product</h5>
             <hr>
         </div>
     </div>
 
     <div class="row">
         <div class="col12 col-lg-6 mx-auto">
-            <form id="product-add-form" action="{% url 'add_product' %}" method="POST" class="form" enctype="multipart/form-data">
+            <form id="product-add-form" action="{% url 'edit_product' product.id %}" method="POST" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-end">
                     <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0">Cancel</a>
-                    <button class="btn btn-light rounded-0" type="submit">Add Product</button>
+                    <button class="btn btn-light rounded-0" type="submit">Edit Product</button>
                 </div>
             </form>
         </div>
