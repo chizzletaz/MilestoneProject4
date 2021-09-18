@@ -221,3 +221,9 @@ And added a css in base.css:
 }
 ```
 ---
+Issue:  
+When adding the profile functionality (saving/updating order and/or delivery details) to the webhookhandler, the webhookhandler didn't pick this up.  
+
+Fix:  
+After checking the code, I realized that in order for stripe webhookhandler to work, the IDE has to have access to it.
+Since I'm working with VSCode, I have to be logged in to Stripe every time I want to be able to listen to messages from Stripe. (After deployment, this isn't necessary and will be done automatically, as was shown in the video with GitPod).

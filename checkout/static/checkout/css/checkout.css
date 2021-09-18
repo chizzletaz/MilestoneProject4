@@ -34,7 +34,7 @@
 
 select,
 select option {
-    color: #f1f1f1;
+    color: #f1f1f1 !important;
 }
 
 select:invalid,
