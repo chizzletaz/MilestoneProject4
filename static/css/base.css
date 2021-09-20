@@ -44,10 +44,6 @@ header li {
     z-index: 999999;
 }
 
-/* #topnav.col-12 .navlink li:hover {
-    color: #fff;
-} */
-
 .form-search {
 	border: 0.01rem solid #f1f1f1;
 	left: auto;
