@@ -32,21 +32,21 @@ header li {
     text-transform: uppercase;
 }
 
-/* .header-container {
-    padding-top: 162px;
-} */
+#lowernav li * {
+    color: rgba(255,255,255, .55) !important;
+}
 
-#topnav {
-    max-height: 80px;
+#lowernav li:hover * {
+    color: rgba(255,255,255, .75) !important;
 }
 
 #nav-drop {
     z-index: 999999;
 }
 
-#topnav.col-12 .navlink li:hover {
+/* #topnav.col-12 .navlink li:hover {
     color: #fff;
-}
+} */
 
 .form-search {
 	border: 0.01rem solid #f1f1f1;

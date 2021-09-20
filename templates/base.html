@@ -66,68 +66,72 @@
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-lg-0">
-                <ul class="list-inline-item text-center text-lg-end w-100 my-0">
-                    <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <div class="text-center">
-                                <i class="fas fa-user link-secondary"></i>
-                                <p class="link-secondary">My Account</p>
-                            </div>
-                        </a>
-                        <div id="nav-drop" class="dropdown-menu text-grey" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                            {% endif %}
-                            <a href="{% url 'profile'  %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
-                            {% endif %}
-                        </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-secondary{% endif %} nav-link"
-                            href="{% url 'view_bag' %}">
-                            <div class="text-center">
-                                <i class="fas fa-shopping-bag"></i>
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    ${{ grand_total|floatformat:2|intcomma }}
-                                    {% else %}
-                                    $0.00
+                <nav class="navbar navbar-expand navbar-dark">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav d-flex ms-auto text-center text-lg-end">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <div class="text-center">
+                                        <i class="fas fa-user"></i>
+                                        <p>My Account</p>
+                                    </div>
+                                </a>
+                                <div id="nav-drop" class="dropdown-menu text-grey" aria-labelledby="user-options">
+                                    {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                     {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                    <!-- Open search bar via javascript toggle -->
-                    <li class="list-inline-item">
-                        <a class="nav-link icon-search" href="#">
-                            <i class="fas fa-search link-secondary"></i>
-                            <p class="my-0 link-secondary">Search</p>
-                        </a>
-                        <div class="form-search">
-                            <form method="GET" action="{% url 'products' %}">
-                                <div class="input-group mb-3">
-                                    <input class="form-control rounded-0" type="text" name="q"
-                                        placeholder="Search our site" aria-label="Search our site"
-                                        aria-describedby="button-addon">
-                                    <button class="btn btn-outline-secondary rounded-0" type="submit" id="button-addon">
-                                        <span class="icon">
-                                            <i class="fas fa-search "></i>
-                                        </span>
-                                    </button>
+                                    <a href="{% url 'profile'  %}" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                    {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Sign Up</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item">Sign In</a>
+                                    {% endif %}
                                 </div>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="{% if grand_total %}text-info font-weight-bold{% else %}{% endif %} nav-link"
+                                    href="{% url 'view_bag' %}">
+                                    <div class="text-center">
+                                        <i class="fas fa-shopping-bag"></i>
+                                        <p class="my-0">
+                                            {% if grand_total %}
+                                            ${{ grand_total|floatformat:2|intcomma }}
+                                            {% else %}
+                                            $0.00
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Open search bar via javascript toggle -->
+                            <li class="nav-item">
+                                <a class="nav-link icon-search" href="#">
+                                    <i class="fas fa-search"></i>
+                                    <p class="my-0">Search</p>
+                                </a>
+                                <div class="form-search">
+                                    <form method="GET" action="{% url 'products' %}">
+                                        <div class="input-group mb-3">
+                                            <input class="form-control rounded-0" type="text" name="q"
+                                                placeholder="Search our site" aria-label="Search our site"
+                                                aria-describedby="button-addon">
+                                            <button class="btn btn-outline-secondary rounded-0" type="submit" id="button-addon">
+                                                <span class="icon">
+                                                    <i class="fas fa-search "></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
-        <div id="lowernav" class="row">
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">

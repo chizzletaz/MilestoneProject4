@@ -36,13 +36,13 @@
             <!-- Categories display only on small and medium size < 992px -->
             <div class="d-block d-lg-none text-right">
                 <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle rounded-0" href="#" role="button" id="dropdownMenuLink"
+                    <a class="btn btn-outline-light dropdown-toggle rounded-0" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
                     
-                    <ul class="dropdown-menu bg-secondary bg-gradient" aria-labelledby="dropdownMenuLink">
-                        <li><a class="btn btn-outline-light rounded-0"
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="btn rounded-0"
                             href="{% url 'products' %}">All Products</a></li>
                         <li><a class="dropdown-item"
                                 href="{% url 'products' %}?category=accessories">Accessories</a></li>
@@ -124,7 +124,7 @@
                                 {% if request.user.is_superuser %}
                                 <div class="d-flex justify-content-between mt-3">
                                     <a class="btn btn-outline-danger btn-sm rounded-0" href="{% url 'delete_product' product.id %}">Delete</a>
-                                    <a class="btn btn-secondary btn-sm rounded-0" href="{% url 'edit_product' product.id %}">Edit</a>
+                                    <a class="btn btn-outline-dark btn-sm rounded-0 px-3" href="{% url 'edit_product' product.id %}">Edit</a>
                                 </div>
                                 {% endif %}
                             </div>
