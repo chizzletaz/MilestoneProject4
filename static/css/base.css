@@ -289,6 +289,17 @@ input[name='q']::placeholder {
 .allauth-form-inner-content input {
     border: none;
     border-bottom: 1px solid #b8bac0 !important;
+    background-color: inherit;
+}
+
+.allauth-form-inner-content input:focus,
+.allauth-form-inner-content input:active {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    background-color: #31333a;
+}
+
+.allauth-form-inner-content input[type='checkbox'] {
+    border: 1px solid #b8bac0;
 }
 
     /* hide labels except for remember me box */

@@ -28,3 +28,7 @@
 #id_category {
     color: #b8bac0;
 }
+
+.shadow-small {
+    box-shadow: 0.125rem .125rem .25rem rgba(255,255,255, 0.75);
+}
