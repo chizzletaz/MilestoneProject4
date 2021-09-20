@@ -99,7 +99,7 @@
                     </a>
                     {% else %}
                     <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
                     </a>
                     {% endif %}
                     <hr>
@@ -120,6 +120,12 @@
                                     5</small>
                                 {% else %}
                                 <small class="text-muted">No Rating</small>
+                                {% endif %}
+                                {% if request.user.is_superuser %}
+                                <div class="d-flex justify-content-between mt-3">
+                                    <a class="btn btn-outline-danger btn-sm rounded-0" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    <a class="btn btn-secondary btn-sm rounded-0" href="{% url 'edit_product' product.id %}">Edit</a>
+                                </div>
                                 {% endif %}
                             </div>
                         </div>

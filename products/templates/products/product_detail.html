@@ -23,10 +23,17 @@
                     </a>
                     {% else %}
                     <a href="">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
                     </a>
                 {% endif %}
             </div>
+            {% if request.user.is_superuser %}
+                <div class="d-grid gap-3 d-md-flex justify-content-md-between mb-5">
+                    <a class="btn btn-secondary rounded-0" href="{% url 'edit_product' product.id %}">Edit Product</a>
+                    <a class="btn btn-outline-danger rounded-0 order-md-first" href="{% url 'delete_product' product.id %}">Delete Product</a>
+                    
+                </div>
+                {% endif %}
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5 px-4">
