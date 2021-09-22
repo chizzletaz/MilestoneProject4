@@ -309,23 +309,8 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 
 ### Deployment to Heroku
 Before we deploy our Heroku application, we need to setup some files that Heroku needs to run the app.  
-1. **Create a 'requirements.txt' file**  
-    A requirements.txt file contains a list of the Python dependencies that our project needs in order to run successfully.  
-    First, we need to tell Heroku which applications and dependencies are required to run our app:
-    1. In the terminal window of the IDE type: **pip3 freeze --local > requirements.txt**
-    2. Then type: **git add -A**
-    3. Then type: **git commit -m “Add requirements.txt”**
 
-2. **Create a Heroku 'Procfile'**  
-    The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
-    1. In the terminal window of the IDE type: **echo web: python app.py > Procfile**
-    2. Then type: **git add Procfile**
-    3. Then type: **git commit -m “Add Profile.”**
-    4. Then type: **git push**  
-
-    > The Procfile might add a blank line at the bottom, and sometimes this can cause problems, when running our app on Heroku, so just delete that line and save the file.
-
-3. **Create a Heroku App**
+1. **Create a Heroku App**
     1. Create a new app by clicking the ‘New’ button.
     ![new Heroku app button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/new-app.png)
     2. Give a unique name and set region to your nearest region.
@@ -335,11 +320,11 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![postgres add-on](/postgres.png)  
     5. For plan name choose the free plan and click submit form.
 
-4. **Setup the Postgres Database**
+2. **Setup the Postgres Database**
     1. In your IDE install dj_database_url and psycopg2. 
         `pip3 install dj_database_url`
         `pip3 install psycopg2-binary`
-    2. Freeze the requirements.
+    2. Create a requirements file.
         `pip3 freeze > requirements.txt`
     3. Import dj_database_url in settings.py.
     4. Backup the database if you're using a local database instead of fixtures.  
@@ -364,11 +349,54 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
         And then the products:
         `python3 manage.py loaddata products`
     
-5. Create a superuser.
+3. **Create a superuser**
     Type: `python3 manage.py createsuperuser`
     Add a username and password.
 
+4. **Make a distinction between local and remote database**
+    Create an if-statement in settings.py so that when the app is running on Heroku it connects to Postgres(remote) and otherwise, it connects to sequel light(local).  
+    ```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+5. **Install gunicorn**
+    Gunicorn will replace our development server once the app is deployed to Heroku and will act as our web server.  
+    type: `pip3 install gunicorn`
 
+6. **Create a Heroku 'Procfile'**  
+    The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
+    1. In the terminal type: **touch Procfile** or create a new file named 'Procfile' in the root.
+    2. Inside the Procfile type: `web: gunicorn <Github appname>.wsgi:application`
+
+7. **Connect to Heroku in the terminal**
+    1. Login to your account on the Heroku website.
+    2. Go to account settings (click on your avatar).
+    3. Scroll down to the API Key section.
+    4. Click 'Reveal' and copy your API Key.
+    5. Login to Heroku via CLI `heroku login -i`
+    6. Login with your email but use the API Key as the password.
+    7. Temporarily disable the collection of static files until AWS has been setup.
+        `heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>`
+    8. Add the hostnames to allowed hosts in settings.py.
+        `ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']`
+       where 127.0.0.1 is the IP of the localhost, so that the app can also run locally.
+    9. Commit to GitHub and then to Heroku.
+        ```
+        git add .
+        git commit -m "commit message"
+        git push
+        ```
+        `git push heroku master`
+    
 
 4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  

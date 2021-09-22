@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-*b@t3qa#94y-6r(bu6oxa^b0q+c$77iuy3wr5*t*d3^(oj-3a^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['space-travel-agency.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -133,12 +133,17 @@ WSGI_APPLICATION = 'space_travel_agency.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 

@@ -1,0 +1,1 @@
+web: gunicorn space_travel_agency.wsgi:application
