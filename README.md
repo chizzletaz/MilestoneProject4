@@ -389,24 +389,26 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     8. Add the hostnames to allowed hosts in settings.py.
         `ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']`
        where 127.0.0.1 is the IP of the localhost, so that the app can also run locally.
-    9. Commit to GitHub and then to Heroku.
+    9. Commit to GitHub.
         ```
         git add .
         git commit -m "commit message"
         git push
         ```
-        `git push heroku master`
-    
+    10. Commit to Heroku. Make sure you have git remote initialized
+        `heroku git:remote -a <Heroku appname>`
+        Push to Heroku
+        `git push heroku`
 
-4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
+8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
-    ![deploy tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy.png)  
+    ![deploy tab](/deploy.png)  
     2. Under 'Deployment method', Click on 'Connect to GitHub'.
-    ![connect to github button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-to-github.png)
-    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’.
-    ![search repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/search-repo.png)
-    4. Click 'Connect'.
-    ![connect repository name](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-repo.png)
+    ![connect to github button](/connect-to-github.png)
+    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
+    ![connect repository name](/search-repo.png)
+    4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
+    ![enable automatic deploy button](/automatic-deploy.png)
 
 
     Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
@@ -422,7 +424,7 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
 
     4. Go back to the Deploy Tab.  
     5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
-    ![enable automatic deploy button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/automatic-deploy.png)
+    ![enable automatic deploy button](/automatic-deploy.png)
     6. Click on ‘Deploy Branch’.
     ![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
     7. When Heroku has finished building the application, the following message should appear:
