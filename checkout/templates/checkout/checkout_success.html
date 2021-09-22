@@ -32,7 +32,7 @@
             <div class="order-confirmation-wrapper p-2 border">
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted"><u>Info:</u></small>
+                        <small class="text-info"><u>Info:</u></small>
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted"><u>Order Details:</u></small>
+                        <small class="text-info"><u>Order Details:</u></small>
                     </div>
                 </div>
 
@@ -68,14 +68,14 @@
                         </p>
                     </div>
                     <div class="col-12 col-md-8 text-md-end">
-                        <p class="small mb-0">{{ item.quantity }} @ ${{ item.product.price }} each</p>
+                        <p class="small mb-0">{{ item.quantity }} @ €{{ item.product.price }} each</p>
                     </div>
                 </div>
                 {% endfor %}
 
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted"><u>Delivering To:</u></small>
+                        <small class="text-info"><u>Delivering To:</u></small>
                     </div>
                 </div>
 
@@ -159,7 +159,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted"><u>Billing Info:</u></small>
+                        <small class="text-info"><u>Billing Info:</u></small>
                     </div>
                 </div>
 
@@ -168,7 +168,7 @@
                         <p class="mb-0 font-weight-bold">Order Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-end">
-                        <p class="mb-0">{{ order.order_total }}</p>
+                        <p class="mb-0">€ {{ order.order_total }}</p>
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@
                         <p class="mb-0 font-weight-bold">Delivery</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-end">
-                        <p class="mb-0">{{ order.delivery_cost }}</p>
+                        <p class="mb-0">€ {{ order.delivery_cost }}</p>
                     </div>
                 </div>
 
@@ -186,7 +186,7 @@
                         <p class="mb-0 font-weight-bold">Grand Total</p>
                     </div>
                     <div class="col-12 col-md-8 text-md-end">
-                        <p class="mb-0">{{ order.grand_total }}</p>
+                        <p class="mb-0">€ {{ order.grand_total }}</p>
                     </div>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                 <span class="text-uppercase">Back to Profile</span>
             </a>
             {% else %}
-            <a href="{% url 'products' %}?category=deals" class="btn btn-light rounded-0 my-2">
+            <a href="{% url 'products' %}?category=deals" class="btn btn-light rounded-0 my-3">
                 <span class="icon mr-2">
                     <i class="fas fa-gifts"></i>
                 </span>

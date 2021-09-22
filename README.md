@@ -330,7 +330,45 @@ Before we deploy our Heroku application, we need to setup some files that Heroku
     ![new Heroku app button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/new-app.png)
     2. Give a unique name and set region to your nearest region.
     ![name and region input](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/name-region.png)
-    3. Click ‘Create App’
+    3. Click ‘Create App’.
+    4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
+    ![postgres add-on](/postgres.png)  
+    5. For plan name choose the free plan and click submit form.
+
+4. **Setup the Postgres Database**
+    1. In your IDE install dj_database_url and psycopg2. 
+        `pip3 install dj_database_url`
+        `pip3 install psycopg2-binary`
+    2. Freeze the requirements.
+        `pip3 freeze > requirements.txt`
+    3. Import dj_database_url in settings.py.
+    4. Backup the database if you're using a local database instead of fixtures.  
+        `python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json`
+        p.s. make sure you're connected to your mysql database.  
+    5. Scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
+        ```
+        DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
+        }
+        ```
+        You can the database url from Heroku's Config Vars in the Settings tab. 
+        !Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be commit in version control.
+    6. Run migrations.
+          `python3 manage.py migrate`
+    7. In case of using a local database type:  
+        `python3 manage.py loaddata db.json`
+        to import the data from the mySQL database to Postgre.
+    8. In case of using fixtures:
+        First import the categories:
+        `python3 manage.py loaddata categories`
+        And then the products:
+        `python3 manage.py loaddata products`
+    
+5. Create a superuser.
+    Type: `python3 manage.py createsuperuser`
+    Add a username and password.
+
+
 
 4. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  

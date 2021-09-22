@@ -14,31 +14,33 @@
 {% block content %}
 <div class="black-overlay"></div>
 <div class="container-fluid">
-    <h1>Space Trips</h1>
+    <h1 class="display-3 ms-5">Space Trips</h1>
     {% for product in products %}
     {% if forloop.counter|divisibleby:2 %}
     <div class="row py-5">
         <div class="col-12 col-md-7 order-md-last">
             <img class="img-fluid" src="{{ product.image.url }}">
         </div>
-        <div class="col-12 col-md-5 my-auto text-center text-lg-start rtl">
-            <h1 class="display-4"><strong>{{ product.name }}</strong></h1>
-            <h4><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
+        <div class="col-12 col-md-5 my-auto rtl">
+            <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
+            <h4 class="text-center"><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
                     More</a></h4>
         </div>
     </div>
+    <hr class="d-md-none">
     {% else %}
     <div class="row py-5">
         <div class="col-12 col-md-7">
             <img class="img-fluid" src="{{ product.image.url }}">
         </div>
-        <div class="col-12 col-md-5 my-auto text-center text-lg-start ltr">
-            <h1 class="display-4"><strong>{{ product.name }}</strong></h1>
-            <h4><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
+        <div class="col-12 col-md-5 my-auto ltr">
+            <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
+            <h4 class="mx-auto text-center"><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
                     More</a>
             </h4>
         </div>
     </div>
+    <hr class="d-md-none">
     {% endif %}
     {% endfor %}
 </div>
