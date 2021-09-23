@@ -146,7 +146,7 @@ This page is shown in case of an internal service error.
 
 
 Below is a chart of the webpages and their mutual connections:  
-![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/Recipe_pages.png)
+![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/Recipe_pages.png)
 
         BACKEND 
 During development the Sqlite3 database is used. This is the default database used by Django.
@@ -158,19 +158,19 @@ Chart of the models used.
 
 ## **Skeleton Level**
 ### Wireframes
-- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/landing.pdf)  
-- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/recipes.pdf)  
-- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/recipe.pdf)  
-- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/contact.pdf)  
-- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/shop.pdf)  
-- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/register.pdf)  
-- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/login.pdf)
-- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/profile.pdf)  
-- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/add_recipe.pdf)  
-- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/edit_recipe.pdf)  
-- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/categories.pdf)  
-- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/add_category.pdf)  
-- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/wireframes/edit_category.pdf)  
+- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/landing.pdf)  
+- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/recipes.pdf)  
+- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/recipe.pdf)  
+- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/contact.pdf)  
+- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/shop.pdf)  
+- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/register.pdf)  
+- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/login.pdf)
+- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/profile.pdf)  
+- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/add_recipe.pdf)  
+- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/edit_recipe.pdf)  
+- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/categories.pdf)  
+- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/add_category.pdf)  
+- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/edit_category.pdf)  
 
 
 ## **Service Level**
@@ -180,7 +180,7 @@ To ensure that colours match well, I've chosen to use the colours of Materialize
 In food, bright colours signify flavours such as sweets and desserts - pink is expecially associated with baking and sweets.  
 Therefore the main colour is pink. As a contrasting colour I've chosen green.
 
-![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/coloursB&B.png)  
+![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/coloursB&B.png)  
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
@@ -193,17 +193,17 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 
 ### **Typography** 
 For the title(h1) and the logo, I've used 'Kaushan Script'. This is a handwritten font, which adds a more unique and homemade feeling.  
-> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/kaushan-script.png)  
+> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/kaushan-script.png)  
 
 To keep the design consistent, I've decided to use one font-family: Noto.  
 Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
 
 For the other headers (h2 to h5) I've used 'Noto Serif'. 
-> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-serif.png)  
+> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/noto-serif.png)  
 
 For the rest of the text I've used 'Noto Sans', this is a sans serif font, which are well suited for displaying text on computer screens.  
 
-> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/noto-sans.png)  
+> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/noto-sans.png)  
 ---
 # **Features**
 
@@ -297,7 +297,7 @@ For the rest of the text I've used 'Noto Sans', this is a sans serif font, which
 - [Coolors](https://coolors.co/) to make the colour scheme.
 ---
 # **Testing**
-For testing results, see [Testing.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/TEST.md)
+For testing results, see [Testing.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/TEST.md)
 
 ---
 ## **Deployment**
@@ -311,12 +311,12 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 
 1. **Create a Heroku App**
     1. Create a new app by clicking the ‘New’ button.
-    ![new Heroku app button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/new-app.png)
+    ![new Heroku app button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/new-app.png)
     2. Give a unique name and set region to your nearest region.
-    ![name and region input](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/name-region.png)
+    ![name and region input](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/name-region.png)
     3. Click ‘Create App’.
     4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
-    ![postgres add-on](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/postgres.png)  
+    ![postgres add-on](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/postgres.png)  
     5. For plan name choose the free plan and click submit form.
 
 2. **Setup the Postgres Database**
@@ -403,33 +403,33 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 
 8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
-    ![deploy tab](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/deploy.png)  
+    ![deploy tab](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/deploy.png)  
     2. Under 'Deployment method', Click on 'Connect to GitHub'.
-    ![connect to github button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/connect-to-github.png)
+    ![connect to github button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/connect-to-github.png)
     3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
-    ![connect repository name](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/search-repo.png)
+    ![connect repository name](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/search-repo.png)
     4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
-    ![enable automatic deploy button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/automatic-deploy.png)
+    ![enable automatic deploy button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/automatic-deploy.png)
 
 9. **Set up Amazon AWS**
     1. Login to AWS or create an account.
     2. Search for S3 and click it.
     3. Create a new bucket  
-    ![create new bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/bucket.png) 
+    ![create new bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/bucket.png) 
     4. Give the bucket a unique name.
     5. Select the region closest to you.
-    ![S3 name and region](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/s3-name-region.png)
+    ![S3 name and region](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/s3-name-region.png)
     6. Uncheck block all public access and acknowledge that the bucket will be public.  
-    ![S3 allow public access](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/s3-access.png)
+    ![S3 allow public access](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/s3-access.png)
     7. Click 'Create bucket'.  
-    ![Create bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/create-bucket.png)
+    ![Create bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/create-bucket.png)
     8. Set basic settings
         - Click on the bucketname.
         - Click the 'Properties' tab.
         - Scroll down to 'Static website hosting' and click 'Edit'
-        ![Static website hosting](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/static-website-hosting.png)  
+        ![Static website hosting](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/static-website-hosting.png)  
         - Click 'Enable' and enter the default values for index and error document.
-        ![Enable hosting settings](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/enable-hosting.png)  
+        ![Enable hosting settings](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/enable-hosting.png)  
         - Click 'Save changes'.
     9. Set permissions
         - Click on the 'Permissions' tab.
@@ -457,34 +457,34 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
     10. Set Bucket Policy
         - In the Permissions tab scroll to Bucket Policy and click 'Edit'.
         - Click on 'Policy generator'  
-        ![policy generator button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/bucket-policy.png)
+        ![policy generator button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/bucket-policy.png)
         - In the new window that opens select 'S3 bucket policy' as the 'Type of Policy'.
         - Add * to 'Principal'.
         - Select 'GetObject' in 'Actions'.
         - Copy your ARN from the other tab and paste it in the ARN field.
         - Click 'Add Statement'.
-        ![policy generator](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/policy-generator.png)
+        ![policy generator](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/policy-generator.png)
         - Click 'Generate policy'.
         - Copy the policy and paste it in the Bucket Policy of the first tab.
         - Add '/*' to the end of the resource key.
         - Click 'Save changes'.
         - Scroll down to Access control list (ACL) and click 'Edit'.
         - Select 'List' for Everyone (public access) and select 'I understand...' at the bottom.
-        ![Acces control list](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/acl.png)
+        ![Acces control list](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/acl.png)
         - Click 'Save changes'.
     11. Create AWS groups, policies and users
         - Click Iam (via search bar or Services).
         - Create a group
-            - Click on ['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-group.png) on the left.
+            - Click on ['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group.png) on the left.
             - Click 'Create group' and enter a group name.
             - Scroll down and click 'Create group'.
         - Create the policy used to access the bucket
             - Click on 'Policies' on the left.
             - Click 'Create policy'.
             - Click the JSON tab and then on 'Import managed policy'.
-            - Search for 'S3' in the pop up window and select ['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-policies.png) and click 'Import'.
+            - Search for 'S3' in the pop up window and select ['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policies.png) and click 'Import'.
             - Copy your ARN (Open S3 in a new tab, click the bucket name, click Permission tab, click Bucket policy and copy the ARN)
-            - Paste it in the ["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-policy.png) in the JSON tab.
+            - Paste it in the ["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policy.png) in the JSON tab.
             - Click 'Next: Tags', then 'Next: Review'.
             - Give the policy a name and description.
             - Click 'Create policy'.
@@ -492,7 +492,7 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             - Click 'User groups' on the left.
             - Click the group name.
             - Click the 'Permissions' tab.
-            - Click 'Add permission', then click ['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-group-policy.png).
+            - Click 'Add permission', then click ['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group-policy.png).
             - Search for the policy that you created above, select it.
             - Click 'Attach policy'.
         - Create a user to put in the group
@@ -541,7 +541,7 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         > 'Override static and media URLs in production' will tell which url's to use in production.  
 
         - Go to Heroku and add these values to the Config Vars (under Settings):
-        ![Heroku Config Vars](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/config-vars.png)  
+        ![Heroku Config Vars](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/config-vars.png)  
         - Create a custom class to tell django that in production we want to use s3 to store our static files.  
         - Add the folowing code to custom_storages.py  
         ```
@@ -587,15 +587,15 @@ A fork is a copy of a repository. Forking a repository allows you to freely expe
 To achieve this follow these steps:
 1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency).
 2. At the top right of the page, click on the fork button.  
-![fork button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/forking.png)
+![fork button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
 ### Cloning this GitHub repository
 1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency)
 2. Click on the ‘Code’ button 
-![Code button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/github-clone.png)
+![Code button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-clone.png)
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
-![save icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/github-copy.png).
+![save icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
 6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
