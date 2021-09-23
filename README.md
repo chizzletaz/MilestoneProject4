@@ -297,7 +297,7 @@ For the rest of the text I've used 'Noto Sans', this is a sans serif font, which
 - [Coolors](https://coolors.co/) to make the colour scheme.
 ---
 # **Testing**
-For testing results, see [Testing.md](xyz/TEST.md)
+For testing results, see [Testing.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/TEST.md)
 
 ---
 ## **Deployment**
@@ -311,12 +311,12 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 
 1. **Create a Heroku App**
     1. Create a new app by clicking the ‘New’ button.
-    ![new Heroku app button](xyz/new-app.png)
+    ![new Heroku app button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/new-app.png)
     2. Give a unique name and set region to your nearest region.
-    ![name and region input](xyz/name-region.png)
+    ![name and region input](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/name-region.png)
     3. Click ‘Create App’.
     4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
-    ![postgres add-on](xyz/postgres.png)  
+    ![postgres add-on](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/postgres.png)  
     5. For plan name choose the free plan and click submit form.
 
 2. **Setup the Postgres Database**
@@ -403,33 +403,33 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
 
 8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
-    ![deploy tab](xyz/deploy.png)  
+    ![deploy tab](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/deploy.png)  
     2. Under 'Deployment method', Click on 'Connect to GitHub'.
-    ![connect to github button](xyz/connect-to-github.png)
+    ![connect to github button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/connect-to-github.png)
     3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
-    ![connect repository name](xyz/search-repo.png)
+    ![connect repository name](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/search-repo.png)
     4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
-    ![enable automatic deploy button](xyz/automatic-deploy.png)
+    ![enable automatic deploy button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/automatic-deploy.png)
 
 9. **Set up Amazon AWS**
     1. Login to AWS or create an account.
     2. Search for S3 and click it.
     3. Create a new bucket  
-    ![create new bucket](xyz/bucket.png) 
+    ![create new bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/bucket.png) 
     4. Give the bucket a unique name.
     5. Select the region closest to you.
-    ![S3 name and region](xyz/s3-name-region.png)
+    ![S3 name and region](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/s3-name-region.png)
     6. Uncheck block all public access and acknowledge that the bucket will be public.  
-    ![S3 allow public access](xyz/s3-access.png)
+    ![S3 allow public access](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/s3-access.png)
     7. Click 'Create bucket'.  
-    ![Create bucket](xyz/create-bucket.png)
+    ![Create bucket](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/create-bucket.png)
     8. Set basic settings
         - Click on the bucketname.
         - Click the 'Properties' tab.
         - Scroll down to 'Static website hosting' and click 'Edit'
-        ![Static website hosting](xyz/static-website-hosting.png)  
+        ![Static website hosting](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/static-website-hosting.png)  
         - Click 'Enable' and enter the default values for index and error document.
-        ![Enable hosting settings](xyz/enable-hosting.png)  
+        ![Enable hosting settings](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/enable-hosting.png)  
         - Click 'Save changes'.
     9. Set permissions
         - Click on the 'Permissions' tab.
@@ -457,34 +457,34 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
     10. Set Bucket Policy
         - In the Permissions tab scroll to Bucket Policy and click 'Edit'.
         - Click on 'Policy generator'  
-        ![policy generator button](xyz/bucket-policy.png)
+        ![policy generator button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/bucket-policy.png)
         - In the new window that opens select 'S3 bucket policy' as the 'Type of Policy'.
         - Add * to 'Principal'.
         - Select 'GetObject' in 'Actions'.
         - Copy your ARN from the other tab and paste it in the ARN field.
         - Click 'Add Statement'.
-        ![policy generator](xyz/policy-generator.png)
+        ![policy generator](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/policy-generator.png)
         - Click 'Generate policy'.
         - Copy the policy and paste it in the Bucket Policy of the first tab.
         - Add '/*' to the end of the resource key.
         - Click 'Save changes'.
         - Scroll down to Access control list (ACL) and click 'Edit'.
         - Select 'List' for Everyone (public access) and select 'I understand...' at the bottom.
-        ![Acces control list](xyz/acl.png)
+        ![Acces control list](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/acl.png)
         - Click 'Save changes'.
     11. Create AWS groups, policies and users
         - Click Iam (via search bar or Services).
         - Create a group
-            - Click on ['User groups'](/xyz/iam-group.png) on the left.
+            - Click on ['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-group.png) on the left.
             - Click 'Create group' and enter a group name.
             - Scroll down and click 'Create group'.
         - Create the policy used to access the bucket
             - Click on 'Policies' on the left.
             - Click 'Create policy'.
             - Click the JSON tab and then on 'Import managed policy'.
-            - Search for 'S3' in the pop up window and select ['AmazonS3FullAccess'](/xyz/iam-policies.png) and click 'Import'.
+            - Search for 'S3' in the pop up window and select ['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-policies.png) and click 'Import'.
             - Copy your ARN (Open S3 in a new tab, click the bucket name, click Permission tab, click Bucket policy and copy the ARN)
-            - Paste it in the ["Resource"](xyz/iam-policy.png) in the JSON tab.
+            - Paste it in the ["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-policy.png) in the JSON tab.
             - Click 'Next: Tags', then 'Next: Review'.
             - Give the policy a name and description.
             - Click 'Create policy'.
@@ -492,7 +492,7 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             - Click 'User groups' on the left.
             - Click the group name.
             - Click the 'Permissions' tab.
-            - Click 'Add permission', then click ['Attach Policies'](xyz/iam-group-policy.png).
+            - Click 'Add permission', then click ['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/iam-group-policy.png).
             - Search for the policy that you created above, select it.
             - Click 'Attach policy'.
         - Create a user to put in the group
@@ -509,7 +509,7 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         - Add these to requirements.
         `pip3 freeze > requirements.txt`  
         - Add storages to INSTALLED APPS in `settings.py`.
-        - Add the following settings to `settings.py` , where to find static and media files and which url's to use.  
+        - Add the following settings to `settings.py`.  
         ```
         if 'USE_AWS' in os.environ:
             # Cache control
@@ -541,7 +541,7 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         > 'Override static and media URLs in production' will tell which url's to use in production.  
 
         - Go to Heroku and add these values to the Config Vars (under Settings):
-        ![Heroku Config Vars](/xyz/config-vars.png)  
+        ![Heroku Config Vars](/https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/config-vars.png)  
         - Create a custom class to tell django that in production we want to use s3 to store our static files.  
         - Add the folowing code to custom_storages.py  
         ```
@@ -557,42 +557,45 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
                 location = settings.MEDIAFILES_LOCATION
         ```  
         - Push to GitHub.
+    13. Add media files to S3
+        - In your Amazon S3 bucket click 'Create folder' and name it 'media'.
+        - Open the folder and click 'Upload'.
+        - Click 'Add files' and select all your product images.
+        - Under 'Permissions' select 'Grant public-read access'.
+        - Select 'I understand...' and click 'Upload'.
+10. **Setup Stripe**
+    1. Add Stripe keys to Config Var
+        - Login to Stripe or create and [account](https://dashboard.stripe.com/register).
+        - Click developers and then API Keys.
+        - Copy the public and secret key and add them to Config Vars in Heroku.  
+        ```
+        STRIPE_PUBLIC_KEY = <your Stripe public key>
+        STRIPE_SECRET_KEY = <your Stripe secret key>
+        ```  
+    2. Create a webhook endpoint
+        - In Stripe - Developers click 'webhooks'.
+        - Click 'Add endpoint'.
+        - Enter your heroku url and add /checkout/wh/ to it.
+        `https://<projectname>.herokuapp.com/checkout/wh/`  
+        - Select 'receive all events' and click 'Add endpoint.
+        - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
+        - Copy the signing secret and add to the Config Vars in Heroku.
 
-
-
-    Before enabling automatic deployment, the hidden variables like IP, PORT, secret key etc., need to be added to Heroku.  
-5. **Add config vars to Heroku**    
-    1. Go to the Settings tab.  
-    ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/settings.png)  
-    2. Click on 'Reveal Config Vars'.  
-    ![Config vars tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars.png)  
-    3. Enter the values of the config vars (see nr.5 [below](#setup-local-deployment) for the MONGO_URI value).
-    ![setting tab](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/config-vars-values.png)  
-
-    > Tip: copy the secret key from the env.py file and enter as the value for the secret key.  
-
-    4. Go back to the Deploy Tab.  
-    5. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
-    ![enable automatic deploy button](/automatic-deploy.png)
-    6. Click on ‘Deploy Branch’.
-    ![deploy branch button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/deploy-branch.png)
-    7. When Heroku has finished building the application, the following message should appear:
-    ![succesful deployment](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/succesful-deploy.png)
 ---
 ### Forking this GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
-1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge).
+1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency).
 2. At the top right of the page, click on the fork button.  
-![fork button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/forking.png)
+![fork button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
 ### Cloning this GitHub repository
-1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/BakeAndBinge)
+1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency)
 2. Click on the ‘Code’ button 
-![Code button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/github-clone.png)
+![Code button](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/github-clone.png)
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
-![save icon](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/github-copy.png).
+![save icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/master/README/images/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
 6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
@@ -602,49 +605,55 @@ To achieve this follow these steps:
 For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ### Setup local deployment
-1. Clone or fork this repository (see above).
-2. Install the requirements by typing:  
+1. **Clone or fork this repository (see above)**.
+2. **Install the requirements by typing:**  
         `pip3 install -r requirements.txt`  
    in the terminal.
-3. Create a MongoDB Database
-    1. Login to MongoDB.
-    2. Create a cluster by clicking Cluster:  
-    ![Clusters](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/clusters.png).
-    3. Create a collection named 'categories' by clicking Collections.  
-    ![Collections](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/collections.png) 
-    4. Create Database by clicking Create Database.  
-    !['Create Database'](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/create-db.png)
-    5. Add a database and collection name and click Create.  
-    ![create](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/db-coll.png)
-    6. Repeat steps 3 to 5 for the following collections: recipes, subscribe, users.
-4. Set the environment variables.
-    1. Create a .gitignore file in the root directory, if there isn't one.
-    2. Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
-    3. Create an env.py file and set the environment variables by adding the following text: 
+3. **Set the environment variables.**
+    1. If you use GitPod.
+        - In your workspace click 'Settings'.
+        - In Environment Variables insert the following variables:
         ```
-        import os
-        os.environ.setdefault("IP", *enter your IP address e.g. 0.0.0.0*)
-        os.environ.setdefault("PORT", *enter a portnumber*)
-        os.environ.setdefault("SECRET_KEY", *enter a secret key*)
-        os.environ.setdefault("MONGO_URI", *enter the MONGO_URI, see below*)
-        os.environ.setdefault("MONGO_DBNAME", *enter the mongodb database name you created*) 
-        ```   
-5. Connect the database to the app
-    1. Log in to MongoDB
-    2. Click on the 'Connect' Tab.  
-    ![connect mongodb](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/mongodb-connect.png)  
-    3. Click on 'Connect your application'.  
-    ![connect mongodb application](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/connect-application.png)  
-    4. Select the Python driver and the recent version (3.6 or higher).  
-    ![mongodb connection string](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/mongodb-connection-string.png)  
-    5. Copy the application code and add it as the value for the 'MONGO_URI' in the env.py file. 
-6. Set up an instance of PyMongo.
-    1. In your python file add:  
-        `mongo = Pymongo(app)`
-7. Run the app:
-    1. In the terminal, type:  
-        `python3 <your python file name>.py`  
-        and hit enter.
+        'DEVELOPMENT', 'True'
+        'SECRET_KEY', '<your secret key>'  e.g. from a key generator
+        'STRIPE_PUBLIC_KEY', '<your stripe public key>'
+        'STRIPE_SECRET_KEY', '<your stripe secret key>'
+        'STRIPE_WH_SECRET', '<your stripe webhook secret>'
+        ```
+    2. If you use a local IDE, like VSCode.
+        - Create a .gitignore file in the root directory, if there isn't one.
+        - Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
+        - Create an env.py file and set the environment variables by adding the following text: 
+        ```
+            import os
+
+            os.environ["STRIPE_PUBLIC_KEY"] = '<your stripe public key>'
+            os.environ["STRIPE_SECRET_KEY"] = '<your stripe secret key>'
+            os.environ["STRIPE_WH_SECRET"] = '<your stripe webhook secret>'
+
+            os.environ["SECRET_KEY"] = '<your secret key>'  e.g. from a key generator
+
+            os.environ["DEVELOPMENT"] = 'True'
+        ```  
+    > See how to get your stripe keys.
+    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
+4. **Migrate the database models**
+    - Check migrations
+    `python3 manage.py makemigrations --dry-run`
+    - Make migrations
+    `python3 manage.py makemigrations`
+    - Check migrate
+    `python3 manage.py migrate --plan`
+    - Migrate
+    `python3 manage.py migrate`
+
+5. **Load product data.**
+    - Type `python3 manage.py loaddata db.json`
+6. **Create a superuser account**
+    - `python3 manage.py createsuperuser
+    - Add a username and password. 
+7.**Run the app.**
+   - In the terminal, type: `python3 <your python file name>.py`  
         
 ---
 # **Credits**
