@@ -10,12 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
 import dj_database_url
 
 if os.path.exists("env.py"):
     import env 
+
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,9 +61,9 @@ INSTALLED_APPS = [
     'profiles',
 
     # Other
-    "crispy_forms",
-    "crispy_bootstrap5",
-    "storages",
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'storages',
     
 ]
 
@@ -107,6 +108,7 @@ TEMPLATES = [
     },
 ]
 
+# has to be added for GitPod
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
@@ -145,8 +147,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-
 
 
 # Password validation
@@ -193,7 +193,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
     # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = 'space-tracel-agency'
+    AWS_STORAGE_BUCKET_NAME = 'space-travel-agency'
     AWS_S3_REGION_NAME = 'eu-west-2'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
