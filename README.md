@@ -509,9 +509,15 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         - Add these to requirements.
         `pip3 freeze > requirements.txt`  
         - Add storages to INSTALLED APPS in `settings.py`.
-        - Add the following settings to `settings.py` to tell Django which bucket it should be communicating with, where to find static and media files and which url's to use.  
+        - Add the following settings to `settings.py` , where to find static and media files and which url's to use.  
         ```
         if 'USE_AWS' in os.environ:
+            # Cache control
+            AWS_S3_OBJECT_PARAMETERS = {
+                'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                'CacheControl': 'max-age=94608000',
+            }
+            
             # Bucket Config
             AWS_STORAGE_BUCKET_NAME = '<bucket name>'
             AWS_S3_REGION_NAME = '<bucket region>'
@@ -528,7 +534,12 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             # Override static and media URLs in production
             STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
             MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-        ```
+        ```  
+        > 'Cache control' will tell the browser that it's okay to cache static files for a long time.
+        > 'Bucket Config' will tell Django which bucket it should be communicating with.
+        > 'Static and media files' will tell where to find static and media files
+        > 'Override static and media URLs in production' will tell which url's to use in production.  
+
         - Go to Heroku and add these values to the Config Vars (under Settings):
         ![Heroku Config Vars](/xyz/config-vars.png)  
         - Create a custom class to tell django that in production we want to use s3 to store our static files.  
