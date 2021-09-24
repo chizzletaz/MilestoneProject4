@@ -62,7 +62,7 @@
             </div> -->
             <div class="col-12 col-lg-6 text-center text-lg-start my-0">
                 <a href="{% url 'home' %}" class="nav-link">
-                    <h3 class="link-secondary text-space"><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
+                    <h3 id="logo-font" class="link-secondary text-space"><strong>Space</strong> Travel<span class="fw-light"> Agency</span></h3>
                 </a>
             </div>
             <div class="col-12 col-lg-6 my-auto py-lg-0">
@@ -108,8 +108,10 @@
                             <!-- Open search bar via javascript toggle -->
                             <li class="nav-item">
                                 <a class="nav-link icon-search" href="#">
-                                    <i class="fas fa-search"></i>
-                                    <p class="my-0">Search</p>
+                                    <div class="text-center">
+                                        <i class="fas fa-search"></i>
+                                        <p class="my-0">Search</p>
+                                    </div>
                                 </a>
                                 <div class="form-search">
                                     <form method="GET" action="{% url 'products' %}">

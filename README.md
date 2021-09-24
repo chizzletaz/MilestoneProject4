@@ -306,6 +306,12 @@ Heroku is used to deploy this application, since GitHub can only deploy static w
 This application was developed using VSCode as IDE, commited to Git and pushed to GitHub.
 The GitHub repository is linked to the Heroku App via automatic deployment (see below).
 Every time commits and pushes are sent to GitHub, the Heroku App is updated shortly after.
+Committing to GitHub is done as follow:  
+```
+    git add .
+    git commit -m "commit message"
+    git push
+```
 
 ### Deployment to Heroku  
 
@@ -316,18 +322,24 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
     ![name and region input](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/name-region.png)
     3. Click ‘Create App’.
     4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
-    ![postgres add-on](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/postgres.png)  
+    ![postgres add-on](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/postgress.png)  
     5. For plan name choose the free plan and click submit form.
 
 2. **Setup the Postgres Database**
     1. In your IDE install dj_database_url and psycopg2.   
-        `pip3 install dj_database_url`  
-        `pip3 install psycopg2-binary`
+        ```
+        pip3 install dj_database_url
+        pip3 install psycopg2-binary
+        ```
     2. Create a requirements file.  
-        `pip3 freeze > requirements.txt`
+        ```
+        pip3 freeze > requirements.txt
+        ```
     3. Import dj_database_url in `settings.py`.
     4. Backup the database if you're using a local database instead of fixtures.  
-        `python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json`  
+        ```
+        python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+        ```  
         p.s. make sure you're connected to your mysql database.  
     5. Scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
         ```
@@ -336,21 +348,29 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         }
         ```
         You can the database url from Heroku's Config Vars in the Settings tab. 
-        > Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be commit in version control.
+        > Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be committed in version control.
     6. Run migrations.  
-          `python3 manage.py migrate`
+          ```
+          python3 manage.py migrate
+          ```
     7. In case of using a local database type:  
-        `python3 manage.py loaddata db.json`  
+        ```
+        python3 manage.py loaddata db.json
+        ```  
         to import the data from the mySQL database to Postgre.
     8. In case of using fixtures:  
         First import the categories:  
-        `python3 manage.py loaddata categories`  
+        ```
+        python3 manage.py loaddata categories
+        ```  
         And then the products:  
-        `python3 manage.py loaddata products`  
+        ```
+        python3 manage.py loaddata products
+        ```  
     
 3. **Create a superuser**  
-    Type: `python3 manage.py createsuperuser`  
-    Add a username and password.
+    - Type: `python3 manage.py createsuperuser`  
+    - Add a username and password.
 
 4. **Make a distinction between local and remote database**  
     Create an if-statement in `settings.py` so that when the app is running on Heroku it connects to Postgres(remote) and otherwise, it connects to sequel light(local).  
@@ -368,14 +388,16 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         }
     ```
 5. **Install gunicorn**  
-    Gunicorn will replace our development server once the app is deployed to Heroku and will act as our web server.  
+    Gunicorn will replace the development server once the app is deployed to Heroku and will act as the web server.  
     type: `pip3 install gunicorn`
 
 6. **Create a Heroku 'Procfile'**  
-    The Procfile is what Heroku looks for to know which file runs the app, and how to run it.
+    The Procfile is what Heroku looks for to know which file runs the app and how to run it.
     1. In the terminal type: **touch Procfile** or create a new file named 'Procfile' in the root.
     2. Inside the Procfile type:   
-    `web: gunicorn <Github appname>.wsgi:application`
+    ```
+    web: gunicorn <Github appname>.wsgi:application
+    ```
 
 7. **Connect to Heroku in the terminal**
     1. Login to your account on the Heroku website.
@@ -383,23 +405,28 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
     3. Scroll down to the API Key section.
     4. Click 'Reveal' and copy your API Key.
     5. Login to Heroku via CLI  
-     `heroku login -i`
+     ```
+     heroku login -i
+     ```
     6. Login with your email but use the API Key as the password.
     7. Temporarily disable the collection of static files until AWS has been setup.  
-        `heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>`  
+        ```
+        heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
+        ```  
     8. Add the hostnames to allowed hosts in `settings.py`.  
-        `ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']`
+        ```
+        ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']
+        ```
        where 127.0.0.1 is the IP of the localhost, so that the app can also run locally.
     9. Commit to GitHub.
-        ```
-        git add .
-        git commit -m "commit message"
-        git push
-        ```
     10. Commit to Heroku. Make sure you have git remote initialized.  
-        `heroku git:remote -a <Heroku appname>`  
+        ```
+        heroku git:remote -a <Heroku appname>
+        ```  
         Push to Heroku.  
-        `git push heroku`
+        ```
+        git push heroku
+        ```
 
 8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
     1. Go to the Deploy tab.  
@@ -475,16 +502,19 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
     11. Create AWS groups, policies and users
         - Click Iam (via search bar or Services).
         - Create a group
-            - Click on ['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group.png) on the left.
+            - Click on 'Users groups' on the left.  
+            !['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group.png)
             - Click 'Create group' and enter a group name.
             - Scroll down and click 'Create group'.
         - Create the policy used to access the bucket
             - Click on 'Policies' on the left.
             - Click 'Create policy'.
             - Click the JSON tab and then on 'Import managed policy'.
-            - Search for 'S3' in the pop up window and select ['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policies.png) and click 'Import'.
+            - Search for 'S3' in the pop up window and select 'AmazonS3FullAccess' and click 'Import'.  
+            !['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policies.png)
             - Copy your ARN (Open S3 in a new tab, click the bucket name, click Permission tab, click Bucket policy and copy the ARN)
-            - Paste it in the ["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policy.png) in the JSON tab.
+            - Paste it in the 'Resource' in the JSON tab.  
+            !["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policy.png)
             - Click 'Next: Tags', then 'Next: Review'.
             - Give the policy a name and description.
             - Click 'Create policy'.
@@ -492,7 +522,8 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             - Click 'User groups' on the left.
             - Click the group name.
             - Click the 'Permissions' tab.
-            - Click 'Add permission', then click ['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group-policy.png).
+            - Click 'Add permission', then click 'Attach Policies'.  
+            !['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group-policy.png)
             - Search for the policy that you created above, select it.
             - Click 'Attach policy'.
         - Create a user to put in the group
@@ -504,10 +535,14 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             - Download the .csv file and save it well, since it contains this users access key and secret access key and can't be downloaded again.
     12. Connect Django to S3
         - Install boto3 and django-storages.  
-        `pip3 install boto3`  
-        `pip3 install django-storages`  
+        ```
+        pip3 install boto3  
+        pip3 install django-storages
+        ```  
         - Add these to requirements.
-        `pip3 freeze > requirements.txt`  
+        ```
+        pip3 freeze > requirements.txt
+        ```  
         - Add storages to INSTALLED APPS in `settings.py`.
         - Add the following settings to `settings.py`.  
         ```
@@ -535,10 +570,10 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
             STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
             MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
         ```  
-        > 'Cache control' will tell the browser that it's okay to cache static files for a long time.
-        > 'Bucket Config' will tell Django which bucket it should be communicating with.
-        > 'Static and media files' will tell where to find static and media files
-        > 'Override static and media URLs in production' will tell which url's to use in production.  
+        > 'Cache control' will tell the browser that it's okay to cache static files for a long time.  
+        > 'Bucket Config' will tell Django which bucket it should be communicating with.  
+        > 'Static and media files' will tell where to find static and media files.  
+        > 'Override static and media URLs in production' will tell which url's to use in production.    
 
         - Go to Heroku and add these values to the Config Vars (under Settings):
         ![Heroku Config Vars](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/config-vars.png)  
@@ -576,7 +611,9 @@ Every time commits and pushes are sent to GitHub, the Heroku App is updated shor
         - In Stripe - Developers click 'webhooks'.
         - Click 'Add endpoint'.
         - Enter your heroku url and add /checkout/wh/ to it.
-        `https://<projectname>.herokuapp.com/checkout/wh/`  
+        ```
+        https://<projectname>.herokuapp.com/checkout/wh/
+        ```  
         - Select 'receive all events' and click 'Add endpoint.
         - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
         - Copy the signing secret and add to the Config Vars in Heroku.
@@ -602,15 +639,17 @@ To achieve this follow these steps:
 7. Click the button 'Clone Repository', add the url you copied above and hit enter.
 8. A clone will be created locally.
 
-For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+> For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ### Setup local deployment
 1. **Clone or fork this repository (see above)**.
 2. **Install the requirements by typing:**  
-        `pip3 install -r requirements.txt`  
+        ```
+        pip3 install -r requirements.txt
+        ```  
    in the terminal.
 3. **Set the environment variables.**
-    1. If you use GitPod.
+    1. If you're using GitPod.
         - In your workspace click 'Settings'.
         - In Environment Variables insert the following variables:
         ```
@@ -620,7 +659,7 @@ For more info on how to clone a repository check [here](https://docs.github.com/
         'STRIPE_SECRET_KEY', '<your stripe secret key>'
         'STRIPE_WH_SECRET', '<your stripe webhook secret>'
         ```
-    2. If you use a local IDE, like VSCode.
+    2. If you're using a local IDE, like VSCode.
         - Create a .gitignore file in the root directory, if there isn't one.
         - Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
         - Create an env.py file and set the environment variables by adding the following text: 
@@ -635,17 +674,25 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 
             os.environ["DEVELOPMENT"] = 'True'
         ```  
-    > See how to get your stripe keys.
+    > See [above](#setup-stripe) how to get your stripe keys.  
     > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
 4. **Migrate the database models**
     - Check migrations
-    `python3 manage.py makemigrations --dry-run`
+    ```
+    python3 manage.py makemigrations --dry-run
+    ```
     - Make migrations
-    `python3 manage.py makemigrations`
+    ```
+    python3 manage.py makemigrations
+    ```
     - Check migrate
-    `python3 manage.py migrate --plan`
+    ```
+    python3 manage.py migrate --plan
+    ```
     - Migrate
-    `python3 manage.py migrate`
+    ```
+    python3 manage.py migrate
+    ```
 
 5. **Load product data.**
     - Type `python3 manage.py loaddata db.json`
@@ -671,8 +718,7 @@ For more info on how to clone a repository check [here](https://docs.github.com/
 ### Content
 Recipes:
 - [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
-- [Artisan bread](https://sallysbakingaddiction.com/homemade-artisan-bread/#tasty-recipes-80079-jump-target)  
-- [Almond cookies](https://www.foodless.nl/amandelkoekjes-met-citroen/)  
+ 
 
 The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
 
@@ -719,6 +765,5 @@ clipon-lens.jpg
 - [Colour codes](https://usbrandcolors.com/tech/) of social media icons.
 ---
 # Acknowledgements
-I want to thank my mentor Antonio Rodriguez for guiding me through this project and helping me with some solutions.
-Especially with the relations between collections on MongoDB and the development of the corresponding python code for the functions in the app.py file.  
+I want to give special thanks my mentor Antonio Rodriguez for  and guiding me through this project and helping me solve some of the challenges I faced.  
 I want to thank Tutor support at CI and fellow Slack members for answering my questions.
