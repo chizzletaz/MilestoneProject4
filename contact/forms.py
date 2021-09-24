@@ -1,11 +1,11 @@
 from django import forms
+from .models import Contact
 
-
-class ContactForm(forms.Form):
-    full_name = forms.CharField(max_length=25, required=True)
-    email = forms.EmailField(max_length=25, required=True)
-    message_subject = forms.CharField(max_length=100, required=True)
-    message_body = forms.CharField(max_length=1500, widget=forms.Textarea, required=True)
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('full_name', 'email',
+            'message_subject', 'message_body',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -19,9 +19,14 @@ class ContactForm(forms.Form):
             'message_subject': 'Subject',
             'message_body': 'Message',
         }
+
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            placeholder = f'{placeholders[field]} *'
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'space-form rounded-0'
             self.fields[field].label = False

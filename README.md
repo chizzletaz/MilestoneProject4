@@ -715,6 +715,7 @@ To achieve this follow these steps:
 
 - Change the scrollbar css - [CSS-tricks](https://css-tricks.com/almanac/properties/s/scrollbar/)
 
+- Using 'cleaned_data' on contact form - [Django Docs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
 ### Content
 Recipes:
 - [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
