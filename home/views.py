@@ -7,13 +7,16 @@ def index(request):
     return render(request, 'home/index.html')
 
 
-# def index(request):
-#     """ A view to return the index page """
+# class Trips: zoals webhookhandler
+#    def __init__(self, product)
 
-#     products = Product.objects.all().filter(category__name='trip')
+#   def get_trip(self, request):
+#       """ A view to return the index page """
 
-#     context = {
+#       products = Product.objects.all().filter(category__name='trip')
+
+#       context = {
 #         'products': products,
-#     }
+#       }
 
-#     return render(request, 'home/index.html', context)
+#       return render(request, 'home/index.html', context)
