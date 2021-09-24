@@ -12,11 +12,14 @@ def contact(request):
 
     if request.method == "POST":
         contact_form = ContactForm(request.POST) 
+
+        # Send email to customer
         if contact_form.is_valid():
+            # Send email to customer
             cust_email = request.POST['email'],
             # credit for using cleaned_data https://docs.djangoproject.com/en/3.2/ref/forms/validation/
             subject = ('We have receiced your message with subject: ' +
-                       contact_form.cleaned_data['message_subject'])
+                       contact_form.cleaned_data['subject'])
             body = render_to_string('contact/confirmation_emails/confirmation_email_body.txt',
                     {'contact_form': contact_form, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
@@ -27,8 +30,13 @@ def contact(request):
                 [cust_email],
                 fail_silently=False,
             )
+            
+            # save message to database
+            contact_form.save()
             messages.success(request, 'Your message was sent successfully!')
             return redirect(reverse('contact'))
+        else:
+            messages.error(request, 'Failed to send message. Please ensure the form is valid.')
 
     contact_form = ContactForm
 
