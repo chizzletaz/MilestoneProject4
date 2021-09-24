@@ -1,25 +1,4 @@
 /* Stripe */
-.StripeElement,
-.stripe-style-input {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border-bottom: 1px solid #7a7c85;
-  border-radius: 0px;
-  background-color: inherit;
-}
-
-.StripeElement--focus,
-.stripe-style-input:focus,
-.stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-  background-color: #31333a;
-}
-
-.stripe-style-input::placeholder {
-    color: #b8bac0;
-}
-
 .fieldset-label {
     position: relative;
     right: 1rem;

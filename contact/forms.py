@@ -5,7 +5,7 @@ class ContactForm(forms.Form):
     full_name = forms.CharField(max_length=25, required=True)
     email = forms.EmailField(max_length=25, required=True)
     message_subject = forms.CharField(max_length=100, required=True)
-    message_body = forms.CharField(max_length=1500, required=True)
+    message_body = forms.CharField(max_length=1500, widget=forms.Textarea, required=True)
 
     def __init__(self, *args, **kwargs):
         """
@@ -23,5 +23,5 @@ class ContactForm(forms.Form):
         for field in self.fields:
             placeholder = f'{placeholders[field]} *'
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'contact-style-input'
+            self.fields[field].widget.attrs['class'] = 'space-form rounded-0'
             self.fields[field].label = False

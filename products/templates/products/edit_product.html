@@ -19,16 +19,19 @@
 <div class="grey-overlay"></div>
 <div class="container">
     <div class="row mb-5">
-        <div class="col-12 col-lg-6 mx-auto">
-            <h2 class="mb-3">Product Management</h2>
-            <h5 class="text-muted">Edit a Product</h5>
+        <div class="mx-auto">
+            <h1 class="display-4 text-center">Product Management</h1>
             <hr>
         </div>
     </div>
 
     <div class="row">
         <div class="col12 col-lg-6 mx-auto">
-            <form id="product-add-form" action="{% url 'edit_product' product.id %}" method="POST" class="form" enctype="multipart/form-data">
+            <div class="mb-5">
+                <h5 class="text-muted">Use the form below to edit a product.</h5>
+                <small class="text-muted"><i>* is a required field</i></small>
+            </div>
+            <form class="update-form" action="{% url 'edit_product' product.id %}" method="POST" class="form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                     {% if field.name != 'image' %}

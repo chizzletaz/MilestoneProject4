@@ -3,7 +3,6 @@
 {% load humanize %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block page_header%}
@@ -21,13 +20,19 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h2>Contact Us</h2>
+            <h1 class="display-4 text-center">Contact Us</h1>
             <hr>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-6">
-            {{ form|crispy }}
+        <div class="col-12 col-md-6 mx-auto">
+            <div class="mb-5">
+                <h5 class="text-muted">If you have any question, please fill out the form below and we'll get back to you as soon as possible.</h5>
+                <small class="text-muted"><i>* is a required field</i></small>
+            </div>
+            <form action="" class="update-form">
+                {{ form|crispy }}
+            </form>
         </div>
     </div>
 {% endblock %}

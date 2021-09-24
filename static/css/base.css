@@ -342,3 +342,49 @@ input[name='q']::placeholder {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+/* General css for forms */
+.space-form {
+    border: none;
+    border-bottom: 1px solid #b8bac0;
+    background-color: inherit;
+}
+
+.space-form:focus,
+.space-form:active,
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+    background-color: #31333a;
+}
+
+.space-form::placeholder {
+    color: #b8bac0;
+}
+
+.update-form .form-control,
+.StripeElement {
+    color: #f1f1f1;
+    background-color: inherit;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #b8bac0;
+}
+
+.update-form textarea[name='description'],
+.update-form textarea[name='message_body'] {
+    height:fit-content;
+}
+
+.update-form::placeholder {
+    color: #b8bac0;
+}
+
+.stretch  {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+  }
