@@ -280,13 +280,14 @@ input[name='q']::placeholder {
 /* Allauth form formatting */
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
-    color: #f1f1f1;
+    color: #f1f1f1 !important;
 }
 
 .allauth-form-inner-content input {
     border: none;
     border-bottom: 1px solid #b8bac0 !important;
     background-color: inherit;
+    color: #f1f1f1 !important;
 }
 
 .allauth-form-inner-content input:focus,
