@@ -52,13 +52,23 @@ header li {
 	right: 0;
 	text-align: center;
 	position: absolute;
-	padding:  20px;
+	padding:  10px 10px;
 	width:  300px;
 	margin: 15px;
 	display: none;
     z-index: 2000;
 }
 
+#search-bar-mobile input {
+    color: #000 !important;
+}
+
+#search-bar-mobile input:hover,
+#search-bar-mobile input:active,
+#search-bar-mobile button:hover,
+#search-bar-mobile button:active {
+    color: #000 !important;
+}
 /* Colours */
 
 .text-off-white {
@@ -369,6 +379,10 @@ input[name='q']::placeholder {
     height: 40px;
     padding: 10px 12px;
     border-bottom: 1px solid #b8bac0;
+}
+
+.form-control input {
+    color: #000;
 }
 
 .update-form textarea[name='description'],
