@@ -34,11 +34,13 @@ header li {
     text-transform: uppercase;
 }
 
-#lowernav li * {
+#lowernav li i,
+#lowernav li p {
     color: rgba(255,255,255, .55) !important;
 }
 
-#lowernav li:hover * {
+#lowernav li i:hover,
+#lowernav li p:hover  {
     color: rgba(255,255,255, .75) !important;
 }
 
@@ -75,6 +77,11 @@ header li {
 #search-bar-mobile button:active {
     color: #000 !important;
 }
+
+.list-inline-item {
+    color: #000;
+}
+
 /* Colours */
 
 .text-off-white {
@@ -268,7 +275,6 @@ input[name='q']::placeholder {
 
 /* Media Queries */
 @media (max-width: 991px) {
-    .header-container,
     body,
     .overlay,
     .dark-overlay {
@@ -335,7 +341,7 @@ input[name='q']::placeholder {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #000;
+    color: #000 !important;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
