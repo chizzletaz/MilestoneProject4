@@ -403,8 +403,10 @@ input[name='q']::placeholder {
 }
 
 .update-form textarea[name='description'],
-.update-form textarea[name='message_body'] {
-    height:fit-content;
+.update-form textarea[name='message_body'],
+.update-form textarea[name='message'] {
+    overflow: auto;
+    min-height: 50px;
 }
 
 .update-form::placeholder {
