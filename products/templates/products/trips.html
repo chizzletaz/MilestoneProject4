@@ -13,8 +13,21 @@
 
 {% block content %}
 <div class="black-overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <h1 class="display-4 text-center title my-4">Space Trips</h1>
+            <h5 id="hero-text">Space Travel Agency offers private spaceflight experiences to suit all interest levels
+                and budgets.
+                You can visit our luxury Space Hotel, the International Space Station
+                or fly to the Moon and back or even go as far as even Mars.
+                All flights are available for regular private citizens to enjoy,
+                and demonstrate that space is no longer the domain of just the professional astronauts.</h5>
+                <h5 class="pt-4 text-center">Take a look at all our trips below:</h5>
+        </div>
+    </div>
+</div>
 <div class="container-fluid">
-    <h1 class="display-4 text-center title">Space Trips</h1>
     {% for product in products %}
     {% if forloop.counter|divisibleby:2 %}
     <div class="row py-5">
@@ -23,7 +36,8 @@
         </div>
         <div class="col-12 col-md-5 my-auto rtl">
             <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
-            <h4 class="text-center"><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
+            <h4 class="text-center"><a href="{% url 'trip_detail' product.id %}"
+                    class="btn btn-lg btn-outline-light rounded-0">Read
                     More</a></h4>
         </div>
     </div>
@@ -35,7 +49,8 @@
         </div>
         <div class="col-12 col-md-5 my-auto ltr">
             <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
-            <h4 class="mx-auto text-center"><a href="{% url 'trip_detail' product.id %}" class="btn btn-lg btn-outline-light rounded-0">Read
+            <h4 class="mx-auto text-center"><a href="{% url 'trip_detail' product.id %}"
+                    class="btn btn-lg btn-outline-light rounded-0">Read
                     More</a>
             </h4>
         </div>
