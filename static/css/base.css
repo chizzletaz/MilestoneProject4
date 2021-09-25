@@ -44,6 +44,7 @@ header li {
 
 #logo-font {
     font-size: 2.2rem;
+    text-shadow: -1px 2px 0 rgba(255, 255, 255, 0.4);
 }
 
 .form-search {
@@ -85,11 +86,15 @@ header li {
 
 .text-space {
     color: rgb(43,145,179);
-    text-shadow: -1px 2px 0 rgba(255, 255, 255, 0.4);
 }
 
 .text-up {
     text-transform: uppercase;
+}
+
+.btn-info {
+    background-color: rgb(43,145,179) !important;
+    border-color: rgb(43,145,179) !important;
 }
 
 /* dark overlay for products page */
@@ -170,6 +175,7 @@ input[name='q']::placeholder {
     position: fixed;
     top: 72px;
     right: 15px;
+    margin: 5px;
     z-index: 99999999999;
 }
 
