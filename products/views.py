@@ -75,7 +75,7 @@ def product_detail(request, product_id):
 def all_trips(request):
     """ A view to show all space trips """
 
-    products = Product.objects.all().filter(category__name='trip')
+    products = Product.objects.all().filter(category__name='trip').order_by('price')
 
     context = {
         'products': products,

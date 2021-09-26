@@ -1,15 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header%}
-<div class="container">
-    <div class="row">
-        <div class="col">
-
-        </div>
-    </div>
-</div>
-{% endblock %}
 
 {% block content %}
 <div class="dark-overlay"></div>
@@ -28,7 +19,7 @@
                 {% endif %}
             </div>
             {% if request.user.is_superuser %}
-                <div class="d-grid gap-3 d-xs-flex justify-content-md-between mb-5">
+                <div class="d-grid gap-3 d-md-flex justify-content-md-between mb-5">
                     <a class="btn btn-outline-light rounded-0" href="{% url 'edit_product' product.id %}">Edit Product</a>
                     <a class="btn btn-outline-danger rounded-0 order-md-first"
                         data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete Product</a>
