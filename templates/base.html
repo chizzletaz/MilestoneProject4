@@ -174,8 +174,8 @@
 
     <footer>
         <div class="row">
-            <div id="footer-link" class="col-12 col-md-3 text-md-start ps-5">
-                <h5>Site links:</h5>
+            <div id="footer-link" class="col-12 col-sm-6 col-md-3 text-md-start ps-5 mb-3">
+                <h5 class="pb-2">Site links:</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link link-secondary px-0" href="{% url 'trips' %}">Space
                             Trips</a></li>
@@ -184,19 +184,19 @@
                     <li class="nav-item"><a class="nav-link link-secondary px-0" href="">About Us</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-3 my-auto order-md-last">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <a href="{% url 'contact' %}" class="btn btn-outline-light rounded-0">Contact Us</a>
+            <div class="col-12 col-sm-6 col-md-3 mt-5 order-md-last mb-3">
+                <div class="d-grid col-6 mx-auto">
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light rounded-0 px-1">Contact Us</a>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mb-3">
                 <div class="row">
-                    <h5 class=" text-center">Contact</h5>
+                    <hr class="d-block d-md-none">
+                    <h5 class="pb-3 text-center">Contact</h5>
                 </div>
-
                 <div class="row">
-                    <div class="col-12 col-sm-6 ps-5 ps-md-1">
-                        <table>
+                    <div class="col-12 col-sm-6 ps-5 ps-md-1 pb-2">
+                        <table class="text-muted">
                             <tbody>
                                 <tr>
                                     <th scope="row"><i class="fas fa-map-marker"></i></th>
@@ -213,13 +213,12 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-12 col-sm-6 ps-5 ps-md-1">
+                    <div class="col-12 col-sm-6 ps-5 ps-md-1 text-muted">
                         <p><i class="fas fa-at"></i> spacetravel@agency.com</p>
                         <p><i class="fas fa-phone-alt"></i> 727-856-4744</p>
                     </div>
                 </div>
-            </div>
-            
+            </div>  
         </div>
         <div id='footer-social' class="d-flex justify-content-center">
             <a class="list-inline-item" href="https://www.facebook.com" target="_blank" rel="noopener">
@@ -235,6 +234,7 @@
                 <i class="fab fa-youtube"></i>
             </a>
         </div>
+        <hr>
         <div class="col s12 text-center">
             <p class="copyright text-muted">Copyright &copy; T. Silva <span id='copyright'></span></p>
         </div>

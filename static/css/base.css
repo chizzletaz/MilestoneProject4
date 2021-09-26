@@ -288,6 +288,7 @@ input[name='q']::placeholder {
 #footer-social a{
 	color: #b8bac0;
 	background-color: inherit;
+    margin: 0 8px 6px;
 }
 
 #footer-social a:hover {
@@ -305,17 +306,7 @@ footer .list-inline-item {
 }
 
 footer .list-inline-item i {
-    /*color: #fff;*/
     font-size: 18px;
-}
-
-.socials {
-    margin-top: 65px;
-}
-
-.socials a {
-    width: 60px;
-    height: 60px;
 }
 
 #footer-card {
@@ -326,7 +317,7 @@ footer .list-inline-item i {
     body,
     .overlay,
     .dark-overlay {
-        padding-top: 61px;
+        padding-top: 100px;
     }
 
     #topnav a {

@@ -9,13 +9,14 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <hr>
+            <hr class="w-75 mx-auto">
             <h1 class="display-4 text-center title">Shopping Bag</h1>
-            <hr>
+            <hr class="w-75 mx-auto">
         </div>
     </div>
 
-    <div class="row">
+    <div class="row my-5">
+        {% if bag_items %}
         <div class="col-12 order-md-last text-md-end">
             <h6><strong>Bag Total: ${{ total|floatformat:2|intcomma }}</strong></h6>
             <h6 class="pt-2">Delivery: ${{ delivery|floatformat:2 }}</h6>
@@ -27,35 +28,35 @@
             </p>
             {% endif %}
             <div class="d-grid d-md-flex justify-content-md-end gap-4 mb-3">
-            <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0 btn-lg">
-                <span class="icon">
-                    <i class="fas fa-chevron-left"></i>
-                </span>
-                <span class="text-uppercase">Keep Shopping</span>
-            </a>
-            <a href="{% url 'checkout' %}" class="btn btn-light rounded-0 btn-lg">
-                <span class="text-uppercase">Secure Checkout</span>
-                <span class="icon">
-                    <i class="fas fa-lock"></i>
-                </span>
-            </a>
-            <p class="text-muted d-md-none">A summary of your bag content can been seen below.</p>
-            
-        </div>
-        <hr class="d-md-none">
+                <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0 btn-lg">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+                <a href="{% url 'checkout' %}" class="btn btn-light rounded-0 btn-lg">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+                <p class="text-muted d-md-none">A summary of your bag content can been seen below.</p>
+            </div>
+            <hr class="d-md-none">
         </div>
         <div class="col-12 my-5">
             <div class="row">
-                {% if bag_items %}
                 {% for item in bag_items %}
                 <div class="col-12 col-md-6">
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <h5 class="d-none d-md-block">Product Info</h5>
                             {% if item.product.image %}
-                            <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            <img class="img-fluid rounded" src="{{ item.product.image.url }}"
+                                alt="{{ item.product.name }}">
                             {% else %}
-                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png"
+                                alt="{{ item.product.name }}">
                             {% endif %}
                         </div>
                         <div class="col-12 col-sm-6 my-auto">
@@ -68,7 +69,8 @@
                     <div class="row">
                         <div class="col-12 col-sm-6 my-auto">
                             <h5 class="d-none d-md-block">Quantity</h5>
-                            <form class="form update-form pt-4" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                            <form class="form update-form pt-4" method="POST"
+                                action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
@@ -78,8 +80,8 @@
                                                 <i class="fas fa-minus"></i>
                                             </span>
                                         </button>
-                                        <input class="form-control qty_input" type="number"
-                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                        <input class="form-control qty_input" type="number" name="quantity"
+                                            value="{{ item.quantity }}" min="1" max="99"
                                             data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <button class="increment-qty btn btn-info rounded-0"
                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
@@ -92,8 +94,8 @@
                             </form>
                             <div class="pt-3">
                                 <a class="update-link text-info"><small>Update</small></a>
-                                <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}"
-                                            ><small><i class="fas fa-trash-alt fa-lg px-3"></i></small></a>
+                                <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}"><small><i
+                                            class="fas fa-trash-alt fa-lg px-3"></i></small></a>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
@@ -105,21 +107,32 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <h5 class="d-none d-md-block">Subtotal</h5>
-                                    <p class="pt-4 d-none d-md-block">${{ item.product.price|calc_subtotal:item.quantity|intcomma }}</p>
-                                    <p class="d-block d-md-none pt-sm-4 pt-xs-0">Subtotal: ${{ item.product.price|calc_subtotal:item.quantity|intcomma }}</p>                         
+                                    <p class="pt-4 d-none d-md-block">
+                                        ${{ item.product.price|calc_subtotal:item.quantity|intcomma }}</p>
+                                    <p class="d-block d-md-none pt-sm-4 pt-xs-0">Subtotal: $
+                                        {{ item.product.price|calc_subtotal:item.quantity|intcomma }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+                {% else %}
+                <div class="d-grid justify-content-md-center gap-4 mb-5">
+                    <p class="lead mb-3">Your bag is empty.</p>
+                    <a href="{% url 'products' %}" class="btn btn-outline-light rounded-0 btn-lg">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                </div>
                 {% endif %}
             </div>
         </div>
     </div>
-
-
 </div>
+<hr>
 {% endblock %}
 
 {% block postloadjs %}
@@ -128,22 +141,22 @@
 
 <script type="text/javascript">
     // Update quantity on click
-    $('.update-link').click(function(e) {
+    $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
         form.submit();
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    $('.remove-item').click(function (e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken,};
+        var data = { 'csrfmiddlewaretoken': csrfToken, };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function () {
+                location.reload();
+            });
     })
 </script>
 
