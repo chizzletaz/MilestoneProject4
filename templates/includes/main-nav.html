@@ -17,13 +17,9 @@
                     Space Trips
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=1%}">Around the earth</a></li>
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=2%}">A space walk</a></li>
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=3%}">Spacehotel</a></li>
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=4%}">ISIS spacestation</a></li>
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=5%}">To the moon</a></li>
-                    <li><a class="dropdown-item" href="{% url 'trip_detail' product_id=6%}">A trip to Mars</a></li>
-                    <li>
+                    {% for product in trips %}
+                    <li><a class="dropdown-item" href="{% url 'trip_detail' product.id %}">{{ product.name }}</a></li>
+                    {% endfor %}
                         <hr class="dropdown-divider">
                     </li>
                     <li><a class="dropdown-item" href="{% url 'trips' %}">All Trips</a></li>

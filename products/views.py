@@ -107,7 +107,7 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
-            if product.category == 'Trip':
+            if product.category.name == 'trip':
                 return redirect(reverse('trip_detail', args=[product.id]))
             else:
                 return redirect(reverse('product_detail', args=[product.id]))

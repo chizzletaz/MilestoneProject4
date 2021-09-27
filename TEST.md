@@ -183,7 +183,7 @@ This works.
 ![Button Close Toast Fix Image](/close-btn-toast-fix.png)
 
 ---
-Issue:  
+Issue: Solved   
 When creating the checkout bag inside the success toast, the checkout button does not take the full width of the toast.
 ![Checkout Button Toast Error](/checkout-btn-toast-error.png)
 
@@ -200,7 +200,7 @@ This works
 ![Checkout Button Toast Error](/checkout-btn-toast-fix.png)
 
 ---
-Issue:  
+Issue: Solved  
 In the dropdown menu in the topnav, the link to 'Sign Up' doesn't work. The link below (sign in) does.
 ![sign up dropdown error](/signup-error-dropdown.png)
 
@@ -221,7 +221,7 @@ And added a css in base.css:
 }
 ```
 ---
-Issue:  
+Issue: Solved  
 When adding the profile functionality (saving/updating order and/or delivery details) to the webhookhandler, the webhookhandler didn't pick this up.  
 
 Fix:  
@@ -229,19 +229,26 @@ After checking the code, I realized that in order for stripe webhookhandler to w
 Since I'm working with VSCode, I have to be logged in to Stripe every time I want to be able to listen to messages from Stripe. (After deployment, this isn't necessary and will be done automatically, as was shown in the video with GitPod).
 
 ---  
-Issue:  
+Issue: Solved
 When adding/editing a product, the standard redirect is to the products page. But since I have a different page for trips,
 if the product is a trip. the redirect should be redirected to the individual trip page.  
 
 Try:  
 use condition on rendering in the products view. For instance: 
 ```
-if product.category.friendly_name == 'trip':
+if product.category.friendly_name == 'Trip':
     return redirect(reverse('trip_detail', args=[product.id]))
 else: 
     return redirect(reverse('product_detail', args=[product.id]))
 ```
 This syntax doesn't work.
-What syntax do I have to you for this...?
+Fix:  
+```
+if product.category.name == 'trip':
+    return redirect(reverse('trip_detail', args=[product.id]))
+else: 
+    return redirect(reverse('product_detail', args=[product.id]))
+```
+This works! The issue was using the correct name and watch case sensitivity.
 
 ---  
