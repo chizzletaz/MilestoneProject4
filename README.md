@@ -13,7 +13,7 @@ Use any expiration date (month/year) in the future and any CVC code.
 
 This website is the fourth ‘Milestone Project’ as part of the Full Stack Development course of Code Institute, which is about Full Stack Frameworks with Django. The focus lies on using the Django framework, using an authorisation and authentication system and using Stripe for payments.
 
-#### A live version can be viewed [here]()
+#### A live version can be viewed [here](https://space-travel-agency.herokuapp.com/)
 
 # Table of Content
 - [User Experience (UX)](#user-experience-ux)  
@@ -73,7 +73,7 @@ Based on the user stories I’ve deducted on the following requirements:
 5. Defensive programming, e.g. confirmation on buying, deleting, logging out, etc.
 6. A profile page where registered users can log in, add, edit and delete personal information.
 7. A shop page.
-8. An about page where users can get more information about the company.
+8. An about page where users can get more information about the company and/or the trips.
 9. A contact page with contact form where users can contact the site’s owner.
 10. Individual pages for travels and products.
 11. Indication/banner for offers or deals, maybe a discount code.
@@ -114,9 +114,8 @@ The information provided should be easily visible:
 - The user gets an indication of which page they are, e.g. by using headers.
 
 The user is given feedback, in order to enhance a pleasant user experience:
-- The user gets a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over 
 - The user gets a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
-- Messages are used to confirm or inform about current actions.
+- Messages(toasts) are used to confirm or inform about current actions.
 - Modal pop ups are used as defensive programming, i.e. prompting the user if they are sure of their action.
 - The user get's a feedback when an error has occurred (via warning text or error handlers). In case of error handlers there is a button that leads back to the home page.
 
@@ -124,16 +123,16 @@ The user is given feedback, in order to enhance a pleasant user experience:
         FRONTEND  
 The website has xx pages, plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
-The main navigation bar has links to XXX register, login and a search icon.
+The main navigation bar has links to home, trips, shop, about, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
 When the user is admin, an extra link for site managing is shown.  
 
-The footer has a section to subscribe to the newsletter and links to socials.
+The footer has a section with contact details, an overview of some important links and links to socials.
 
 #### Description of the pages
 
 - **The landing page/home page:** *(index.html - route: /, /home)*  
-The main page has the main navbar. Below that is a hero image and a short explanation for the site. Beneath that are the latest 6 recipes.
+The main page has the main navbar. Below that is a hero image and a short explanation for the site. 
 
 - **The 403 error handler page:** *(403.html - errorhandler: 403)*  
 This page is shown in case of forbidden access.
@@ -146,7 +145,7 @@ This page is shown in case of an internal service error.
 
 
 Below is a chart of the webpages and their mutual connections:  
-![pages chart](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/Recipe_pages.png)
+![pages chart]()
 
         BACKEND 
 During development the Sqlite3 database is used. This is the default database used by Django.
@@ -159,18 +158,7 @@ Chart of the models used.
 ## **Skeleton Level**
 ### Wireframes
 - [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/landing.pdf)  
-- [Wireframes for Recipes Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/recipes.pdf)  
-- [Wireframes for Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/recipe.pdf)  
-- [Wireframes for Contact Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/contact.pdf)  
-- [Wireframes for Shop Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/shop.pdf)  
-- [Wireframes for Register Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/register.pdf)  
-- [Wireframes for Login Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/login.pdf)
-- [Wireframes for Profile Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/profile.pdf)  
-- [Wireframes for Add Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/add_recipe.pdf)  
-- [Wireframes for Edit Recipe Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/edit_recipe.pdf)  
-- [Wireframes for Categories Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/categories.pdf)  
-- [Wireframes for Add Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/add_category.pdf)  
-- [Wireframes for Edit Category Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/edit_category.pdf)  
+
 
 
 ## **Service Level**
@@ -192,21 +180,14 @@ This colour is used for buttons that have to stand out, shadow-text and the unde
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
 
 ### **Typography** 
-For the title(h1) and the logo, I've used 'Kaushan Script'. This is a handwritten font, which adds a more unique and homemade feeling.  
+For the title(h1) and the logo, I've used .  
 > ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/kaushan-script.png)  
 
-To keep the design consistent, I've decided to use one font-family: Noto.  
-Noto fonts are intended to be visually harmonious across multiple languages, with compatible heights and stroke thicknesses.
+To keep the design consistent, I've decided to use 
 
-For the other headers (h2 to h5) I've used 'Noto Serif'. 
-> ![example of noto serif text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/noto-serif.png)  
-
-For the rest of the text I've used 'Noto Sans', this is a sans serif font, which are well suited for displaying text on computer screens.  
-
-> ![example of noto sans text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/noto-sans.png)  
 ---
 # **Features**
-
+# TO BE EDITED
 ## **Existing Features**
 
 - **Responsiveness** on all viewports, which allows users to use the website on all devices.
@@ -240,29 +221,23 @@ For the rest of the text I've used 'Noto Sans', this is a sans serif font, which
 
 **CRUD (Create, Read, Update, Delete) functionality**  
 *Create:*  
-- Logged in users can create new recipes.
-- Admin can create new categories.  
+- Admin can create new trips and products.  
 
 *Read:*  
-- All users can search and view recipes.  
+- All users can search and view trips and products.  
 
 *Update:*
-- Logged in users can edit their own recipes.
-- Admin can edit categories.
+- Admin can edit trips and products.
 
 *Delete:*
-- Logged in users can delete their own recipes.
-- Admin can delete categories.
+- Admin can delete trips and products.
 
 ## **Features left to implement**
-- **Rating/liking recipes** by other users.
-- **Sharing recipes** via social media, email or other ways of communication.
-- A **save option** to save other users' recipes.
+- **Rating/liking products and trips** by users.
+- **Sharing option** via social media, email or other ways of communication.
+- A **favourite option**, so users can save their favourite trips andor products on their profile page.
 - **Deleting a profile**, when a user doesn't want to use the account anymore.
-- A **sort option**, so users can sort by attribute (alphabetically, time, rating, etc).
-- An **add labels** option to add labels (e.g. vegan, gluten free) to recipes.
 - **Pagination**, in case the number of recipes gets too large. It would be more user friendly to have pagination.
-- **Reset password**, in case the user has lost their password and wants to reset it.
 ---
 # **Technologies used**
 
@@ -273,11 +248,11 @@ For the rest of the text I've used 'Noto Sans', this is a sans serif font, which
 - [Python3](https://www.python.org/) for backend programming.
 
 ### **Frameworks and libraries used**   
-- [Materialize v1.0.0](https://materializecss.com/) a frontend-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
+- [Bootstrap v5.1.0](https://getbootstrap.com/) a frontend-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
 - [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
 - [Google fonts](https://fonts.google.com/) for the fonts used on the website. 
 - [Font Awesome](https://fontawesome.com/) for the icons used on the website. 
-- [Flask](https://flask.palletsprojects.com/en/2.0.x/) is a micro Python web application framework. 
+- [Django](https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
 - [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) is a fast, expressive, extensible templating engine for Python.
 
 ### **Tools and Programmes used**
@@ -287,7 +262,8 @@ For the rest of the text I've used 'Noto Sans', this is a sans serif font, which
 - [Git](https://git-scm.com/) for version control.  
 - [GitHub](https://github.com/) for storing the files and version control of the website.  
 - [Visual Studio Code](https://code.visualstudio.com/) for coding (IDE) the website.
-- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for the cloud database.
+- [PostgreSQL](https://www.postgresql.org/) used as an open source relational cloud database during development.
+- [Amazon AWS](https://aws.amazon.com/) used to store static files after deployment.
 - [Heroku](https://www.heroku.com/) a cloud platform for deploying the website.
 - [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
@@ -764,7 +740,7 @@ clipon-lens.jpg
 - Error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
 - Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
 - Error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
-- [Colour codes](https://usbrandcolors.com/tech/) of social media icons.
+
 ---
 # Acknowledgements
 I want to give special thanks my mentor Antonio Rodriguez for  and guiding me through this project and helping me solve some of the challenges I faced.  
