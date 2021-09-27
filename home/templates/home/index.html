@@ -10,11 +10,100 @@
             <img class="img-fluid" src="{{ MEDIA_URL }}earthview1_dzJo7mr.jpg">
         </div>
         <div class="col-12 col-md-5 my-auto text-center text-lg-start ltr">
-            <h1 class="display-6"><strong>EXPERIENCE SPACE</strong></h1>
+            <h1 class="display-6"><strong>Experience space</strong></h1>
             <h4>Discover the beauty of our solar system</h4>
-            <h4 class="text-center mt-5"><a href="{% url 'trips' %}" class="btn btn-lg btn-outline-light rounded-0">Read More</a></h4>
+            <h4 class="text-center mt-5"><a href="{% url 'trips' %}" class="btn btn-lg btn-outline-light rounded-0">Read
+                    More</a></h4>
         </div>
     </div>
 </div>
-<hr>
-{% endblock %}
+<div class="container">
+    <div class="row">
+        <h1 class="display-6"><strong>Visit our shop</strong></h1>
+        <h4>Check out our latest products</h4>
+    </div>
+    <div class="row d-flex justify-content-start text-off-black">
+        <div class="col-12 col-md-6 col-lg-4 order-md-last">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                    {% for product in products %}
+                    {% if forloop.counter == 1 %}
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        {% else %}
+                        <div class="carousel-item" data-bs-interval="5000">
+                            {% endif %}
+                            <div class="card h-100 rounded-0">
+                                {% if product.image %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                                <hr>
+                                <div class="card-body py-0">
+                                    <h5 class="mb-0"><strong>{{ product.name }}</strong></h5>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead my-2 text-left font-weight-bold">$ {{ product.price }}</p>
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% if product.rating %}
+                                            <small class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} /
+                                                5</small>
+                                            {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                            {% if request.user.is_superuser %}
+                                            <div class="d-flex justify-content-between mt-3">
+                                                <a class="btn btn-outline-danger btn-sm rounded-0" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                <a class="btn btn-outline-dark btn-sm rounded-0 px-3" href="{% url 'edit_product' product.id %}">Edit</a>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+                <h4 class="text-center mt-5"><a href="{% url 'products' %}"
+                        class="btn btn-lg btn-outline-light rounded-0">Go to Shop</a></h4>
+            </div>
+        </div>
+        
+    </div>
+    <hr>
+    {% endblock %}
