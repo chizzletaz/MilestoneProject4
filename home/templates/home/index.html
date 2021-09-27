@@ -17,13 +17,13 @@
         </div>
     </div>
 </div>
+<hr class="d-md-none my-5">
 <div class="container">
-    <div class="row">
+    <div class="row text-center text-md-start">
         <h1 class="display-6"><strong>Visit our shop</strong></h1>
-        <h4>Check out our latest products</h4>
     </div>
-    <div class="row d-flex justify-content-start text-off-black">
-        <div class="col-12 col-md-6 col-lg-4 order-md-last">
+    <div class="row d-flex justify-content-start">
+        <div class="col-12 col-md-6 col-lg-4 order-md-last text-off-black py-md-5">
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
@@ -59,10 +59,12 @@
                                     <h5 class="mb-0"><strong>{{ product.name }}</strong></h5>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
+                                    <div class="row mt-3 mb-5">
                                         <div class="col">
                                             <p class="lead my-2 text-left font-weight-bold">$ {{ product.price }}</p>
-                                            <p class="small mt-1 mb-0">
+                                        </div>
+                                        <div class="col">
+                                            <p class="small mt-1 mb-1">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                 </a>
@@ -72,12 +74,6 @@
                                                 5</small>
                                             {% else %}
                                             <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                            {% if request.user.is_superuser %}
-                                            <div class="d-flex justify-content-between mt-3">
-                                                <a class="btn btn-outline-danger btn-sm rounded-0" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                <a class="btn btn-outline-dark btn-sm rounded-0 px-3" href="{% url 'edit_product' product.id %}">Edit</a>
-                                            </div>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -98,7 +94,8 @@
                     </button>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-1 my-5 pt-md-5 text-center">
+                <h4>Check out our latest products</h4>
                 <h4 class="text-center mt-5"><a href="{% url 'products' %}"
                         class="btn btn-lg btn-outline-light rounded-0">Go to Shop</a></h4>
             </div>
