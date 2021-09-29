@@ -20,10 +20,10 @@ class ReviewForm(forms.ModelForm):
             'rating': 'Rating',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'rating':
-                placeholder = placeholders[field]
+                placeholder = f'{placeholders[field]} *'
                 self.fields[field].widget.attrs['placeholder'] = placeholder
                 self.fields[field].label = False
             self.fields[field].widget.attrs['class'] = 'space-form rounded-0'

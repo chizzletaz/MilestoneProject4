@@ -1,4 +1,4 @@
-# Space Travel Agency
+# [Space Travel Agency](https://space-travel-agency.herokuapp.com/)
 ![Preview image]()
 
 Who hasn’t looked at the stars and thought, I wonder what it’s like out there.
@@ -13,7 +13,7 @@ Use any expiration date (month/year) in the future and any CVC code.
 
 This website is the fourth ‘Milestone Project’ as part of the Full Stack Development course of Code Institute, which is about Full Stack Frameworks with Django. The focus lies on using the Django framework, using an authorisation and authentication system and using Stripe for payments.
 
-#### A live version can be viewed [here](https://space-travel-agency.herokuapp.com/)
+#### A live website can be viewed [here](https://space-travel-agency.herokuapp.com/)
 
 # Table of Content
 - [User Experience (UX)](#user-experience-ux)  
