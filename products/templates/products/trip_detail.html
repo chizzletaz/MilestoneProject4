@@ -14,10 +14,10 @@
                 </a>
             </div>
             {% if request.user.is_superuser %}
-            <div class="d-grid gap-3 d-md-flex justify-content-md-between mb-5">
+            <div class="d-grid gap-3 d-md-flex justify-content-md-around mb-5">
                 <a class="btn btn-outline-light rounded-0" href="{% url 'edit_product' product.id %}">Edit Trip</a>
                 <a class="btn btn-outline-danger rounded-0 order-md-first" data-bs-toggle="modal"
-                    data-bs-target="#confirmDelete">Delete Product</a>
+                    data-bs-target="#confirmDelete">Delete Trip</a>
             </div>
             {% endif %}
         </div>
@@ -88,6 +88,7 @@
         </div>
     </div>
 </div>
+{% include 'reviews/includes/reviews.html' %}
 <hr>
 {% endblock %}
 

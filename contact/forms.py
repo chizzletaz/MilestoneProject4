@@ -21,7 +21,6 @@ class ContactForm(forms.ModelForm):
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
-        self.fields['message'].widget.attrs['oninput'] ='this.style.height = "";this.style.height = this.scrollHeight + "px"'
         for field in self.fields:
             if field != 'country':
                 if self.fields[field].required:

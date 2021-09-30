@@ -94,9 +94,13 @@ def trip_detail(request, product_id):
     """ A view to show an individual trip details """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
+    review_form = ReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'form': review_form,
     }
 
     return render(request, 'products/trip_detail.html', context)
