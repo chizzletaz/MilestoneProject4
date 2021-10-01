@@ -10,4 +10,3 @@ def index(request):
         'products': products,
       }
     return render(request, 'home/index.html', context)
-

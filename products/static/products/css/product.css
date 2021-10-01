@@ -10,6 +10,11 @@
     box-shadow: 0.125rem .125rem .25rem rgba(255,255,255, 0.75);
 }
 
+.form-group,
+#thedate {
+    width: 150px;
+}
+
 /* Pagination indicators */
 .page-link {
     border: none;
