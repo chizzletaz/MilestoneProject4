@@ -9,3 +9,32 @@
 .shadow-small {
     box-shadow: 0.125rem .125rem .25rem rgba(255,255,255, 0.75);
 }
+
+/* Pagination indicators */
+.page-link {
+    border: none;
+    color: #f1f1f1;
+    background-color: transparent;
+    width: 36px;
+    margin: 5px;
+}
+
+.page-item.disabled .page-link {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+}
+
+.page-item.active .page-link {
+    background-color: rgb(43,145,179);
+    /* box-shadow: 0.125rem .125rem .25rem rgba(255,255,255, 0.75); */
+}
+
+.page-link:hover {
+    background-color: rgba(255,255,255, .75);
+    color: #000;
+}
+
+.page-item:last-child .page-link,
+.page-item:first-child .page-link {
+    border-radius: 0;
+}

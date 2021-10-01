@@ -696,7 +696,7 @@ To achieve this follow these steps:
 Recipes:
 - [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
  
-- Adjusting the heigth of the textarea to fit the content - [Martin Prestone](https://stackoverflow.com/questions/2803880/is-there-a-way-to-get-a-textarea-to-stretch-to-fit-its-content-without-using-php)
+- How to paginate with Django - [Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
 
 The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
 
