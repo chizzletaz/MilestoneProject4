@@ -38,7 +38,7 @@ header li {
     font-size: 16px;
     text-transform: uppercase;
 }
-
+    /* Making the topnav links the same colours as navbar light of Bootstrap */
 #lowernav li i,
 #lowernav li p,
 #footer-link li a {
@@ -50,7 +50,8 @@ header li {
 #footer-link li a:hover  {
     color: rgba(255,255,255, .75) !important;
 }
-
+    /* end */
+    
 #nav-drop {
     z-index: 999999;
 }
