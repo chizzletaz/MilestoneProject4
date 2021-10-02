@@ -51,7 +51,7 @@ header li {
     color: rgba(255,255,255, .75) !important;
 }
     /* end */
-    
+
 #nav-drop {
     z-index: 999999;
 }
@@ -455,12 +455,19 @@ footer .list-inline-item i {
     color: #b8bac0;
 }
 
-.stretch  {
+#id_rating {
+    color: #f1f1f1;
+}
+
+#id_rating::placeholder {
+    color: #b8bac0;
+}
+/* .stretch  {
     display: block;
     width: 100%;
     overflow: hidden;
     resize: both;
     min-height: 40px;
     line-height: 20px;
-}
+} */
   
