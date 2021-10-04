@@ -4,16 +4,17 @@ from django.db.models.fields import CommaSeparatedIntegerField
 from profiles.models import UserProfile
 from products.models import Product
 
+
 class Review(models.Model):
     class Meta:
         ordering = ['-id']
     
     RATING = [
-        ('1', '1'),
-        ('2', '2'),
-        ('3', '3'),
-        ('4', '4'),
-        ('5', '5'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     ]
 
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)

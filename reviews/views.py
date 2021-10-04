@@ -18,15 +18,12 @@ def add_review(request, product_id):
             product = get_object_or_404(Product, pk=product_id)
             user = UserProfile.objects.get(user=request.user)
             review_form = ReviewForm(request.POST)
-            print(review_form)
             # check if user already added a review
             added_review = Review.objects.filter(user=user, product=product)
             if added_review.exists():
-                
                 messages.error(request, 'You already reviewed this product. To change your review click the edit button on your review.')
             else:
                 if review_form.is_valid():
-                    print('1 test')
                     review = review_form.save(commit=False)
                     review.product = product
                     review.user = user
@@ -40,7 +37,7 @@ def add_review(request, product_id):
     
                     messages.success(request, 'Review succesfully added!')
                 else:
-                    print('This works')
+                    print(review_form.errors)
                     messages.error(request, 'Failed to add review. Please ensure the form is valid.')
             return redirect(reverse('product_detail', args=[product.id]))
         

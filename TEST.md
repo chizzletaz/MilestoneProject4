@@ -252,3 +252,40 @@ else:
 This works! The issue was using the correct name and watch case sensitivity.
 
 ---  
+Issue: Solved. 
+On the product page, adding a review gives an error message.  
+Try:  
+A print statement after `review_form = ReviewForm(request.POST)` in the add_review view 
+returns the statement, so the POST method works.  
+A print statement after `if review_form.is_valid():` doesn't return the statement.
+A print statement after the `else:` block of the `if review_form.is_valid():` returns the 
+statement.  
+So the form isn't validated in some way. 
+On stackoverflow [enigma](https://stackoverflow.com/questions/5516437/django-form-has-no-errors-but-form-is-valid-doesnt-validate) suggests to use `print(form.errors)` to 
+print the error at the back end. 
+Placing this statement after the `else:` block gives:
+ `<ul class="errorlist"><li>rating<ul class="errorlist"><li>Select a valid choice. 5 is not one of the available choices.</li></ul></li></ul>`  
+So the select box gives the error for not validating the form. 
+Fix:  
+After checking the model I saw that I accidentally adding the rating in the wrong syntax.
+I wrote the key in '' as well:
+```
+RATING = [
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    ]
+```  
+It should have been:  
+```
+RATING = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
+```
+---
