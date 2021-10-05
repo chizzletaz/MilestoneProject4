@@ -26,5 +26,4 @@ class ReviewForm(forms.ModelForm):
             if field != 'rating':
                 placeholder = f'{placeholders[field]} *'
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-                self.fields[field].label = False
             self.fields[field].widget.attrs['class'] = 'space-form rounded-0'

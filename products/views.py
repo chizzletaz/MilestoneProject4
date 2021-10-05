@@ -71,13 +71,23 @@ def product_detail(request, product_id):
     """ A view to show an individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
+    user = UserProfile.objects.get(user=request.user)
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
+
+    # Check if user has already added a review
+    try:
+        previous_review = Review.objects.get(user=user, product=product)
+        review_edit_form = ReviewForm(instance=previous_review)
+        
+    except:
+        review_edit_form = None
 
     context = {
         'product': product,
         'reviews': reviews,
         'form': review_form,
+        'review_edit_form': review_edit_form,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -98,13 +108,23 @@ def trip_detail(request, product_id):
     """ A view to show an individual trip details """
 
     product = get_object_or_404(Product, pk=product_id)
+    user = UserProfile.objects.get(user=request.user)
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
+
+    # Check if user has already added a review
+    try:
+        previous_review = Review.objects.get(user=user, product=product)
+        review_edit_form = ReviewForm(instance=previous_review)
+        
+    except:
+        review_edit_form = None
 
     context = {
         'product': product,
         'reviews': reviews,
         'form': review_form,
+        'review_edit_form': review_edit_form,
     }
 
     return render(request, 'products/trip_detail.html', context)

@@ -73,33 +73,57 @@
                         <div class="col">
                             {% if user.is_authenticated and user.get_username == review.user.user.username %}
                             <div class="d-flex justify-content-between mt-3">
-                                <a class="remove-item text-danger float-end" id=""><small><i
+                                <!-- delete icon -->
+                                <a class="remove-item text-danger float-end"
+                                    data-bs-toggle="modal" data-bs-target="#confirmReviewDelete"><small><i
                                             class="fas fa-trash-alt fa-lg px-3"></i></small></a>
                                 <a class="btn btn-outline-light btn-sm rounded-0 px-3"
-                                    href="">Edit Review</a>
+                                 data-bs-toggle="modal" data-bs-target="#reviewEdit">Edit Review</a>
                             </div>
 
-                            <!-- confirmation modal for delete -->
-                            <div class="modal fade text-off-white" id="confirmDelete" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- confirmation modal for delete review -->
+                            <div class="modal fade text-off-white" id="confirmReviewDelete" tabindex="-1"
+                                aria-labelledby="confirmReviewDeleteLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content bg-dark">
                                         <div class="modal-header">
-                                            <h6 class="modal-title" id="exampleModalLabel">Are you sure you want to
-                                                delete
-                                                this product?</h6>
+                                            <h6 class="modal-title" id="confirmReviewDeleteLabel">Are you sure you want to
+                                                delete this review?</h6>
                                             <button type="button" class="btn-close btn-close-white"
                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary rounded-0"
                                                 data-bs-dismiss="modal">Cancel</button>
-                                            <a href=""
+                                            <a href="{% url 'delete_review' review.id %}"
                                                 class="btn btn-outline-light rounded-0">Delete</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- edit review modal -->
+                            
+                            <div class="modal fade" id="reviewEdit" tabindex="-1" aria-labelledby="reviewEditLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header mx-auto">
+                                        <h5>Edit your Review</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="{% url 'edit_review' review.id %}" method="POST" class="update-form">
+                                            {% csrf_token %}
+                                            {{ review_edit_form|crispy }}
+                                            <div class="d-flex justify-content-end gap-4 mt-5">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button class="btn btn-light rounded-0" type="submit">Edit review</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             {% endif %}
                         </div>
                     </div>

@@ -448,7 +448,7 @@ footer .list-inline-item i {
 .update-form textarea[name='message'],
 .update-form textarea[name='comment'] {
     overflow: auto;
-    min-height: 50px;
+    min-height: 100px;
 }
 
 .update-form::placeholder {
