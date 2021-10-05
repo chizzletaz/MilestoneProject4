@@ -157,7 +157,16 @@ Chart of the models used.
 
 ## **Skeleton Level**
 ### Wireframes
-- [Wireframes for Home Page](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/wireframes/landing.pdf)  
+- [Wireframes for Home Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/home.pdf)  
+- [Wireframes for Trips Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/Trips.pdf)  
+- [Wireframes for Indivual Trip Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/trip.pdf)  
+- [Wireframes for Shop Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/shop.pdf)  
+- [Wireframes for Indivual Product Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/product.pdf)  
+- [Wireframes for Contact Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/contact.pdf)  
+- [Wireframes for Add and Edit Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/add_edit.pdf)  
+- [Wireframes for Login Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/login.pdf)  
+- [Wireframes for Sign up Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/signup.pdf)  
+- [Wireframes for Profile Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/profile.pdf)  
 
 
 
