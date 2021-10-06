@@ -1,11 +1,11 @@
 # [Space Travel Agency](https://space-travel-agency.herokuapp.com/)
-![Preview image]()
+![Preview image](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/previewMS4.png)
 
 Who hasn’t looked at the stars and thought, I wonder what it’s like out there.
-Now with XXX you can see for your self.
+Now with Space Travel Agency you can see for your self.
 
-XXX is a full stack e-commerce web application for a fictitious space travel company, where users can book several trips outside of earth, e.g to the moon or to a space hotel.
-The site offers different travel destinations and has an online shop.
+Space Travel Agency is a full stack e-commerce web application for a fictitious space travel company, where users can book several trips outside of earth, e.g to the moon or to a space hotel.
+The site offers different travel destinations and also has an online shop.
 
 This website is for educational purposes only. Don’t use real credit card details, instead use the following details for testing purposes:
 Card number: 4242 4242 4242 4242 

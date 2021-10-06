@@ -11,7 +11,7 @@
         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                <form action="{% url 'profile' %}" method="POST" class="update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button class="btn btn-light rounded-0 text-uppercase float-end mb-3">
