@@ -33,6 +33,10 @@ h1, h2 {
 }
 
 /* Header */
+header {
+    padding: 0 !important;
+}
+
 header li {
     padding: 0px 10px 0;
     font-size: 16px;
@@ -106,6 +110,10 @@ header li {
 
 .text-space {
     color: rgb(43,145,179);
+}
+
+.bg-space {
+    background-color: rgb(43,145,179);
 }
 
 .text-up {
@@ -253,7 +261,7 @@ input[name='q']::placeholder {
 }
 
 .bag-notification-wrapper {
-    height: 120px;
+    height: 156px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -319,7 +327,7 @@ footer .list-inline-item i {
     body,
     .overlay,
     .dark-overlay {
-        padding-top: 68px;
+        padding-top: 92px;
     }
 
     #topnav a {
