@@ -131,7 +131,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 156px;
+    padding-top: 140px;
     position: fixed;
     background: #000;
     z-index: -1;
@@ -142,7 +142,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 156px;
+    padding-top: 140px;
     position: fixed;
     background: #1e1f27;
     z-index: -1;
@@ -152,7 +152,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 156px;
+    padding-top: 140px;
     position: fixed;
     background: rgb(0,0,0,0.6);
     z-index: -1;
@@ -163,7 +163,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 156px;
+    padding-top: 140px;
     position: absolute;
     background: rgb(255,255,255,0.8);
 }
@@ -261,7 +261,7 @@ input[name='q']::placeholder {
 }
 
 .bag-notification-wrapper {
-    height: 156px;
+    height: 140px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -327,7 +327,7 @@ footer .list-inline-item i {
     body,
     .overlay,
     .dark-overlay {
-        padding-top: 92px;
+        padding-top: 84px;
     }
 
     #topnav a {

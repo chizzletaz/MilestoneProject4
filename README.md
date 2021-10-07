@@ -48,11 +48,11 @@ This website is the fourth ‘Milestone Project’ as part of the Full Stack Dev
 # **User Experience (UX)**
 ## **Strategic level**
 
-I’ve always been interested in space and inspired by the recent space flights (Bezos, Branson, Musk), I came up with the idea for a future commercial space travel company that offers various space trips. 
-Users can choose from various destinations: a trip around the earth, a space walk, a trip to a space hotel, a trip around the moon, a trip to mars.
-Users can create an account to safe orders or travel details.
+I’ve always been interested in space and inspired by the recent space flights (Bezos, Branson, Musk), I came up with the idea for a commercial space travel company that offers various space trips. 
+Users can choose from various destinations: a trip around the earth, a space walk, a trip to a space hotel, a trip, to the International Space Station, a trip around the moon and a trip to mars.
+Users can create an account to safe their orders and travel details.
 
-The target audience are people that want to go to outer space, who want to want to travel outside of earth and experience traveling in space or feeling weightlessness. 
+The target audience are people that want to go to outer space, who want to want to travel outside of earth, experience traveling in space or feeling weightlessness. 
 These can be first time users, people who have never been to space and want to experience this. Or returning users, for instance people who have been to space and want to go a step further.
 
 The primary goal is to provide an intuitive, interactive web app, which provides users with a platform to book a space trip. 
@@ -60,10 +60,10 @@ The secondary goal is to sell space travel related products.
 The project goals are showing my knowledge and applying my added skills that I’ve learned, such as Django.
 
 ### **User stories:**  
-See userstories...
+See [userstories](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/userstories.pdf)
 
 ## **Scope level**
-Based on the user stories I’ve deducted on the following requirements:
+Based on the user stories I’ve deducted the following requirements:
 
 **Requirements**
 1. A home page with navbar and CTA.
@@ -71,7 +71,7 @@ Based on the user stories I’ve deducted on the following requirements:
 3. A page where all travels are displayed.
 4. An option to register and login/logout.
 5. Defensive programming, e.g. confirmation on buying, deleting, logging out, etc.
-6. A profile page where registered users can log in, add, edit and delete personal information.
+6. A profile page where registered users can log in, add, edit and personal information.
 7. A shop page.
 8. An about page where users can get more information about the company and/or the trips.
 9. A contact page with contact form where users can contact the site’s owner.
@@ -121,7 +121,7 @@ The user is given feedback, in order to enhance a pleasant user experience:
 
 ### **The pages**
         FRONTEND  
-The website has xx pages, plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages.
+The website has 11 pages, plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, trips, shop, about, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
@@ -168,16 +168,14 @@ Chart of the models used.
 - [Wireframes for Sign up Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/signup.pdf)  
 - [Wireframes for Profile Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/profile.pdf)  
 
-
-
 ## **Service Level**
 
 ### **Colors**
-To ensure that colours match well, I've chosen to use the colours of Materialize.  
-In food, bright colours signify flavours such as sweets and desserts - pink is expecially associated with baking and sweets.  
-Therefore the main colour is pink. As a contrasting colour I've chosen green.
+Given a space theme, I've decided on a 'dark' website, so maink dark backgrounds.
+As a contrasting colour I've chosen the info colour of Bootstrap and a darker version of that.  
 
-![colourB&B](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/coloursB&B.png)  
+
+![colourSTA](/coloursSTA.png)  
 
 - ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
 This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
