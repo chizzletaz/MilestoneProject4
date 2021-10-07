@@ -9,7 +9,7 @@ body {
     background-color: #000;
     background-size: cover;
     color: #f1f1f1;
-	padding-top:  120px;
+	padding-top:  156px;
     font-family: "Poppins", sans-serif;
     
 }
@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5 {
 
 h1, h2 {
     letter-spacing: 0.6rem;
-    padding: 20px 0;
+    padding: 1rem 0;
     text-transform: uppercase;
 }
 
@@ -123,7 +123,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 120px;
+    padding-top: 156px;
     position: fixed;
     background: #000;
     z-index: -1;
@@ -134,7 +134,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 120px;
+    padding-top: 156px;
     position: fixed;
     background: #1e1f27;
     z-index: -1;
@@ -144,7 +144,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 120px;
+    padding-top: 156px;
     position: fixed;
     background: rgb(0,0,0,0.6);
     z-index: -1;
@@ -155,7 +155,7 @@ header li {
     width: 100%;
     top: 0;
     left: 0;
-    padding-top: 120px;
+    padding-top: 156px;
     position: absolute;
     background: rgb(255,255,255,0.8);
 }
@@ -319,15 +319,15 @@ footer .list-inline-item i {
     body,
     .overlay,
     .dark-overlay {
-        padding-top: 100px;
+        padding-top: 68px;
     }
 
     #topnav a {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     i ~ p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .nav-link {
@@ -343,6 +343,9 @@ footer .list-inline-item i {
         font-size: 1rem;
     }
 
+    #lowernav li {
+        padding: 0.1rem;
+    }
 }
 
 /* Allauth form formatting */
