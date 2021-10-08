@@ -35,7 +35,7 @@ def bag_contents(request):
                 'product': product,
             })
         else:
-            for departure, quantity in item_data.items():
+            for departure, quantity in item_data['items_by_departure'].items():
                 total += quantity * product.price
                 product_count += quantity
                 bag_items.append({
