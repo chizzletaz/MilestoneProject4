@@ -71,7 +71,10 @@ def product_detail(request, product_id):
     """ A view to show an individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    user = UserProfile.objects.get(user=request.user)
+    if request.user.is_authenticated:
+        user = UserProfile.objects.get(user=request.user)
+    else:
+        user = None
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
 
@@ -108,7 +111,10 @@ def trip_detail(request, product_id):
     """ A view to show an individual trip details """
 
     product = get_object_or_404(Product, pk=product_id)
-    user = UserProfile.objects.get(user=request.user)
+    if request.user.is_authenticated:
+        user = UserProfile.objects.get(user=request.user)
+    else:
+        user = None
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
 
