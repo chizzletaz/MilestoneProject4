@@ -289,3 +289,67 @@ RATING = [
     ]
 ```
 ---
+Issue: Solved  
+I'm trying to download my local mysql database and upload it to postgres using these steps: 
+
+1. Make sure your manage.py file is connected to your mysql database
+2. Use this command to backup your current database and load it into a db.json file:
+    `python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json`
+3. Connect your manage.py file to your postgres database
+4. Then use this command to load your data from the db.json file into postgres:
+    `python3 manage.py loaddata db.json`
+
+After the last command I'm getting this error: 
+```
+UserProfile(pk=1): duplicate key value violates unique constraint "profiles_userprofile_user_id_key"
+DETAIL: Key (user_id)=(1) already exists.
+```
+So there must be some duplicate files connected to user_id=1 in the database.
+Try:  
+removing users, reviews and orders from the database via the admin.  
+This doesn't work.  
+Try:  
+Reset the postgres database.
+Run python3 manage.py migrate
+and then the steps from above.  
+This also doesn't work.  
+Try:  
+After consulting a Tutor (John), we managed to solve the problem.
+Looking at the Review model, the Reviews are dependent on both the Product and User models, so we won't want to transfer those.  
+The Review has two fields populated by an object as a ForeignKey, meaning that the User who created the view, their userProfile must exist in the database.
+Because I deleted the users, it gives an error now as those Users won't exists anymore.  
+The user or users who created any reviews on the local database won't be present in the deployed database. 
+It's easier to just dump the data for the specific models, Category and Product 
+and then once you've loaded that data, just populate some reviews by creating a new user, and manually add some reviews.  
+Fix:  
+Use the steps from above:
+1. Connect to local sqlite database:  
+Comment out the database and use:
+```
+DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+```  
+2. Use the same dumpdata command, but target the specific app and model.
+`python3 manage.py dumpdata products.Category > categories.json`  
+`python3 manage.py dumpdata products.Product > products.json`  
+3. Connect to Postgres database: 
+Comment out the local database and use:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+```
+You can add the DATABASE_URL to the env.py as well.  
+4. use this command to load your data from the db.json file into postgres:  
+`python3 manage.py loaddata categories.json`  
+`python3 manage.py loaddata products.json`
+
+Use the normal database again.  
+
+---
+
