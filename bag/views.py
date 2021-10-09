@@ -33,7 +33,7 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     departure = None
-    if 'departure' in request.POST:
+    if 'trip_departure' in request.POST:
         departure = request.POST['trip_departure']
     bag = request.session.get('bag', {})
     
@@ -68,7 +68,7 @@ def adjust_bag(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     departure = None
-    if 'departure' in request.POST:
+    if 'trip_departure' in request.POST:
         departure = request.POST['trip_departure']
     bag = request.session.get('bag', {})
 
@@ -116,7 +116,7 @@ def remove_from_bag(request, item_id):
     try:
         product = get_object_or_404(Product, pk=item_id)
         departure = None
-        if 'departure' in request.POST:
+        if 'trip_departure' in request.POST:
             departure = request.POST['trip_departure']
         bag = request.session.get('bag', {})
         # if it is a trip, so with departure

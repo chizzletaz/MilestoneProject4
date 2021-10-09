@@ -11,7 +11,7 @@ body {
     color: #f1f1f1;
 	padding-top:  156px;
     font-family: "Poppins", sans-serif;
-    
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5 {
