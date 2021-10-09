@@ -34,7 +34,7 @@ def add_to_bag(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     departure = None
     if 'departure' in request.POST:
-        departure = request.POST['departure']
+        departure = request.POST['trip_departure']
     bag = request.session.get('bag', {})
     
     # if it is a trip, so with departure
@@ -42,9 +42,9 @@ def add_to_bag(request, item_id):
         if item_id in list(bag.keys()):
             if departure in bag[item_id]['items_by_departure'].keys():
                 bag[item_id]['items_by_departure'][departure] += quantity
-                messages.success(request, f'Updated {product.name} @ {departure} to {bag[item_id][departure]}.')
+                messages.success(request, f'Updated {product.name} @ {departure} to {bag[item_id]["items_by_departure"][departure]}.')
             else:
-                bag[item_id]['items_by_departure']['departure'] = quantity
+                bag[item_id]['items_by_departure'][departure] = quantity
                 messages.success(request, f'Added {product.name} @ {departure} to your bag.')
         else:
             bag[item_id] = {'items_by_departure': {departure: quantity}}
@@ -58,9 +58,7 @@ def add_to_bag(request, item_id):
             bag[item_id] = quantity
             messages.success(request, f'Added {product.name} to your bag.')
 
-    
     request.session['bag'] = bag
-    print(bag)
     return redirect(redirect_url)
 
 
@@ -71,7 +69,7 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     departure = None
     if 'departure' in request.POST:
-        departure = request.POST['departure']
+        departure = request.POST['trip_departure']
     bag = request.session.get('bag', {})
 
     # if it is a trip, so with departure
@@ -85,7 +83,7 @@ def adjust_bag(request, item_id):
                 bag.pop(item_id)
                 messages.success(request, f'Removed {product.name} @ {departure} from your bag')
     # if is is a product, so without departure
-    else:    
+    else:   
         if quantity > 0:
             bag[item_id] = quantity
             messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}.')
@@ -119,9 +117,8 @@ def remove_from_bag(request, item_id):
         product = get_object_or_404(Product, pk=item_id)
         departure = None
         if 'departure' in request.POST:
-            departure = request.POST['departure']
+            departure = request.POST['trip_departure']
         bag = request.session.get('bag', {})
-
         # if it is a trip, so with departure
         if departure:
             del bag[item_id]['items_by_departure'][departure]
