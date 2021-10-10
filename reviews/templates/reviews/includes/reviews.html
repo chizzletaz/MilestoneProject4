@@ -36,27 +36,27 @@
         {% for review in reviews %}
         <div class="col-12 col-md-10 col-xl-6 mx-auto py-3">
             <div class="card h-100 rounded-0 p-2 bg-dark">
-                {% if product.rating == 1 %}
+                {% if review.rating == 1 %}
                 <p class="my-auto"><i class="fas fa-star"></i><i class="far fa-star"></i><i
                         class="far fa-star"></i>
                     <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
                 </p>
-                {% elif product.rating == 2 %}
+                {% elif review.rating == 2 %}
                 <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="far fa-star"></i>
                     <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
                 </p>
-                {% elif product.rating == 3 %}
+                {% elif review.rating == 3 %}
                 <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i>
                     <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
                 </p>
-                {% elif product.rating == 4 %}
+                {% elif review.rating == 4 %}
                 <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                         class="fas fa-star"></i>
                     <i class="fas fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
                 </p>
-                {% elif product.rating == 5 %}
+                {% elif review.rating == 5 %}
                 <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i><i class="fas fa-star"></i> {{ review.rating }} / 5
