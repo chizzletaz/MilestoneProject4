@@ -744,9 +744,9 @@ sleep-mask.jpg
 clipon-lens.jpg
 	https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg  
 
-- Error 500 image - <a href="https://www.freepik.com/free-photos-vectors/website">Website vector created by stories - www.freepik.com</a>  
-- Error 403 image - <a href='https://www.freepik.com/free-photos-vectors/website'>Website vector created by stories - www.freepik.com</a>  
-- Error 404 image - <a href='https://www.freepik.com/free-photos-vectors/technology'>Technology vector created by freepik - www.freepik.com</a>
+- Error 403 image - <a href='https://dribbble.com/shots/6787406-Prezi-403'>Wes Sly</a>  
+- Error 404 image - <a href='https://dribbble.com/shots/6782244-Prezi-404'>Wes Sly</a>
+- Error 500 image - <a href="https://dribbble.com/shots/6787408-Prezi-500">Wes Sly</a> 
 
 ---
 # Acknowledgements

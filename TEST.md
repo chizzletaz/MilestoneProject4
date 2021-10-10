@@ -352,4 +352,43 @@ You can add the DATABASE_URL to the env.py as well.
 Use the normal database again.  
 
 ---
+Issue: Solved.  
+After editing for adding the departure date, the update quantity functionality on bag.html didn't work anymore.  
+The code is as follows:  
+```
+$('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+```
+adding a print statement before and after `var form=..` gives a print statement, so the script is being called.  
+And the problem seems to be getting the `.update-form`.  
+Fix:  
+After checking the elements on the bag.html page, `.prev` is not giving the correct element.
+You have to add `parent()`. So the code becomes:  
+```
+$('.update-link').click(function (e) {
+        var form = $(this).parent().prev('.update-form');
+        form.submit();
+    })
+```  
+---
+Issue: Solved 
+After runserver the terminal sometimes gives the error:  
+```
+UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: 
+<class 'products.models.Product'> QuerySet.
+paginator = Paginator(products, 6)
+```  
+According to [KenWhitesell](https://forum.djangoproject.com/t/unorderedobjectlistwarning-pagination-may-yield-inconsistent-results-with-an-unordered-object-list-class-myapp-models-movies-queryset-this-is-the-code-snippets-https-github-com-coderbang1-movie-app1/4549):  
+A database, by default, provides an unordered and theoretically indeterminate sequence of results. You can issue two of the same query and get a different order and they both be valid.
+When you’re trying to do server-side pagination, that means that you might get some of the same rows on page 2 as you had seen on page 1. Those are the inconsistent results being referred to in the warning message.
 
+The resolution to this is to ensure that some ordering is applied to your queryset. Either adding an order_by clause on the queryset or an ordering in the Meta for that model.
+
+Fix:  
+I've opted for adding an order_by clause to the queryset:  
+`products = Product.objects.all().exclude(category__name='trip').order_by('id')`  
+So far, the error hasn't returned.  
+
+---

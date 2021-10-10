@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="black-overlay"></div>
+<div class="container">
+    <div class="row ">
+        <div class="col text-center">
+            <!-- <img class="img-fluid" src="{{ MEDIA_URL }}403.webp" alt="403 error message"> -->
+            <h1 class="display-1">500</h1>
+            <h2 class="lead">Internal Server Error!</h2>
+            <p>Houston, we got a problem. Please click the button below to return home.</p>
+            <a class="btn btn-outline-light rounded-0" href="{% url 'home' %}">Go back Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
