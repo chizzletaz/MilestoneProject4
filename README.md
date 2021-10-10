@@ -171,20 +171,20 @@ Chart of the models used.
 ## **Service Level**
 
 ### **Colors**
-Given a space theme, I've decided on a 'dark' website, so maink dark backgrounds.
-As a contrasting colour I've chosen the info colour of Bootstrap and a darker version of that.  
+Given the space theme, I've decided on a 'dark' website, so mainly dark backgrounds.
+As a contrasting colour I've chosen a darker version of the info colour of Bootstrap.  
 
 
-![colourSTA](/coloursSTA.png)  
+![coloursSTA](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/coloursSTA.png)  
 
-- ![#ff4081](https://via.placeholder.com/15/ff4081/000000?text=+) #ff4081 is used as the main colour and is the pink accent-2 colour of Materialize.
-This colour is used for buttons that have to stand out, shadow-text and the underline of the links upon hovering.  
-- ![#fce4ec](https://via.placeholder.com/15/fce4ec/000000?text=+) #fce4ec is the pink lighten-5 colour on Materialize. This colour is used for the background of the modals.    
-- ![#009688](https://via.placeholder.com/15/009688/000000?text=+) #009688 is the standard button colour of Materialize. I've kept this colour for the less important buttons (the submit button in the footer and the info button on the profile page).  
-- ![#80cbc4](https://via.placeholder.com/15/80cbc4/000000?text=+) #80cbc4 is the teal lighten-3 colour on Materialize. This colour is used for the background colour of the flash messages.
-- ![#fefefa](https://via.placeholder.com/15/fefefa/000000?text=+) #fefefa is used as the background colour. It is a slightly off white colour and emphasizes a simple and clean design.  
-- ![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the border of the edit buttons.  
-- ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the border of the delete and cancel buttons.  
+- ![#000000](https://via.placeholder.com/15/000000/000000?text=+) #000 is used as the main background colour.  
+- ![#f1f1f1](https://via.placeholder.com/15/f1f1f1/000000?text=+) #f1f1f1 is main text colour for dark backgrounds. 
+- ![#b8bac0](https://via.placeholder.com/15/b8bac0/000000?text=+) #b8bac0 is taken from the Bootstrap grey colour for navbar links with a dark background. I've used this colour as text-muted, for form elements and placeholder text.
+- ![#2b91b3](https://via.placeholder.com/15/2b91b3/000000?text=+) #2b91b3 is a darker shade of the Bootstrap info colour. I've used this for colour accents.   
+- ![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the edit buttons and text.  
+- ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the delete and cancel buttons and text.  
+
+- The standard colours of Bootstrap for success, info, danger and warning were used for the toast elements.
 
 ### **Typography** 
 For the title(h1) and the logo, I've used .  
