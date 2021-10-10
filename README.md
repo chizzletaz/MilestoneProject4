@@ -1,14 +1,14 @@
 # [Space Travel Agency](https://space-travel-agency.herokuapp.com/)
 ![Preview image](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/previewMS4.png)
 
-Who hasn’t looked at the stars and thought, I wonder what it’s like out there.
+Who hasn’t looked at the stars and thought, I wonder what it’s like out there.  
 Now with Space Travel Agency you can see for your self.
 
 Space Travel Agency is a full stack e-commerce web application for a fictitious space travel company, where users can book several trips outside of earth, e.g to the moon or to a space hotel.
 The site offers different travel destinations and also has an online shop.
 
-This website is for educational purposes only. Don’t use real credit card details, instead use the following details for testing purposes:
-Card number: 4242 4242 4242 4242 
+This website is for educational purposes only. Don’t use real credit card details, instead use the following details for testing purposes:  
+Card number: 4242 4242 4242 4242   
 Use any expiration date (month/year) in the future and any CVC code. 
 
 This website is the fourth ‘Milestone Project’ as part of the Full Stack Development course of Code Institute, which is about Full Stack Frameworks with Django. The focus lies on using the Django framework, using an authorisation and authentication system and using Stripe for payments.
@@ -65,7 +65,7 @@ See [userstories](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/READ
 ## **Scope level**
 Based on the user stories I’ve deducted the following requirements:
 
-**Requirements**
+#### **Requirements**
 1. A home page with navbar and CTA.
 2. A responsive design.
 3. A page where all travels are displayed.
@@ -87,7 +87,7 @@ Based on the user stories I’ve deducted the following requirements:
 19. Secure checkout via Stripe payment.
 20. Email confirmation on purchase.
 
-**extra requirements**
+#### **Extra requirements**
 1. An option to subscribe to a newletter.
 2. An option to delete a profile.
 3. An option to recover the password.
@@ -486,7 +486,7 @@ Committing to GitHub is done as follow:
         - Click Iam (via search bar or Services).
         - Create a group
             - Click on 'Users groups' on the left.  
-            !['User groups'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group.png)
+            !['User groups'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group.png)
             - Click 'Create group' and enter a group name.
             - Scroll down and click 'Create group'.
         - Create the policy used to access the bucket
@@ -494,7 +494,7 @@ Committing to GitHub is done as follow:
             - Click 'Create policy'.
             - Click the JSON tab and then on 'Import managed policy'.
             - Search for 'S3' in the pop up window and select 'AmazonS3FullAccess' and click 'Import'.  
-            !['AmazonS3FullAccess'](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policies.png)
+            !['AmazonS3FullAccess'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policies.png)
             - Copy your ARN (Open S3 in a new tab, click the bucket name, click Permission tab, click Bucket policy and copy the ARN)
             - Paste it in the 'Resource' in the JSON tab.  
             !["Resource"](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-policy.png)
@@ -559,7 +559,7 @@ Committing to GitHub is done as follow:
         > 'Override static and media URLs in production' will tell which url's to use in production.    
 
         - Go to Heroku and add these values to the Config Vars (under Settings):
-        ![Heroku Config Vars](/https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/config-vars.png)  
+        ![Heroku Config Vars](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/config-vars-1.png)  
         - Create a custom class to tell django that in production we want to use s3 to store our static files.  
         - Add the folowing code to custom_storages.py  
         ```
@@ -680,8 +680,8 @@ To achieve this follow these steps:
 5. **Load product data.**
     - Type `python3 manage.py loaddata db.json`
 6. **Create a superuser account**
-    - `python3 manage.py createsuperuser
-    - Add a username and password. 
+    - `python3 manage.py createsuperuser`
+    - Add a username and password.   
 7.**Run the app.**
    - In the terminal, type: `python3 <your python file name>.py`  
         
@@ -699,13 +699,13 @@ To achieve this follow these steps:
 - Change the scrollbar css - [CSS-tricks](https://css-tricks.com/almanac/properties/s/scrollbar/)
 
 - Using 'cleaned_data' on contact form - [Django Docs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
+
 ### Content
-Recipes:
-- [Twix pie](https://veganwifey.com/een-vegan-twix-taart/)  
- 
 - How to paginate with Django - [Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
 
-The other recipes are my own or come from my own collection of recipes written on a piece of paper.  
+- The text on the landing page and the trips pages is inspired by [space adventures](https://spaceadventures.com/).
+- Some text for review come from the reviews of the same product on Amazon.
+
 
 ### Media
 earthview1.jpg 
@@ -744,11 +744,7 @@ sleep-mask.jpg
 clipon-lens.jpg
 	https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg  
 
-- Error 403 image - <a href='https://dribbble.com/shots/6787406-Prezi-403'>Wes Sly</a>  
-- Error 404 image - <a href='https://dribbble.com/shots/6782244-Prezi-404'>Wes Sly</a>
-- Error 500 image - <a href="https://dribbble.com/shots/6787408-Prezi-500">Wes Sly</a> 
-
 ---
 # Acknowledgements
 I want to give special thanks my mentor Antonio Rodriguez for  and guiding me through this project and helping me solve some of the challenges I faced.  
-I want to thank Tutor support at CI and fellow Slack members for answering my questions.
+I want to thank Tutor support at CI and my fellow Slack members for answering my questions.
