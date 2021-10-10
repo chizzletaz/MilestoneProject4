@@ -175,23 +175,22 @@ Given the space theme, I've decided on a 'dark' website, so mainly dark backgrou
 As a contrasting colour I've chosen a darker version of the info colour of Bootstrap.  
 
 
-![coloursSTA](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/coloursSTA.png)  
+![coloursSTA](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/coloursSTA.png)  
 
 - ![#000000](https://via.placeholder.com/15/000000/000000?text=+) #000 is used as the main background colour.  
 - ![#f1f1f1](https://via.placeholder.com/15/f1f1f1/000000?text=+) #f1f1f1 is main text colour for dark backgrounds. 
 - ![#b8bac0](https://via.placeholder.com/15/b8bac0/000000?text=+) #b8bac0 is taken from the Bootstrap grey colour for navbar links with a dark background. I've used this colour as text-muted, for form elements and placeholder text.
 - ![#2b91b3](https://via.placeholder.com/15/2b91b3/000000?text=+) #2b91b3 is a darker shade of the Bootstrap info colour. I've used this for colour accents.   
-- ![#66bb6a](https://via.placeholder.com/15/66bb6a/000000?text=+) #66bb6a is used for the edit buttons and text.  
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the delete and cancel buttons and text.  
 
-- The standard colours of Bootstrap for success, info, danger and warning were used for the toast elements.
+- The standard colours of Bootstrap for success ![#28a745](https://via.placeholder.com/15/28a745/000000?text=+), info ![#17a2b8](https://via.placeholder.com/15/17a2b8/000000?text=+), danger ![#dc3545](https://via.placeholder.com/15/dc3545/000000?text=+) and warning ![#ffc107](https://via.placeholder.com/15/ffc107/000000?text=+) were used for the toast elements.
 
 ### **Typography** 
-For the title(h1) and the logo, I've used .  
-> ![example of kaushan script text](https://github.com/chizzletaz/BakeAndBinge/blob/main/README/images/kaushan-script.png)  
+For the headings (h1 to h6) I've used Montserrat, a sans serif font.    
+> ![example of Montserrat script text](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/montserrat.png)  
 
-To keep the design consistent, I've decided to use 
-
+For all the text I've used Rubik, a sans serif font.  
+> ![example of Rubik script text](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/rubik.png) 
 ---
 # **Features**
 # TO BE EDITED

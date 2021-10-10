@@ -4,7 +4,6 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.core.exceptions import PermissionDenied
 
 from .models import Product, Category
 from .forms import ProductForm
@@ -75,7 +74,7 @@ def product_detail(request, product_id):
     if request.user.is_authenticated:
         user = UserProfile.objects.get(user=request.user)
     else:
-        raise PermissionDenied
+        user = None
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
 
