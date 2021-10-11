@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="black-overlay"></div>
+<div class="container-fluid">
+    <div class="row my-5">
+        <h1 class="display-6 text-center mb-3"><strong>About Us</strong></h1>
+        <div class="col-12 col-md-5 order-md-last">
+            <img class="img-fluid" src="{{ MEDIA_URL }}earthview2_ZeDaDho.jpg" alt="earthview">
+        </div>
+        <div class="col-12 col-md-7 px-5 my-auto rtl">
+            
+            <p class="mt-3">Earth has close to 8 billion people and less than 600 people have been lucky enough
+                to wake up outside of Earth’s atmosphere.</p>
+            <p>In 2020, Space Adventure Agency opened the door for private citizens to explore space
+                – a destination that holds the future for humanity – and we can do the same for you!</p> 
+                <h4 class="text-center pt-3"><a href="{% url 'trips' %}" class="btn btn-lg btn-outline-light rounded-0">Go to
+                    Trips</a></h4>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <h1 class="display-6 text-center mb-3"><strong>About the Trips</strong></h1>
+        <div class="col-12 col-md-5">
+            <img class="img-fluid" src="{{ MEDIA_URL }}spacewalk2.jpg" alt="spacewalk">
+        </div>
+        <div class="col-12 col-md-7 my-auto px-5 rtl">
+            
+            <p class="mt-3">A trip to space is nota an everyday event. So before a trip we’ll work with you to identify your needs
+                and priorities, in order to customize your training and preparation program accordingly.</p>
+            <p>By developing a spaceflight program to match your interests and focus on activities that are meaningful
+                to you, we’ll enhance your in-space experience.</p> 
+            <h4 class="text-center pt-3"><a href="{% url 'trips' %}" class="btn btn-lg btn-outline-light rounded-0">Go to Trips</a></h4>
+        </div>
+        
+    </div>
+    <hr class="d-md-none">
+</div>
+
+<hr>
+{% endblock %}

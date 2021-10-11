@@ -121,7 +121,7 @@ The user is given feedback, in order to enhance a pleasant user experience:
 
 ### **The pages**
         FRONTEND  
-The website has 11 pages, plus 3 error handler pages. Each page will have a navbar and a footer, except for the error handler pages.
+The website has 11 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, trips, shop, about, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
@@ -131,16 +131,16 @@ The footer has a section with contact details, an overview of some important lin
 
 #### Description of the pages
 
-- **The landing page/home page:** *(index.html - route: /, /home)*  
+- **The landing page/home page:**  
 The main page has the main navbar. Below that is a hero image and a short explanation for the site. 
 
-- **The 403 error handler page:** *(403.html - errorhandler: 403)*  
+- **The 403 error handler page:**   
 This page is shown in case of forbidden access.
 
-- **The 404 error handler page:** *(403.html - errorhandler: 404)*  
+- **The 404 error handler page:**  
 This page is shown in case no page is found.
 
-- **The 500 error handler page:** *(403.html - errorhandler: 500)*  
+- **The 500 error handler page:**  
 This page is shown in case of an internal service error.
 
 
