@@ -25,12 +25,12 @@
             <form action="{% url 'contact' %}" method="POST" class="update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <div class="d-flex justify-content-end gap-4 mb-3">
+                <div class="d-flex justify-content-end gap-4 py-3">
                     <a href="{% url 'contact' %}" class="btn btn-outline-light rounded-0">Cancel</a>
                     <button class="btn btn-light rounded-0" type="submit">Send</button>
                 </div>
             </form>
         </div>
     </div>
-    <hr>
+    <hr class="mt-5">
 {% endblock %}
