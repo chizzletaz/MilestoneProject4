@@ -72,6 +72,69 @@
                     </tbody>
                 </table>
             </div>
+            <p class="text-dark bg-light p-2 mt-5 rounded-1">My Reviews</p>
+            {% for review in reviews %}
+            <div class="col mx-auto py-3">
+                <div class="card h-100 rounded-0 p-2 bg-dark">
+                    <div class="row">
+                    <div class="col m-1">
+                        {% if review.rating == 1 %}
+                    <p class="my-auto"><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                            class="far fa-star"></i>
+                        <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
+                    </p>
+                    {% elif review.rating == 2 %}
+                    <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="far fa-star"></i>
+                        <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
+                    </p>
+                    {% elif review.rating == 3 %}
+                    <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                        <i class="far fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
+                    </p>
+                    {% elif review.rating == 4 %}
+                    <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="far fa-star"></i> {{ review.rating }} / 5
+                    </p>
+                    {% elif review.rating == 5 %}
+                    <p class="my-auto"><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i> {{ review.rating }} / 5
+                    </p>
+                    {% endif %}
+                    <small class="my-2 text-left"> By <i>{{ review.user }}</i> - {{ review.date_added|date:"b jS, Y" }}</small>
+                    </div>
+                    <div class="col my-auto text-end">
+                        <p class="lead">{{ review.product }}</p>
+                    </div>
+                    </div>
+                    <hr class="mt-1">
+                    <div class="card-body py-0">
+                        <h5 class="mb-0 class-title pb-2"><strong>{{ review.title }}</strong></h5>
+                        <blockquote class="card-text">{{ review.comment }}</blockquote>
+                    </div>
+                    <div class="card-footer pt-2 border-0 text-left">
+                        <div class="row">
+                            <div class="col">
+                                {% if user.is_authenticated and user.get_username == review.user.user.username %}
+                                <div class="d-flex justify-content-center mt-3">
+                                    {% if review.product.price > 1000 %}
+                                    <a class="btn btn-outline-light btn-sm rounded-0 px-3"
+                                    href="{% url 'trip_detail' review.product.id  %}">Go to Trip</a>
+                                    {% else %}
+                                    <a class="btn btn-outline-light btn-sm rounded-0 px-3"
+                                    href="{% url 'product_detail' review.product.id  %}">Go to Product</a>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 <hr>    
