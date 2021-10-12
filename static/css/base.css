@@ -79,6 +79,10 @@ header li {
     z-index: 2000;
 }
 
+#search-bar-mobile {
+    background-color: #262626 !important;
+}
+
 #search-bar-mobile input {
     color: #000 !important;
 }
