@@ -74,14 +74,14 @@
                     <div class="container-fluid">
                         <ul class="navbar-nav d-flex ms-auto text-center text-lg-end">
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="user-options" role="button" data-bs-toggle="dropdown"
+                                <a class="nav-link" href="#" id="user-option" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     <div class="text-center">
                                         <i class="fas fa-user"></i>
                                         <p class="my-0">My Account</p>
                                     </div>
                                 </a>
-                                <div id="nav-drop" class="dropdown-menu" aria-labelledby="user-options">
+                                <div id="nav-drop" class="dropdown-menu" aria-labelledby="user-option">
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item text-grey">Product
@@ -123,9 +123,9 @@
                                         <div class="input-group">
                                             <input class="form-control rounded-0" type="text" name="q"
                                                 placeholder="Search our site" aria-label="Search our site"
-                                                aria-describedby="button-addon">
+                                                aria-describedby="button-search">
                                             <button class="btn btn-outline-secondary rounded-0" type="submit"
-                                                id="button-addon">
+                                                id="button-search">
                                                 <span class="icon">
                                                     <i class="fas fa-search "></i>
                                                 </span>
@@ -227,7 +227,7 @@
             <a class="list-inline-item" href="https://www.twitter.com" title="link to twitter" target="_blank" rel="noopener">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a class="list-inline-item" hrf="https://www.instagram.com" title="link to instagram" target="_blank" rel="noopener">
+            <a class="list-inline-item" href="https://www.instagram.com" title="link to instagram" target="_blank" rel="noopener">
                 <i class="fab fa-instagram"></i>
             </a>
             <a class="list-inline-item" href="https://www.pinterest.com" title="link to youtube" target="_blank" rel="noopener">
