@@ -121,7 +121,7 @@ The user is given feedback, in order to enhance a pleasant user experience:
 
 ### **The pages**
         FRONTEND  
-The website has 11 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
+The website has 14 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, trips, shop, about, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
@@ -132,7 +132,60 @@ The footer has a section with contact details, an overview of some important lin
 #### Description of the pages
 
 - **The landing page/home page:**  
-The main page has the main navbar. Below that is a hero image and a short explanation for the site. 
+This is the first page a user sees when they come to the site. There is a hero image and a CTA-text and button for the trips.
+Below that there is a section for the shop where the user can see the latest products and a link to the shop page.
+
+- **The trips page:**  
+On this pages all the trips are displayed.  All the trips are displayed with a corresponding image, 
+the name of the trip and a link to the individual trip.
+
+- **The individual trip page:**  
+This is where the individual trip is displayed. The user can get more information about the trip, 
+like description and price. There is an option to choose the amount and the departure date.
+
+- **The shop page:**  
+This page displays all the products for sale. The products are paginized and there are 6 products 
+displayed per page. Each product has a link to the product page of the product in question.
+
+- **The individual product page:**  
+This is where an individual product is displayed. The user can get more information about the product, 
+like description and price. There is an option to choose the amount.
+
+- **The about page:**  
+This page has a short description about the website and the background of the trips.
+
+- **The contact page:**  
+This page has a contact form, where the user can ask questions or give remarks. 
+A confirmation email is sent to the user’s emailaddress after submitting.
+
+- **The sign up page:**  
+This page has a signup form where the user can register and create an account. After registration 
+the user is asked to confirm their email address. After confirmation the user is redirected to the
+home page. There is a button to go to the login page, if a user already has an account.
+
+- **The sign in page:**  
+This page has a login form where users that have an account can login. After login the user will be 
+redirected to the home page. There is a button to the register page, in case the user has no account.
+
+- **The profile page:**  
+This is the personal page of the user. Here the user can see and edit their shipping information, 
+see an overview of their orders (with a link to that order) and any reviews they have written 
+(with a link to that product).
+
+- **The product management page:**  
+On this page, the admin can add a new product or trip by filling in the form. After submitting the admin 
+is redirected the individual page of the added product/trip.
+
+- **The shopping bag page:**  
+This page contains all the items the user has put in their shopping bag. It has an overview of the product/trip, the amount the price, the subtotal and the grand total. There is a button go back to the shop page and a button
+to go to the checkout page.
+
+- **The checkout page:**  
+This page has an form the user has to fill out iot complete their order. The user has to provide delivery information and credit card details. After submitting the form, the user gets a confirmation email.
+There is also an order summary.
+
+- **The checkout success page:**  
+This page is shown when the payment was successfull. It has an overview of the order, delivery details and payment details. 
 
 - **The 403 error handler page:**   
 This page is shown in case of forbidden access.
@@ -699,49 +752,24 @@ To achieve this follow these steps:
 
 - Using 'cleaned_data' on contact form - [Django Docs](https://docs.djangoproject.com/en/3.2/ref/forms/validation/)
 
-### Content
 - How to paginate with Django - [Vitor Freitas](https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html)
 
+### Content
 - The text on the landing page and the trips pages is inspired by [space adventures](https://spaceadventures.com/).
-- Some text for review come from the reviews of the same product on Amazon.
+- Some text for product review come from the reviews of the same product on Amazon.
 
 
 ### Media
-earthview1.jpg 
-	https://earth.google.com/
-
-earthview2.jpg
-	https://besthqwallpapers.com/download/148672/1440x900
-space-hotel-room.jpg
-	https://www.architecturaldigest.com/story/worlds-first-space-hotel-open-2027
-space-hotel.jpg
-	Architectual digest (https://www.architecturaldigest.com/story/worlds-first-space-hotel-open-2027)
-moon.jpg
-	https://en.wikipedia.org/wiki/Moon
-moon2.jpg
-	https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Helping_Heracles_EL3_to_survive_the_long_cold_dark_nights_on_the_Moon
-moon3.jpg
-	https://www.cloudynights.com/topic/640527-34-moon-with-an-old-friend/
-mars.webp
-	https://www.ad.nl/wetenschap/vanavond-ideaal-weer-om-mars-te-spotten~a230ac057/?referrer=https%3A%2F%2Fwww.google.com%2F
-mars2.jpg
-	scienties(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.scientias.nl%2Fmars-lijkt-in-ieder-geval-ondergronds-over-een-belangrijk-ingredient-voor-leven-te-beschikken%2F&psig=AOvVaw2whrgOVXpChlJ9U2zj8qug&ust=1630530459121000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOjbobmV3PICFQAAAAAdAAAAABAQ)
-spacewalk.jpg
-	https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace
-spacewalk2.jpg
-	https://www.dawn.com/news/1472001
-
-space-background.jpg
-	https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg
-
-space-background2.jpg
-	https://wallpaperaccess.com/dark-space-desktop
-no-image.png
-	https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png
-sleep-mask.jpg
-	https://m.media-amazon.com/images/I/A1OyV3YHI4L._SY450_.jpg
-clipon-lens.jpg
-	https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg  
+[earthview1.jpg](https://earth.google.com/)  
+[earthview2.jpg](https://besthqwallpapers.com/download/148672/1440x900)  
+[moon3.jpg](https://www.cloudynights.com/topic/640527-34-moon-with-an-old-friend/)  
+[mars.webp](https://www.ad.nl/wetenschap/vanavond-ideaal-weer-om-mars-te-spotten~a230ac057/?referrer=https%3A%2F%2Fwww.google.com%2F)  
+[spacewalk.jpg](https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace)  
+[spacewalk2.jpg](https://www.dawn.com/news/1472001)  
+[space-background.jpg](https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg)  
+[no-image.png](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png)  
+[sleep-mask.jpg](https://m.media-amazon.com/images/I/A1OyV3YHI4L._SY450_.jpg)  
+[clipon-lens.jpg](https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg)  
 
 ---
 # Acknowledgements
