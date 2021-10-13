@@ -3,7 +3,7 @@
 {% load humanize %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/product.css' %}">
 {% endblock %}
 
 
@@ -19,12 +19,12 @@
     </div>
 
     <div class="row">
-        <div class="col12 col-lg-6 mx-auto">
+        <div class="col-12 col-lg-6 mx-auto">
             <div class="mb-5">
                 <h5 class="text-muted">Fill in the form below to add a new product.</h5>
                 <small class="text-muted"><i>* is a required field</i></small>
             </div>
-            <form class="update-form" action="{% url 'add_product' %}" method="POST" class="form" enctype="multipart/form-data">
+            <form class="update-form form" action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                     {% if field.name != 'image' %}
@@ -46,25 +46,24 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<!-- Handle correct colours for category input field -->
-<script>
-    let categorySelected = $('#id_category').val();
-if(!categorySelected) {
-    $('#id_category').css('color', '#b8bac0');
-};
-$('#id_category').change(function() {
-    categorySelected = $(this).val();
-    if(!categorySelected) {
-        $(this).css('color', '#b8bac0');
-    } else {
-        $(this).css('color', '#f1f1f1');
-    }
-});
-</script>
 
-<!-- Notifying user of what the image will be changed to -->
-<script type="text/javascript">
-    $('#new-image').change(function() {
+<script>
+    // Handle correct colours for category input field
+    let categorySelected = $('#id_category').val();
+    if (!categorySelected) {
+        $('#id_category').css('color', '#b8bac0');
+    };
+    $('#id_category').change(function () {
+        categorySelected = $(this).val();
+        if (!categorySelected) {
+            $(this).css('color', '#b8bac0');
+        } else {
+            $(this).css('color', '#f1f1f1');
+        }
+    });
+
+    // Notifying user of what the image will be changed to
+    $('#new-image').change(function () {
         var file = $('#new-image')[0].files[0];
         $('#filename').text(`Image will be set to: ${file.name}`);
     });

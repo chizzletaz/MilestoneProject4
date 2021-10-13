@@ -241,21 +241,21 @@
     </footer>
 
     {% block postloadjs%}
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $('.toast').toast('show');
         });
     </script>
 
     <!-- display/hide search bar -->
-    <script type="text/javascript">
+    <script>
         $(".icon-search").click(function () {
             $(".form-search").toggle();
         })
     </script>
 
     <!-- Display and update copyright -->
-    <script type="text/javascript">$("#copyright").text(new Date().getFullYear());</script>
+    <script>$("#copyright").text(new Date().getFullYear());</script>
     {% endblock %}
 
 </body>

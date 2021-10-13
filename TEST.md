@@ -55,7 +55,7 @@ The user is subscribed to the newsletter when the user fills in the subscription
 ## Code validation
 ### HTML
 [W3C Markup Validation Service](https://validator.w3.org/) is used to check for markup validity of the web document.  
-Because Flask Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
+Because Jinja template is used on all HTML pages, the source code is taken from the rendered pages to be tested.  
 You can validate the rendered page by:  
 - Use the source code of the rendered page
     - Right click on the page
@@ -70,26 +70,62 @@ However, when authentication is used, the live link can't be used to validate th
 Furthermore, the live site of Heroku takes a while to update.   
 Therefore I've opted to use the source code to render the pages.
 
-Running the code through the validator gives:  
+Running the code through the validator gives: 
+#### For about.html:
+- 3 errors and 1 warning three times are shown.
+1. *Element `<hr>` not allowed as child of element `<ul>` in this context.*  
+Fix:  
+You can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children.  
+So wrap the `<hr>` in `<li></li>`.  
+2. *No `<li>` element in scope but a `<li>` end tag seen.*  
+Fix:  
+Remove the extra `<li>` element.  
+3. *The aria-labelledby attribute must point to an element in the same document.*  
+The aria-labelledby doesn't point to a matching id. Add `id="offcanvasNavbarLabel"` to the `<h3>` in the offcanvas 
+component.  
+4. *The type attribute is unnecessary for JavaScript resources.*  
+Fix:  
+Up until html5 type was needed for the browser to distinguish between js and other text. With html5 it is no longer needed.
+The default type for `<script>` tags is JavaScript, so you don’t need to include the type for JS resources.    
+Remove the `type="text/javascript"`.  
+This will be done for all the other scripts on other pages as well.  
+
+#### For bag.html:  
+- No errors or warnings to show.  
+    > I've added a product to the bag first.  
+
+#### For checkout.html:  
+- No errors or warnings to show.  
+
+#### For checkout_success.html:
+
+#### For contact.html:  
+- No errors or warnings to show.  
+
 #### For index.html:
-- 4 errors and 1 warning shown  
-![html index error](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/html-index.png)
-1. *Element `<h4>` not allowed as child of element `<ul>` in this context.*  
+- No errors or warnings to show.  
+
+#### For add_product.html:  
+- 2 errors are shown.  
+1. *Duplicate attribute id*  
 Fix:  
-According to HTML5 spec, you can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children. So you should populate it with `<li></li>`, then insert your content within each list, so wrap the h4 in `<li></li>`  
-Credit: [Mike Hanslo](https://stackoverflow.com/questions/29079953/element-h4-not-allowed-as-child-of-element-ul-in-this-context)
-2. *Section lacks heading.*   
+The include of `include "django/forms/widgets/attrs.html"` already has an id attribute in there.  
+`Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>`  
+So remove the `id="new-image"` from the select image.  
+2. *Element p not allowed as child of element strong in this context.*  
 Fix:  
-Change section into div.
-3. *Start tag `<a>` seen but an element of the same type was already open.*  
-I originally only had the 'go to recipe'-button acting as an anchor tag. Later I added an anchor tag to the whole card, but forgot to remove the anchor tag of the button. This resulted in an anchor tag inside another anchor tag.   
-Fix:  
-Change the the anchor tag of the button to a button tag and remove the href.  
-This gives another error:  
-4. *The element button must not appear as a descendant of the a element.*    
-Fix:  
-Change button tag to `<p>` tag with button class.
-> Note: Since similar cards are used on the recipes and profile pages pages, these errors will be fixed there as well.
+remove `<strong>`.  
+
+#### For edit_product.html:  
+
+#### For products.html:
+#### For product_detail.html:
+#### For trips.html:
+#### For trip_detail.html:
+#### For profile.html:
+#### For signup.html:
+#### For signin.html:
+
 
 ---
 ### CSS  

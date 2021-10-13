@@ -7,8 +7,9 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'country',
-                  'county',)
+                  'town_or_city', 'postcode', 'county',
+                  'country',
+                  )
 
     def __init__(self, *args, **kwargs):
         """
@@ -20,10 +21,10 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'postcode': 'Postal Code',
-            'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
+            'town_or_city': 'Town or City',
+            'postcode': 'Postal Code',
             'county': 'County, State or Locality',
         }
 
@@ -34,6 +35,6 @@ class OrderForm(forms.ModelForm):
                     placeholder = f'{placeholders[field]} *'
                 else:
                     placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'space-form rounded-0'
             self.fields[field].label = False
