@@ -178,7 +178,7 @@ def edit_product(request, product_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated product!')
-            if product.category == 'Trip':
+            if product.category.name == 'trip':
                 return redirect(reverse('trip_detail', args=[product.id]))
             else: 
                 return redirect(reverse('product_detail', args=[product.id]))

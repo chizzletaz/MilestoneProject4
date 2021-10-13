@@ -176,6 +176,9 @@ see an overview of their orders (with a link to that order) and any reviews they
 On this page, the admin can add a new product or trip by filling in the form. After submitting the admin 
 is redirected the individual page of the added product/trip.
 
+- **The edit product page:**  
+On this page, the admin can edit an existing product or trip by editing the pre filled form. After submitting the admin is redirected the individual page of the added product/trip.
+ 
 - **The shopping bag page:**  
 This page contains all the items the user has put in their shopping bag. It has an overview of the product/trip, the amount the price, the subtotal and the grand total. There is a button go back to the shop page and a button
 to go to the checkout page.
@@ -332,7 +335,7 @@ For all the text I've used Rubik, a sans serif font.
 - [Coolors](https://coolors.co/) to make the colour scheme.
 ---
 # **Testing**
-For testing results, see [Testing.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/TEST.md)
+For testing results, see [TEST.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/TEST.md)
 
 ---
 ## **Deployment**
