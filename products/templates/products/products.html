@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+<link rel="stylesheet" href="{% static 'products/css/product.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,8 +15,7 @@
 
             <!-- Categories display only on large and extra large size > 992px -->
             <div class="d-none d-lg-block">
-                <a class="btn btn-outline-light rounded-0"
-                    href="{% url 'products' %}">All Products</a>
+                <a class="btn btn-outline-light rounded-0" href="{% url 'products' %}">All Products</a>
                 <a class="btn btn-outline-light rounded-0"
                     href="{% url 'products' %}?category=accessories">Accessories</a>
                 <a class="btn btn-outline-light rounded-0"
@@ -31,24 +30,20 @@
             <!-- Categories display only on small and medium size < 992px -->
             <div class="d-block d-lg-none text-right">
                 <div class="dropdown">
-                    <a class="btn btn-outline-light dropdown-toggle rounded-0" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn btn-outline-light dropdown-toggle rounded-0" href="#" role="button"
+                        id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Categories
                     </a>
-                    
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="btn rounded-0"
-                            href="{% url 'products' %}">All Products</a></li>
-                        <li><a class="dropdown-item"
-                                href="{% url 'products' %}?category=accessories">Accessories</a></li>
+                        <li><a class="btn rounded-0" href="{% url 'products' %}">All Products</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=accessories">Accessories</a>
+                        </li>
                         <li><a class="dropdown-item"
                                 href="{% url 'products' %}?category=entertainment">Entertainment</a></li>
-                        <li><a class="dropdown-item"
-                                href="{% url 'products' %}?category=multimedia">Multimedia</a></li>
-                        <li><a class="dropdown-item"
-                                href="{% url 'products' %}?category=pers-care">Personal Care</a></li>
-                        <li><a class="dropdown-item"
-                                href="{% url 'products' %}?category=deals">Deals</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=multimedia">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=pers-care">Personal Care</a>
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'products' %}?category=deals">Deals</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,129 +52,144 @@
 
         </div>
     </div>
-        <div class="row">
-            <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                <div class="sort-select-wrapper">
-                    <select id="sort-selector" class="rounded-0 border border-{% if current_sorting != 'None_None' %}secondary{% else %}black{% endif %}">
-                        <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                        <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                        <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
-                        <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
-                        <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
-                        <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
-                        <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                        <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
-                        <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 order-md-first">
-                <p class="text-space mt-3 text-center text-md-left">
-                    {% if search_term or current_categories or current_sorting != 'None_None' %}
-                        {% for c in current_categories %}
-                            <span class="text-off-white">{{ c.friendly_name }} | </span>
-                        {% endfor %}
-                    {% endif %}
-                    {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
-                </p>
+    <div class="row">
+        <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+            <div class="sort-select-wrapper">
+                <select id="sort-selector"
+                    class="rounded-0 border border-{% if current_sorting != 'None_None' %}secondary{% else %}black{% endif %}">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to
+                        high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
+                        low)</option>
+                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to
+                        high)</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high
+                        to low)</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)
+                    </option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category
+                        (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category
+                        (Z-A)</option>
+                </select>
             </div>
         </div>
-        
-        <!-- Pagination top -->
-        <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
-        <nav aria-label="Page navigation example" class="py-3">
-            <ul class="pagination justify-content-center text-center">
-                {% if products.has_previous %}
-                    <li class="page-item"> 
-                        <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
-                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" aria-label="Previous">
-                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-                        </a>
-                    </li>
+        <div class="col-12 col-md-6 order-md-first">
+            <p class="text-space mt-3 text-center text-md-left">
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                    {% for c in current_categories %}
+                        <span class="text-off-white">{{ c.friendly_name }} | </span>
+                    {% endfor %}
                 {% endif %}
-
-                {% for i in products.paginator.page_range %}
-                    {% if products.number == i %}
-                        <li class="page-item active"><a class="page-link">{{ i }}<span class="sr-only">(current)</span></a></li>
-                    {% else %}
-                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>
                     {% endif %}
-                {% endfor %}
+            </p>
+        </div>
+    </div>
 
-                {% if products.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
+    <!-- Pagination top -->
+    <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+    <nav aria-label="Page navigation example" class="py-3">
+        <ul class="pagination justify-content-center text-center">
+            {% if products.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                </a>
+            </li>
+            {% endif %}
+
+            {% for i in products.paginator.page_range %}
+            {% if products.number == i %}
+            <li class="page-item active"><a class="page-link">{{ i }}<span class="sr-only">(current)</span></a></li>
+            {% else %}
+            <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if products.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
                     <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                    </a>
-                </li>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Next">
+                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- end of pagination top -->
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 text-off-black mb-5">
+        {% for product in products %}
+        <div class="col">
+            <div class="card h-100 rounded-0">
+                {% if product.image %}
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
                 {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" aria-label="Next">
-                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                    </a>
-                </li>
+                <a href="{% url 'product_detail' product.id %}">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}">
+                </a>
                 {% endif %}
-            </ul>
-          </nav>
+                <hr>
+                <div class="card-body py-0">
+                    <h5 class="mb-0">{{ product.name }}</h5>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 text-left">
+                    <div class="row">
+                        <div class="col">
+                            <p class="lead my-2 text-left font-weight-bold">$ {{ product.price }}</p>
+                            <p class="small mt-1 mb-0">
+                                <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                </a>
+                            </p>
+                            {% if product.rating %}
+                            <small class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} /
+                                5</small>
+                            {% else %}
+                            <small class="text-muted">No Rating</small>
+                            {% endif %}
+                            {% if request.user.is_superuser %}
+                            <div class="d-flex justify-content-between mt-3">
+                                <a class="btn btn-outline-danger btn-sm rounded-0 order-md-first" data-bs-toggle="modal"
+                                    data-bs-target="#confirmDelete{{ product.id }}">Delete</a>
+                                <a class="btn btn-outline-dark btn-sm rounded-0 px-3"
+                                    href="{% url 'edit_product' product.id %}">Edit</a>
+                            </div>
 
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 text-off-black mb-5">
-            {% for product in products %}
-            <div class="col">
-                <div class="card h-100 rounded-0">
-                    {% if product.image %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no-image.jpeg" alt="{{ product.name }}">
-                    </a>
-                    {% endif %}
-                    <hr>
-                    <div class="card-body py-0">
-                        <h5 class="mb-0">{{ product.name }}</h5>
-                    </div>
-                    <div class="card-footer bg-white pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col">
-                                <p class="lead my-2 text-left font-weight-bold">$ {{ product.price }}</p>
-                                <p class="small mt-1 mb-0">
-                                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
-                                    </a>
-                                </p>
-                                {% if product.rating %}
-                                <small class="text-muted"><i class="fas fa-star"></i> {{ product.rating }} /
-                                    5</small>
-                                {% else %}
-                                <small class="text-muted">No Rating</small>
-                                {% endif %}
-                                {% if request.user.is_superuser %}
-                                <div class="d-flex justify-content-between mt-3">
-                                    <a class="btn btn-outline-danger btn-sm rounded-0 order-md-first"
-                                        data-bs-toggle="modal" data-bs-target="#confirmDelete">Delete</a>
-                                    <a class="btn btn-outline-dark btn-sm rounded-0 px-3" href="{% url 'edit_product' product.id %}">Edit</a>
-                                </div>
-
-                                {% endif %}
-                                <!-- confirmation modal for delete -->
-                                <div class="modal fade text-off-white" id="confirmDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
+                            {% endif %}
+                            <!-- confirmation modal for delete -->
+                            <div class="modal fade text-off-white" id="confirmDelete{{ product.id }}" tabindex="-1"
+                                aria-labelledby="exampleModalLabel{{ product.id }}" aria-hidden="true">
+                                <div class="modal-dialog">
                                     <div class="modal-content bg-dark">
                                         <div class="modal-header">
-                                        <h6 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this product?</h6>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <h6 class="modal-title" id="exampleModalLabel{{ product.id }}">Are you sure you want to
+                                                delete this product?</h6>
+                                            <button type="button" class="btn-close btn-close-white"
+                                                data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary rounded-0" data-bs-dismiss="modal">Cancel</button>
-                                        <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-light rounded-0">Delete</a>
+                                            <button type="button" class="btn btn-secondary rounded-0"
+                                                data-bs-dismiss="modal">Cancel</button>
+                                            <a href="{% url 'delete_product' product.id %}"
+                                                class="btn btn-outline-light rounded-0">Delete</a>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -187,89 +197,92 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
-        <!-- Pagination bottom-->
-        <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center text-center">
-                {% if products.has_previous %}
-                    <li class="page-item"> 
-                        <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
-                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-                        </a>
-                    </li>
-                    {% else %}
-                    <li class="page-item disabled">
-                        <a class="page-link" aria-label="Previous">
-                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-                        </a>
-                    </li>
-                {% endif %}
+        {% endfor %}
+    </div>
+    <!-- Pagination bottom-->
+    <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center text-center">
+            {% if products.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ products.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                </a>
+            </li>
+            {% endif %}
 
-                {% for i in products.paginator.page_range %}
-                    {% if products.number == i %}
-                        <li class="page-item active"><a class="page-link">{{ i }}<span class="sr-only">(current)</span></a></li>
-                    {% else %}
-                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
-                    {% endif %}
-                {% endfor %}
+            {% for i in products.paginator.page_range %}
+            {% if products.number == i %}
+            <li class="page-item active"><a class="page-link">{{ i }}<span class="sr-only">(current)</span></a></li>
+            {% else %}
+            <li><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
 
-                {% if products.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
+            {% if products.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ products.next_page_number }}" aria-label="Next">
                     <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                    </a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" aria-label="Next">
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="Next">
                     <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
-          </nav>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- end of pagination bottom -->
 </div>
+
 <!-- back to top icon -->
 <div class="btt-button shadow-sm rounded-0 border border-white">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-chevron-up text-off-white mx-auto my-auto"></i>
-    </a>	
+    </a>
 </div>
 <hr>
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <!-- back to top -->
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
-    
-    <!-- sorting -->
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
+{{ block.super }}
+<!-- back to top -->
+<script>
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 
-            var selectedVal = selector.val();
-            if(selectedVal != "reset"){
-                var sort = selectedVal.split("_")[0];
-                var direction = selectedVal.split("_")[1];
+<!-- sorting -->
+<script>
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
 
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort");
-                currentUrl.searchParams.delete("direction");
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
 
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}

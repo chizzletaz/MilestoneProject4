@@ -72,7 +72,8 @@ Therefore I've opted to use the source code to render the pages.
 
 Running the code through the validator gives: 
 #### For about.html:
-- 3 errors and 1 warning three times are shown.
+- 3 errors and 1 warning three times are shown.  
+[html about page errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-about.png)
 1. *Element `<hr>` not allowed as child of element `<ul>` in this context.*  
 Fix:  
 You can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children.  
@@ -117,12 +118,44 @@ Fix:
 remove `<strong>`.  
 
 #### For edit_product.html:  
+- 2 errors are shown.  
+[html edit product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-edit.png)  
+1. *Duplicate attribute class.*  
+Fix:  
+Remove the merge the 2 classes into 1 class.  
+2. *An img element must have an alt attribute, except under certain conditions.*  
+Fix:  
+Add an alt to the img element in custom_clearable_file_input.html.   
 
-#### For products.html:
-#### For product_detail.html:
-#### For trips.html:
-#### For trip_detail.html:
-#### For profile.html:
+#### For products.html:  
+- 2 errors and 2 warnings are shown 5 times.  
+[html product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-products.png)  
+1. *Duplicate ID confirmDelete.*  
+Fix:  
+Create unique id's by adding the product id to delete modals by use of Jinja notation:  
+`id="confirmDelete{{ product.id }}"`  
+2. *Duplicate ID exampleModalLabel.*  
+Fix:  
+Create unique id's by adding the product id to to `<h6>` by use of Jinja notation:  
+`id="exampleModalLabel{{ product.id }}"`  
+> This has been done on other pages with similar forms as well.  
+#### For product_detail.html:  
+- 1 error is shown.  
+[html product details error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-product-detail.html)  
+1. *Attribute placeholder not allowed on element select at this point.*  
+Fix:  
+Remove the placeholder from the select element by deleting `self.fields['rating'].widget.attrs['placeholder'] = 'Add your rating'` from the review model.  
+
+#### For trips.html:  
+- No errors or warnings to show.  
+
+#### For trip_detail.html:  
+- 7 errors and 6 warning are shown.  
+[html trip detail errors 1](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail1.png)  
+[html trip detail errors 2](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail2.png)  
+
+#### For profile.html:  
+
 #### For signup.html:
 #### For signin.html:
 

@@ -5,11 +5,12 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
+from reviews.models import Review
+from reviews.forms import EditReviewForm, ReviewForm
+from profiles.models import UserProfile
+
 from .models import Product, Category
 from .forms import ProductForm
-from reviews.models import Review
-from reviews.forms import ReviewForm
-from profiles.models import UserProfile
 
 # Create your views here.
 
@@ -119,11 +120,11 @@ def trip_detail(request, product_id):
     review_form = ReviewForm()
 
     # Check if user has already added a review
-    try:
-        previous_review = Review.objects.get(user=user, product=product)
-        review_edit_form = ReviewForm(instance=previous_review)
-        
-    except:
+    previous_review = Review.objects.get(user=user, product=product)
+    if previous_review:
+        review_edit_form = EditReviewForm(instance=previous_review)
+
+    else:
         review_edit_form = None
 
     context = {

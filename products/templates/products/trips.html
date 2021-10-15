@@ -23,7 +23,7 @@
     {% if forloop.counter|divisibleby:2 %}
     <div class="row py-5">
         <div class="col-12 col-md-7 order-md-last">
-            <img class="img-fluid" src="{{ product.image.url }}">
+            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
         </div>
         <div class="col-12 col-md-5 my-auto rtl">
             <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
@@ -36,7 +36,7 @@
     {% else %}
     <div class="row py-5">
         <div class="col-12 col-md-7">
-            <img class="img-fluid" src="{{ product.image.url }}">
+            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
         </div>
         <div class="col-12 col-md-5 my-auto ltr">
             <h1 class="display-6 mx-auto my-3"><strong>{{ product.name }}</strong></h1>
