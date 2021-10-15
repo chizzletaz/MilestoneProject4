@@ -3,10 +3,11 @@ from django.shortcuts import get_object_or_404, redirect, reverse, render
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from .models import Review
-from .forms import ReviewForm, EditReviewForm
 from products.models import Product
 from profiles.models import UserProfile
+from .models import Review
+from .forms import ReviewForm, EditReviewForm
+
 
 
 @login_required
@@ -34,7 +35,7 @@ def add_review(request, product_id):
                     average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
                     product.rating = average_rating
                     product.save()
-    
+
                     messages.success(request, 'Review succesfully added!')
                 else:
                     messages.error(request, 'Failed to add review. Please ensure the form is valid.')
@@ -73,7 +74,7 @@ def edit_review(request, review_id):
         else:
             form = EditReviewForm(instance=EditReviewForm)
             messages.info(request, f'You are editing {review.title}')
-        
+
         template = 'products/edit_review.html'
         context = {
             'form': form,
@@ -91,7 +92,7 @@ def delete_review(request, review_id):
 
     if request.user.is_authenticated:
         review = get_object_or_404(Review, pk=review_id)
-        
+
         if request.user:
             review.delete()
 

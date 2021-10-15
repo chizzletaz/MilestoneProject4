@@ -153,6 +153,41 @@ Remove the placeholder from the select element by deleting `self.fields['rating'
 - 7 errors and 6 warning are shown.  
 [html trip detail errors 1](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail1.png)  
 [html trip detail errors 2](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail2.png)  
+1. *Duplicate ID id_title*
+Partial Fix:  
+Crispy forms renders the title field with it's own id based on the input title.
+According to the django crispy forms docs you can change the id of the fields (label and input/select) by changing the
+attribute in the forms.py.  
+So I decided to make a second class named EditReviewForm and change the id's in there:  
+```
+class EditReviewForm(forms.ModelForm):
+    """ Create a form fro users to add a review """
+    class Meta:
+        model = Review
+        fields = ('title', 'comment', 'rating')
+        widgets = {
+            'title': forms.TextInput(attrs={'id': 'edit_title'}),
+            'comment': forms.Textarea(attrs={'id': 'edit_comment'}),
+            'rating': forms.Select(attrs={'id': 'edit_rating'}),
+        }
+    ...
+```  
+I changed the form rendering on reviews.html:  
+```
+{% csrf_token %}
+<div class="div">
+    {{ review_edit_form.title|as_crispy_field }}
+</div>
+<div class="div">
+    {{ review_edit_form.comment|as_crispy_field }}
+</div>
+<div class="div">
+    {{ review_edit_form.rating|as_crispy_field }}
+</div>
+```  
+This fixes the duplicate ID's for the input and select fields.  
+However, the duplicate ID's for the `<div>`'s are still there.  
+[html trip detail div errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail-div.png) 
 
 #### For profile.html:  
 

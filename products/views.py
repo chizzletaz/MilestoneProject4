@@ -83,7 +83,7 @@ def product_detail(request, product_id):
     try:
         previous_review = Review.objects.get(user=user, product=product)
         review_edit_form = ReviewForm(instance=previous_review)
-        
+
     except:
         review_edit_form = None
 
@@ -157,7 +157,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-    
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -181,7 +181,7 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             if product.category.name == 'trip':
                 return redirect(reverse('trip_detail', args=[product.id]))
-            else: 
+            else:
                 return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
@@ -204,7 +204,7 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners are allowed to take this action.')
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
