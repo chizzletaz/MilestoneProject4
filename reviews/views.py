@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from products.models import Product
 from profiles.models import UserProfile
 from .models import Review
-from .forms import ReviewForm, EditReviewForm
+from .forms import ReviewForm
 
 
 
@@ -48,7 +48,7 @@ def add_review(request, product_id):
 
 @login_required
 def edit_review(request, review_id):
-    """ Edit a review on the product page """
+    """ Edit a review  """
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only logged in users can edit a review.')
         return redirect(reverse('login'))
@@ -56,7 +56,7 @@ def edit_review(request, review_id):
     if request.user.is_authenticated:
         review = get_object_or_404(Review, pk=review_id)
         if request.method == "POST":
-            form = EditReviewForm(request.POST, instance=review)
+            form = ReviewForm(request.POST, instance=review)
             if form.is_valid:
                 form.save()
 
@@ -66,16 +66,17 @@ def edit_review(request, review_id):
                 average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
                 product.rating = average_rating
                 product.save()
-
                 messages.success(request, 'Your review is edited successfully!')
-                return redirect(reverse('product_detail', args=[review.product.id]))
+           
             else:
                 messages.error(request, 'Failed to edit review. Please ensure the form is valid.')
+
+            return redirect(reverse('product_detail', args=[review.product.id]))
         else:
-            form = EditReviewForm(instance=EditReviewForm)
+            form = ReviewForm(instance=review)
             messages.info(request, f'You are editing {review.title}')
 
-        template = 'products/edit_review.html'
+        template = 'reviews/edit_review.html'
         context = {
             'form': form,
         }

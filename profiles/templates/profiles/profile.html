@@ -19,7 +19,9 @@
     <!-- for viewports smaller than 992px -->
     <div class="row d-flex d-lg-none">
         <div class="col">
+            
             {% include 'includes/mobile-profile-content.html' %}
+            
         </div>
     </div>
 
@@ -103,8 +105,8 @@
                                 <i class="fas fa-star"></i><i class="fas fa-star"></i> {{ review.rating }} / 5
                             </p>
                             {% endif %}
-                            <small class="my-2 text-left"> By <i>{{ review.user }}</i> - {{ review.date_added|date:"b
-                                jS, Y" }}</small>
+                            <small class="my-2 text-left"> By <i>{{ review.user }}</i> - 
+                                {{ review.date_added|date:"b jS, Y" }}</small>
                         </div>
                         <div class="col my-auto text-end">
                             <p class="lead">{{ review.product }}</p>

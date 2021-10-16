@@ -188,6 +188,8 @@ I changed the form rendering on reviews.html:
 This fixes the duplicate ID's for the input and select fields.  
 However, the duplicate ID's for the `<div>`'s are still there.  
 [html trip detail div errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail-div.png) 
+After a long session with Tutoring we still couldn't fix the error.  
+To be on the safe side and make the page pass the W3C validation, I've decided to put the edit review option on a different page.  
 
 #### For profile.html:  
 

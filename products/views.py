@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 
 from reviews.models import Review
-from reviews.forms import EditReviewForm, ReviewForm
+from reviews.forms import ReviewForm
 from profiles.models import UserProfile
 
 from .models import Product, Category
@@ -72,26 +72,13 @@ def product_detail(request, product_id):
     """ A view to show an individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
-    if request.user.is_authenticated:
-        user = UserProfile.objects.get(user=request.user)
-    else:
-        user = None
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
-
-    # Check if user has already added a review
-    try:
-        previous_review = Review.objects.get(user=user, product=product)
-        review_edit_form = ReviewForm(instance=previous_review)
-
-    except:
-        review_edit_form = None
 
     context = {
         'product': product,
         'reviews': reviews,
         'form': review_form,
-        'review_edit_form': review_edit_form,
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -112,26 +99,26 @@ def trip_detail(request, product_id):
     """ A view to show an individual trip details """
 
     product = get_object_or_404(Product, pk=product_id)
-    if request.user.is_authenticated:
-        user = UserProfile.objects.get(user=request.user)
-    else:
-        user = None
+    # if request.user.is_authenticated:
+    #     user = UserProfile.objects.get(user=request.user)
+    # else:
+    #     user = None
     reviews = Review.objects.filter(product=product)
     review_form = ReviewForm()
 
     # Check if user has already added a review
-    previous_review = Review.objects.get(user=user, product=product)
-    if previous_review:
-        review_edit_form = EditReviewForm(instance=previous_review)
+    # try:
+    #     previous_review = Review.objects.get(user=user, product=product)
+    #     review_edit_form = ReviewForm(instance=previous_review)
 
-    else:
-        review_edit_form = None
+    # except:
+    #     review_edit_form = None
 
     context = {
         'product': product,
         'reviews': reviews,
         'form': review_form,
-        'review_edit_form': review_edit_form,
+        # 'review_edit_form': review_edit_form,
     }
 
     return render(request, 'products/trip_detail.html', context)
