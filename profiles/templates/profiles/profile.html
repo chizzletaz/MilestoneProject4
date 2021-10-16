@@ -16,18 +16,11 @@
             <hr>
         </div>
     </div>
-    <!-- for viewports smaller than 992px -->
-    <div class="row d-flex d-lg-none">
-        <div class="col">
-            
-            {% include 'includes/mobile-profile-content.html' %}
-            
-        </div>
-    </div>
+    
 
     <!-- for viewports larger than 992px -->
-    <div class="row d-none d-lg-flex pb-5">
-        <div class="col-lg-6">
+    <div class="row pb-5">
+        <div class="col-12 col-lg-6 order-lg-first">
             <p class="text-dark bg-light p-2 rounded-1">Default Delivery Information</p>
             <form action="{% url 'profile' %}" method="POST" class="update-form">
                 {% csrf_token %}
@@ -37,7 +30,7 @@
                 </button>
             </form>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 d-none d-lg-block">
             <p class="text-dark bg-light p-2 rounded-1">Order History</p>
             <div class="order-history table-responsive">
                 <table class="table table-sm table-borderless text-off-white">
@@ -137,6 +130,15 @@
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+
+    <!-- for viewports smaller than 992px -->
+    <div class="row d-flex d-lg-none">
+        <div class="col">
+            
+            {% include 'includes/mobile-profile-content.html' %}
+            
         </div>
     </div>
 </div>

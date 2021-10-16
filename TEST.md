@@ -93,12 +93,13 @@ This will be done for all the other scripts on other pages as well.
 
 #### For bag.html:  
 - No errors or warnings to show.  
-    > I've added a product to the bag first.  
+    > Note: I've added a product to the bag first.  
 
 #### For checkout.html:  
 - No errors or warnings to show.  
 
 #### For checkout_success.html:
+- No errors or warnings to show.  
 
 #### For contact.html:  
 - No errors or warnings to show.  
@@ -189,21 +190,55 @@ This fixes the duplicate ID's for the input and select fields.
 However, the duplicate ID's for the `<div>`'s are still there.  
 [html trip detail div errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail-div.png) 
 After a long session with Tutoring we still couldn't fix the error.  
-To be on the safe side and make the page pass the W3C validation, I've decided to put the edit review option on a different page.  
+To be on the safe side and make the page pass the W3C validation, I've decided to put the edit review option on a different page.    
+After creating a separate edit review page no more errors or warnings are shown.  
 
 #### For profile.html:  
+- 1 error is shown.  
+[html profile error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-profile.png)  
+1. *Attribute placeholder not allowed on element select at this point*  
+Fix:  
+The form is rendering a placeholder for the country select element. So the select element for country shouldn't get a placeholder. 
+Upon inspecting the forms.py in profile. I noticed that all elements get a placeholder with respective name due to:  
+```
+for field in self.fields:
+    if field != 'default_country':
+        if self.fields[field].required:
+            placeholder = f'{placeholders[field]} *'
+        else:
+            placeholder = placeholders[field]
+    self.fields[field].widget.attrs['placeholder'] = placeholder
+```
+So the to not give the country element a placeholder, the last line should be inside the `if field != 'default_country':` statement.  
+```
+for field in self.fields:
+    if field != 'default_country':
+        if self.fields[field].required:
+            placeholder = f'{placeholders[field]} *'
+        else:
+            placeholder = placeholders[field]
+        self.fields[field].widget.attrs['placeholder'] = placeholder
+```
+#### For edit_review.html:  
+- No errors or warnings to show.  
 
-#### For signup.html:
+#### For signup.html:  
+- No errors or warnings to show.  
+
 #### For signin.html:
-
+- No errors or warnings to show.   
 
 ---
 ### CSS  
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
-#### For style.css:
+#### For base.css:
 - No errors are found.  
 ![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
+
+#### For checkout.css:
+#### For product.css:
+#### For profile.css:
 
 ---
 ### Javascript  
@@ -213,6 +248,10 @@ It is recommended to add **```/* jshint esversion: 6 */```** at the top of the .
 Running the code through the validator gives:
 #### For style.js:
 - No errors or warnings are shown. 
+
+#### For stripe_elements.js:
+#### For countryfield.js:
+
 ---
 ### Python  
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
