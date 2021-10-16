@@ -1,11 +1,12 @@
 from django import forms
 from .models import Contact
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('full_name', 'email',
-            'subject', 'message',)
+                  'subject', 'message',)
 
     def __init__(self, *args, **kwargs):
         """

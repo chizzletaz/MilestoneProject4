@@ -1,7 +1,9 @@
+/* jshint esversion: 6 */
+
 let countrySelected = $('#id_default_country').val();
 if(!countrySelected) {
     $('#id_default_country').css('color', '#b8bac0');
-};
+}
 $('#id_default_country').change(function() {
     countrySelected = $(this).val();
     if(!countrySelected) {

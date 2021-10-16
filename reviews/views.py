@@ -9,7 +9,6 @@ from .models import Review
 from .forms import ReviewForm
 
 
-
 @login_required
 def add_review(request, product_id):
     """ Add a review to a product/trip """
@@ -22,7 +21,9 @@ def add_review(request, product_id):
             # check if user already added a review
             added_review = Review.objects.filter(user=user, product=product)
             if added_review.exists():
-                messages.error(request, 'You already reviewed this product. To change your review click the edit button on your review.')
+                messages.error(request, 'You already reviewed this product. \
+                    To change your review click the edit button \
+                        on your review.')
             else:
                 if review_form.is_valid():
                     review = review_form.save(commit=False)
@@ -32,17 +33,20 @@ def add_review(request, product_id):
 
                     # Recalculate rating
                     reviews = Review.objects.filter(product=product)
-                    average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
+                    average_rating = (reviews.aggregate(Avg('rating'))
+                                      ['rating__avg'])
                     product.rating = average_rating
                     product.save()
 
                     messages.success(request, 'Review succesfully added!')
                 else:
-                    messages.error(request, 'Failed to add review. Please ensure the form is valid.')
+                    messages.error(request, 'Failed to add review. \
+                        Please ensure the form is valid.')
             return redirect(reverse('product_detail', args=[product.id]))
 
     else:
-        messages.error(request, 'Sorry, only logged in users can leave a review.')
+        messages.error(request, 'Sorry, only logged in users can \
+            leave a review.')
         return redirect(reverse('login'))
 
 
@@ -50,7 +54,8 @@ def add_review(request, product_id):
 def edit_review(request, review_id):
     """ Edit a review  """
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, only logged in users can edit a review.')
+        messages.error(request, 'Sorry, only logged in users can \
+            edit a review.')
         return redirect(reverse('login'))
 
     if request.user.is_authenticated:
@@ -63,15 +68,19 @@ def edit_review(request, review_id):
                 # Recalculate rating
                 product = Product.objects.get(name=review.product)
                 reviews = Review.objects.filter(product=product)
-                average_rating = reviews.aggregate(Avg('rating'))['rating__avg']
+                average_rating = (reviews.aggregate(Avg('rating'))
+                                  ['rating__avg'])
                 product.rating = average_rating
                 product.save()
-                messages.success(request, 'Your review is edited successfully!')
-           
-            else:
-                messages.error(request, 'Failed to edit review. Please ensure the form is valid.')
+                messages.success(request, 'Your review is \
+                    edited successfully!')
 
-            return redirect(reverse('product_detail', args=[review.product.id]))
+            else:
+                messages.error(request, 'Failed to edit review. \
+                    Please ensure the form is valid.')
+
+            return redirect(reverse(
+                            'product_detail', args=[review.product.id]))
         else:
             form = ReviewForm(instance=review)
             messages.info(request, f'You are editing {review.title}')
@@ -89,7 +98,8 @@ def edit_review(request, review_id):
 def delete_review(request, review_id):
     """ Delete a review on the product page """
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, only logged in users can delete a review.')
+        messages.error(request, 'Sorry, only logged in users can \
+            delete a review.')
         return redirect(reverse('login'))
 
     if request.user.is_authenticated:
@@ -106,8 +116,10 @@ def delete_review(request, review_id):
             product.save()
 
             messages.success(request, 'Your review has been deleted.')
-            return redirect(reverse('product_detail', args=[review.product.id])) 
+            return redirect(reverse('product_detail',
+                                    args=[review.product.id]))
         else:
-            messages.error(request, 'Cannot delete review, this is not your review')
-            return redirect(reverse('product_detail', args=[review.product.id]))
-        
+            messages.error(request, 'Cannot delete review, \
+                this is not your review')
+            return redirect(reverse('product_detail',
+                                    args=[review.product.id]))

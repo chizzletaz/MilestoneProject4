@@ -8,7 +8,7 @@ from products.models import Product
 class Review(models.Model):
     class Meta:
         ordering = ['-id']
-    
+
     RATING = [
         (1, '1'),
         (2, '2'),
@@ -22,7 +22,7 @@ class Review(models.Model):
     title = models.CharField(max_length=254, null=False, blank=False)
     comment = models.TextField(max_length=1500, null=False, blank=False)
     rating = models.IntegerField(choices=RATING, null=False, blank=False)
-    date_added = models.DateTimeField(auto_now_add=True) 
+    date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

@@ -17,7 +17,8 @@ from .forms import ProductForm
 def all_products(request):
     """ A view to show all products without space trips """
 
-    products = Product.objects.all().exclude(category__name='trip').order_by('id')
+    products = (Product.objects.all().
+                exclude(category__name='trip').order_by('id'))
     query = None
     categories = None
     sort = None
@@ -49,7 +50,8 @@ def all_products(request):
                 messages.error(request, "You didn't enter a search term.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (Q(name__icontains=query) |
+                       Q(description__icontains=query))
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -86,7 +88,8 @@ def product_detail(request, product_id):
 def all_trips(request):
     """ A view to show all space trips """
 
-    products = Product.objects.all().filter(category__name='trip').order_by('price')
+    products = (Product.objects.all().filter(
+        category__name='trip').order_by('price'))
 
     context = {
         'products': products,
@@ -114,7 +117,8 @@ def trip_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to take this action.')
+        messages.error(request, 'Sorry, only store owners are \
+            allowed to take this action.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -127,7 +131,8 @@ def add_product(request):
             else:
                 return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+                Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -143,7 +148,8 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to take this action.')
+        messages.error(request, 'Sorry, only store owners are \
+            allowed to take this action.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -157,7 +163,8 @@ def edit_product(request, product_id):
             else:
                 return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. \
+                Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -175,7 +182,8 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners are allowed to take this action.')
+        messages.error(request, 'Sorry, only store owners are \
+            allowed to take this action.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)

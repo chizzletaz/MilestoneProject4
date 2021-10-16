@@ -10,7 +10,7 @@ class ReviewAdmin(admin.ModelAdmin):
         'rating',
         'date_added',
     )
-    
+
     list_display = (
         'title',
         'product',

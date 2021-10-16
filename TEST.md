@@ -73,7 +73,7 @@ Therefore I've opted to use the source code to render the pages.
 Running the code through the validator gives: 
 #### For about.html:
 - 3 errors and 1 warning three times are shown.  
-[html about page errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-about.png)
+![html about page errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-about.png)
 1. *Element `<hr>` not allowed as child of element `<ul>` in this context.*  
 Fix:  
 You can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children.  
@@ -120,7 +120,7 @@ remove `<strong>`.
 
 #### For edit_product.html:  
 - 2 errors are shown.  
-[html edit product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-edit.png)  
+![html edit product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-edit.png)  
 1. *Duplicate attribute class.*  
 Fix:  
 Remove the merge the 2 classes into 1 class.  
@@ -130,7 +130,7 @@ Add an alt to the img element in custom_clearable_file_input.html.
 
 #### For products.html:  
 - 2 errors and 2 warnings are shown 5 times.  
-[html product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-products.png)  
+![html product errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-products.png)  
 1. *Duplicate ID confirmDelete.*  
 Fix:  
 Create unique id's by adding the product id to delete modals by use of Jinja notation:  
@@ -142,7 +142,7 @@ Create unique id's by adding the product id to to `<h6>` by use of Jinja notatio
 > This has been done on other pages with similar forms as well.  
 #### For product_detail.html:  
 - 1 error is shown.  
-[html product details error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-product-detail.html)  
+![html product details error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-product-detail.html)  
 1. *Attribute placeholder not allowed on element select at this point.*  
 Fix:  
 Remove the placeholder from the select element by deleting `self.fields['rating'].widget.attrs['placeholder'] = 'Add your rating'` from the review model.  
@@ -152,8 +152,8 @@ Remove the placeholder from the select element by deleting `self.fields['rating'
 
 #### For trip_detail.html:  
 - 7 errors and 6 warning are shown.  
-[html trip detail errors 1](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail1.png)  
-[html trip detail errors 2](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail2.png)  
+![html trip detail errors 1](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail1.png)  
+![html trip detail errors 2](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail2.png)  
 1. *Duplicate ID id_title*
 Partial Fix:  
 Crispy forms renders the title field with it's own id based on the input title.
@@ -188,14 +188,14 @@ I changed the form rendering on reviews.html:
 ```  
 This fixes the duplicate ID's for the input and select fields.  
 However, the duplicate ID's for the `<div>`'s are still there.  
-[html trip detail div errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail-div.png) 
+![html trip detail div errors](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-trip-detail-div.png) 
 After a long session with Tutoring we still couldn't fix the error.  
 To be on the safe side and make the page pass the W3C validation, I've decided to put the edit review option on a different page.    
 After creating a separate edit review page no more errors or warnings are shown.  
 
 #### For profile.html:  
 - 1 error is shown.  
-[html profile error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-profile.png)  
+![html profile error](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/validation/html-profile.png)  
 1. *Attribute placeholder not allowed on element select at this point*  
 Fix:  
 The form is rendering a placeholder for the country select element. So the select element for country shouldn't get a placeholder. 
@@ -233,35 +233,37 @@ for field in self.fields:
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
 #### For base.css:
-- No errors are found.  
-![style.css validation](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/css-style.png)
+- No errors are found. 
 
-#### For checkout.css:
-#### For product.css:
-#### For profile.css:
+#### For checkout.css:  
+- No errors are found.  
+
+#### For product.css:  
+- No errors are found.  
+
+#### For profile.css:  
+- No errors are found.
 
 ---
 ### Javascript  
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
-It is recommended to add **```/* jshint esversion: 6 */```** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.  
+It is recommended to add **`/* jshint esversion: 6 */`** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.  
 
 Running the code through the validator gives:
-#### For style.js:
-- No errors or warnings are shown. 
+#### For stripe_elements.js:  
+- No errors or warnings are shown.  
 
-#### For stripe_elements.js:
 #### For countryfield.js:
+- No errors or warnings are shown.  
 
 ---
 ### Python  
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
-#### For app.py:
+Due to the large amound of python files, I'll only mention the files with big errors or warnings, leaving out the 
+whitespace or line to long errors.
 Before checking the app.py file, I tried to remove as many mistakes beforehand, such as extra whitespaces, maximum
-code line length of 72, correct line breaks, etc. Nevertheless, there were a lot of issues that I missed.  
-- Several notifications  
-![pep8 python notifications](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/python-pep8.png)  
-After fixing the notifications, I get an All right message.
-![All right message pep8](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/validation/python-pep8-after.png)
+code line length of 72, correct line breaks, etc.  
+- No large errors were found.
 
 ---
 ## Testing browser compatibility
