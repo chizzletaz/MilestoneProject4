@@ -20,10 +20,76 @@ Go to the [README file](https://github.com/chizzletaz/BakeAndBinge/blob/master/R
 ***
 
 ## Testing user stories
-### First time users:
-**1. As a first time user, I want to navigate easily across the website.**
-- The user can navigate the website by using the links in the navbar.  
-![navbar image](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/navbar.png) 
+### Viewing and navigation:
+**1. As a traveler/shopper I want to be able to	view a list of destinations/products so that I can see what is available.**
+- For trip destinations, the user can navigate to the trips page via the landing page:  
+![go to trips page button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-1a.png)  
+or via the navbar:  
+![go to trips page button navbar](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-1b.png)   
+- For products, the user can navigate to the products page via the landing page:  
+![go to shop page button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-1c.png)  
+or via the navbar:  
+![go to shop page button navbar](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-1d.png)  
+- For both trips and products, the user can navigation to the page by clicking the respective link in the footer:  
+![footer links](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-1e.png)
+
+**2. As a traveler/shopper I want to be able to	view individual destinations/products so that I can identify the price, description, product rating and other details.**  
+- To view individual trips and get more information about them, the user can go to the individual page by clicking the 'Read more' button
+on the trips page:  
+![go to trips page button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-2a.png)  
+or via the navbar:  
+![go to trips page button navbar](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-2b.png)  
+There they can get more information about the trip, like description, price, rating, etc.:  
+![trip info](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-2c.png)  
+- To view indivual products, the user can click the respective image on the shop page:  
+![go to product page button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-2d.png)  
+There they can get more information about the product, like description, price, rating, etc.:  
+![product info](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-2e.png)   
+
+**3. As a traveler/shopper I want to be able to	easily find deals so that I can take advantage of special savings on products I’d like to purchase and save money.**   
+- The user can navigate to shop page and then go to the deals by clicking the 'Deals' button:  
+![Deals button shop](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3a.png)  
+- The checkout success page (which is shown after succesfully completing a purchase) has a link that redirects the user to the deals category.  
+![Deals button checkout](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3b.png)
+- A banner is shown at the top of the page with a free delivery promotion.  
+![promotion banner](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3c.png)
+- If the user is warned when they don't meet the promotion limit:  
+![promotion warning](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3d.png)
+![promotion warning](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3e.png)  
+
+**4. As a traveler/shopper I want to be able to	easily view my shopping cart total at any time so that I can avoid spending to much.**  
+- The total amount is shown at the top of the page below the shopping bag icon:  
+![shopping total](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-4a.png)
+
+**5. As a traveler/shopper I want to be able to	find information about Space Travel Agency so that I can learn more about space travel and the company.**  
+- The user can navigate to the about page by clicking the link in the navbar:  
+![about page link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-5a.png)
+or click the link in the footer:  
+![about page link footer](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-5b.png)  
+
+**6. As a traveler/shopper I want to be able to	contact the site owner/company so that I can get answer to my questions or get more information about certain things.**  
+- The user can navigate to the contact page by clicking the link in the navbar:  
+![contact page link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-6a.png)  
+or click the link in the footer:  
+![contact page link footer](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-6b.png)  
+There the user can fill in a contact form:  
+![contact form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-6c.png)
+
+**7. As a traveler/shopper I want to be able to	see reviews on the travels/products so that I can make a better decision which travel/product to buy.**  
+- On the individual trip or product page, the user can scroll down to view reviews:  
+![product review](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-7a.png)   
+
+
+### Viewing and navigation:
+**8. As a traveler/shopper I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
+- When a user is logged in  
+
+
+
+
+**4. As a traveler/shopper I want to be able to	 so that I can .**
+**4. As a traveler/shopper I want to be able to	 so that I can .**
+
 
 ## Manual testing features
 

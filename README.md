@@ -71,7 +71,7 @@ Based on the user stories I’ve deducted the following requirements:
 3. A page where all travels are displayed.
 4. An option to register and login/logout.
 5. Defensive programming, e.g. confirmation on buying, deleting, logging out, etc.
-6. A profile page where registered users can log in, add, edit and personal information.
+6. A profile page where registered users can log in, add and edit personal information.
 7. A shop page.
 8. An about page where users can get more information about the company and/or the trips.
 9. A contact page with contact form where users can contact the site’s owner.
@@ -111,7 +111,7 @@ The navigation is kept simple and consistent:
 The information provided should be easily visible:
 - Visual aids are used, like icons and complementary colours.
 - The amount of information is kept to a minimum.
-- The user gets an indication of which page they are, e.g. by using headers.
+- The user gets an indication on which page they are, e.g. by using headers.
 
 The user is given feedback, in order to enhance a pleasant user experience:
 - The user gets a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
@@ -123,7 +123,7 @@ The user is given feedback, in order to enhance a pleasant user experience:
         FRONTEND  
 The website has 14 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
-The main navigation bar has links to home, trips, shop, about, account, shopping basket and search.
+The main navigation bar has links to home, trips, shop, about, contact, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
 When the user is admin, an extra link for site managing is shown.  
 
@@ -174,13 +174,13 @@ see an overview of their orders (with a link to that order) and any reviews they
 
 - **The product management page:**  
 On this page, the admin can add a new product or trip by filling in the form. After submitting the admin 
-is redirected the individual page of the added product/trip.
+is redirected to the individual page of the added product/trip.
 
 - **The edit product page:**  
-On this page, the admin can edit an existing product or trip by editing the pre filled form. After submitting the admin is redirected the individual page of the added product/trip.
+On this page, the admin can edit an existing product or trip by editing the pre filled form. After submitting the admin is redirected to the individual page of the added product/trip.
  
 - **The shopping bag page:**  
-This page contains all the items the user has put in their shopping bag. It has an overview of the product/trip, the amount the price, the subtotal and the grand total. There is a button go back to the shop page and a button
+This page contains all the items the user has put in their shopping bag. It has an overview of the product/trip, the amount, the price, the subtotal and the grand total. There is a button to go back to the shop page and a button
 to go to the checkout page.
 
 - **The checkout page:**  
@@ -776,5 +776,5 @@ To achieve this follow these steps:
 
 ---
 # Acknowledgements
-I want to give special thanks my mentor Antonio Rodriguez for  and guiding me through this project and helping me solve some of the challenges I faced.  
+I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project. For patience when helping me solve some of the challenges I faced.  
 I want to thank Tutor support at CI and my fellow Slack members for answering my questions.
