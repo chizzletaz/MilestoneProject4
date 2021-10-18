@@ -49,6 +49,9 @@ or via the navbar:
 **3. As a traveler/shopper I want to be able to	easily find deals so that I can take advantage of special savings on products I’d like to purchase and save money.**   
 - The user can navigate to shop page and then go to the deals by clicking the 'Deals' button:  
 ![Deals button shop](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3a.png)  
+For large screens.  
+![Deals button shop](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3f.png)  
+For small screens
 - The checkout success page (which is shown after succesfully completing a purchase) has a link that redirects the user to the deals category.  
 ![Deals button checkout](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-3b.png)
 - A banner is shown at the top of the page with a free delivery promotion.  
@@ -63,7 +66,7 @@ or via the navbar:
 
 **5. As a traveler/shopper I want to be able to	find information about Space Travel Agency so that I can learn more about space travel and the company.**  
 - The user can navigate to the about page by clicking the link in the navbar:  
-![about page link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-5a.png)
+![about page link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-5a.png)  
 or click the link in the footer:  
 ![about page link footer](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-5b.png)  
 
@@ -80,8 +83,8 @@ or click the link in the footer:
 ![product review](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-7a.png)   
 
 
-### Viewing and navigation:
-**8. As a traveler/shopper I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
+### Registration and User Accounts:
+**8. As a user I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
 - When a user is logged in they can go to an product or trip page and click the 'Write Review' button. A form will appear where they can add their review.  
 ![add review form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-8a.png)  
 - When a user is logged in and the review is theirs, an edit button and a delete icon is shown on their review:  
@@ -91,49 +94,65 @@ or click the link in the footer:
 - If they click the delete icon a modal pops up to confirm if they want to delete their review:  
 ![delete review confirmation](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-8d.png)  
 
-
-**9. As a traveler/shopper I want to be able to	easily register for an account so that I can have a personal account and be able to view my profile.**  
+**9. As a user I want to be able to	easily register for an account so that I can have a personal account and be able to view my profile.**  
 - A user can click the 'MY ACCOUNT' navlink and then click 'SIGN UP' to register for an account (See #13 for the user profile page):  
 ![sign up link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-9a.png)  
 - There the user can fill in the sign up form:  
 ![sign up form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-9b.png) 
 
-
-**10. As a traveler/shopper I want to be able to easily login or logout so that I can access my account and personal account information.**  
+**10. As a user I want to be able to easily login or logout so that I can access my account and personal account information.**  
 - A user can click the 'MY ACCOUNT' navlink and then click 'SIGN IN' to sign in:  
 ![sign in link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-10a.png)  
 - When a user is logged in, they can click the 'MY ACCOUNT' navlink and click on 'LOG OUT':  
 ![sign out link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-10b.png)  
 
-
-**11. As a traveler/shopper I want to be able to easily reset my password in case I forget it so that I can recover access to my account when I forget my password.**  
+**11. As a user I want to be able to easily reset my password in case I forget it so that I can recover access to my account when I forget my password.**  
 - On the sign in page (see above) there is a 'Forgot Password?' link:  
 ![forgot password link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-11a.png)  
 - After clicking the link, the user will be redirected to a password recover page, where they can fill in the form to reset their password:  
 ![reset password form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-11b.png) 
 
-**12. As a traveler/shopper I want to be able to receive an email confirmation after registering so that I can confirm that my account registration was successful.**  
-- After registration (and confirmation) the allauth of Django will send a confirmation email to the address that is given.  
-![confirmation email](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-12a.png)  
+**12. As a user I want to be able to receive some kind of confirmation after registering so that I can confirm that my account registration was successful.**  
+- After registration a confirmation email is sent to the address that is given.  
+![confirmation email](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-12a.png) 
+![confirmation email header](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-12b.png)   
+![confirmation email message](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-12c.png)    
 
-**13. As a traveler/shopper I want to be able to	 so that I can .**
-**14. As a traveler/shopper I want to be able to	 so that I can .**
-**15. As a traveler/shopper I want to be able to	 so that I can .**
-**16. As a traveler/shopper I want to be able to	 so that I can .**
-**17. As a traveler/shopper I want to be able to	 so that I can .**
-**18. As a traveler/shopper I want to be able to	 so that I can .**
+**13. As a user I want to be able to have a personalised user profile so that I can view my personal order history and update my personal account information and see my reviews.**  
+- When a user is logged in, they can click on 'MY ACCOUNT' and then on 'my profile' to go to their personal profile page:  
+![profile page link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-13a.png)  
+- On that page they have an overview of their delivery information, order history and reviews:  
+![profile page overview](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-13b.png)   
+For large screens   
+![profile page overview](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-13c.png)  
+For smaller screens the order history and reviews are in accordeons.  
+- The user can update their delivery information by editing the form. Or they can go to the product they reviewed by clicking the 'Go to product' button.  
+
+### Sorting and Searching:
+**14. As a shopper I want to be able to	sort products by category so that I can narrow down my search.**  
+- On the shop page the user can sort product by category, by clicking the relevant button for large screens.  
+![sort category large screen](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-14a.png)
+- For smaller screens the user can sort by category by selecting the relevant category from the dropdown button.  
+![sort category small screen](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-14b.png) 
+
+**15. As a shopper I want to be able to	 so that I can .**
+**16. As a shopper I want to be able to	 so that I can .**
+**17. As a shopper I want to be able to	 so that I can .**
+**18. As a shopper I want to be able to	 so that I can .**
+
+### Purchasing and Checkout:
 **19. As a traveler/shopper I want to be able to	 so that I can .**
 **20. As a traveler/shopper I want to be able to	 so that I can .**
 **21. As a traveler/shopper I want to be able to	 so that I can .**
 **22. As a traveler/shopper I want to be able to	 so that I can .**
 **23. As a traveler/shopper I want to be able to	 so that I can .**
 **24. As a traveler/shopper I want to be able to	 so that I can .**
+
+### Admin and Store Management:
 **25. As a traveler/shopper I want to be able to	 so that I can .**
 **26. As a traveler/shopper I want to be able to	 so that I can .**
 **27. As a traveler/shopper I want to be able to	 so that I can .**
 **28. As a traveler/shopper I want to be able to	 so that I can .**
-**29. As a traveler/shopper I want to be able to	 so that I can .**
-**30. As a traveler/shopper I want to be able to	 so that I can .**
 
 
 ## Manual testing features
