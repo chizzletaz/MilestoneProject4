@@ -11,16 +11,16 @@
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
-<form class="signup pt-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
+<form class="signup py-3" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
   {{ form|crispy }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <div class="d-flex justify-content-end gap-4 mb-3">
-  <a class="btn btn-outline-light rounded-0 btn-lg" href="{% url 'account_login' %}">Back to Login</a>
-  <button type="submit">{% trans "Sign Up" %}</button>
+  <div class="d-flex justify-content-end gap-4 py-3">
+    <a class="btn btn-outline-light rounded-0 btn-lg" href="{% url 'account_login' %}">Back to Login</a>
+    <button type="submit">{% trans "Sign Up" %}</button>
   </div>
 </form>
-
+<hr>
 {% endblock %}

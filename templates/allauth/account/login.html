@@ -36,7 +36,7 @@
 </p>
 {% endif %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
+<form class="login py-3" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
   {% if redirect_field_value %}
@@ -50,5 +50,5 @@
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
-
+<hr>
 {% endblock %}
