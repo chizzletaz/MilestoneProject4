@@ -28,6 +28,11 @@
                 {{ field | as_crispy_field }}
                 {% endfor %}
                 <div class="d-flex justify-content-end gap-4 mb-3">
+                    {% if review.product.price > 9000 %}
+                        <a href="{% url 'trip_detail' review.product.id %}" class="btn btn-outline-light rounded-0">Cancel</a>
+                    {% else %}
+                        <a href="{% url 'product_detail' review.product.id %}" class="btn btn-outline-light rounded-0">Cancel</a>
+                    {% endif %}
                     <button class="btn btn-light rounded-0" type="submit">Submit</button>
                 </div>
             </form>
