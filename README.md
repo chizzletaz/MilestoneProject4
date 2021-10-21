@@ -200,15 +200,11 @@ This page is shown in case no page is found.
 This page is shown in case of an internal service error.
 
 
-Below is a chart of the webpages and their mutual connections:  
-![pages chart]()
-
         BACKEND 
 During development the Sqlite3 database is used. This is the default database used by Django.
 During production PostgreSQL is used in conjunction with deployment on Heroku.
 
-Explanation of the models used?
-Chart of the models used.
+Chart of the database models used.
 
 
 ## **Skeleton Level**
@@ -249,57 +245,56 @@ For all the text I've used Rubik, a sans serif font.
 > ![example of Rubik script text](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/rubik.png) 
 ---
 # **Features**
-# TO BE EDITED
 ## **Existing Features**
 
 - **Responsiveness** on all viewports, which allows users to use the website on all devices.
-- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
-- A **subscription option**, which allows users to subscribe to the newsletter, by entering their email address in the subscribe card. 
-
-- **Recipe cards**, which allow users to see information about a recipe. By clicking on the recipe, the user is redirected to the recipe page.
+- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, part of the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
 - **Register functionality**, which allows users to create an account, by filling in the register form. 
 - **Login functionality**, which allows users to log in their account, by filling in the login form. 
 - **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
-- A **CTA (Call to Action button) button**, which allows users to register to the website (incase they don't have an account yet).
-- A **search bar**, which allows users to search recipes, by entering a keyword into the search bar.
-- **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.
+- A **search bar**, which allows users to search products, by entering a keyword into the search bar.
+- **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.  
+- **Sort select box**, which allow users to sort items by price, rating, name and category.  
+- **Indication of special offers/deal**, which allow users to find deals or get special offers.
 - **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
-- A **collapsible**, which allows users to get more information about a product on the shop page, by clicking on the three dots icon.
-
-**Modals** 
-- A modal for how to add a recipe, which gives users information on how to add a new recipe.
-- A confirmation modal as a defensive programming tool, which allows users to confirm to delete a recipe or category (in case of admin) or to log out.
+- **Strip functionality**, which allow users to safely pay by credit card.
+- A confirmation **modal** as a defensive programming tool, which allows users to confirm to delete their review and 
+admin to delete a product or trip.
 
 **Icons**
 - Social media icons, which allow users to go to the corresponding social platform, by clicking on the social icon.
-- Icons as a visual aid, which allow users to quickly and intuitively see what is meant. E.g. a cross-icon to signify a delete function, a plus-icon to signify to add a recipe or category or an @-icon to enter an email address.
+- Icons as a visual aid, which allow users to quickly and intuitively see what is meant. 
 
-**Forms**
-- A form that allows users to get in contact with the website owner, by filling in the form.
-- A form that allows users to add a new recipe, by filling in the form on the add-recipe page.
-- A form that allows users to edit a recipe, by editing the prefilled recipe form on the edit-recipe page.
-- A form that allows the admin to add a new category, by filling in the form on the add-category page.
-- A form that allows the admin to edit a category, by editing the prefilled form on the edit-category page.
+**Forms**  
+- A form that allows users to register for an account, by filling in the sign up form on the signup page.
+- A form that allows users to log in to the site, by filling in the log in form on the signin page.
+- A form that allows users to get in contact with the website owner, by filling in the contact form on the contact page.
+- A form that allows users to edit their delivery information, by filling out/editing the default delivery information form on their profile page.
+- A form that allows users to add a review for a product/trip by filling in the add review form on the individual product page.  
+- A form the allows users to edit their review for a product/trip by filling in the edit review form on the edit review page.
+- A form that allows the admin to add a new product/trip, by filling in the form on the product management page.
+- A form that allows the admin to edit a category, by editing the prefilled form on the edit product page.
 
 **CRUD (Create, Read, Update, Delete) functionality**  
 *Create:*  
 - Admin can create new trips and products.  
+- Users can create a review for a product/trip.
 
 *Read:*  
 - All users can search and view trips and products.  
 
 *Update:*
-- Admin can edit trips and products.
+- Admin can edit trips and products.  
+- Users can edit their own review.
 
 *Delete:*
-- Admin can delete trips and products.
+- Admin can delete trips and products.  
+- Users can delete their own review.
 
 ## **Features left to implement**
-- **Rating/liking products and trips** by users.
 - **Sharing option** via social media, email or other ways of communication.
 - A **favourite option**, so users can save their favourite trips andor products on their profile page.
 - **Deleting a profile**, when a user doesn't want to use the account anymore.
-- **Pagination**, in case the number of recipes gets too large. It would be more user friendly to have pagination.
 ---
 # **Technologies used**
 
@@ -561,7 +556,7 @@ Committing to GitHub is done as follow:
             - Click the group name.
             - Click the 'Permissions' tab.
             - Click 'Add permission', then click 'Attach Policies'.  
-            !['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group-policy.png)
+            !['Attach Policies'](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/iam-group-permission.png)
             - Search for the policy that you created above, select it.
             - Click 'Attach policy'.
         - Create a user to put in the group
