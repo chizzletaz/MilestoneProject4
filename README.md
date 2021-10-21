@@ -257,8 +257,8 @@ For all the text I've used Rubik, a sans serif font.
 - **Sort select box**, which allow users to sort items by price, rating, name and category.  
 - **Indication of special offers/deal**, which allow users to find deals or get special offers.
 - **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
-- **Strip functionality**, which allow users to safely pay by credit card.
-- A confirmation **modal** as a defensive programming tool, which allows users to confirm to delete their review and 
+- **Stripe functionality**, which allow users to safely pay by credit card.
+- A **confirmation modal** as a defensive programming tool, which allows users to confirm to delete their review and 
 admin to delete a product or trip.
 
 **Icons**
@@ -273,7 +273,7 @@ admin to delete a product or trip.
 - A form that allows users to add a review for a product/trip by filling in the add review form on the individual product page.  
 - A form the allows users to edit their review for a product/trip by filling in the edit review form on the edit review page.
 - A form that allows the admin to add a new product/trip, by filling in the form on the product management page.
-- A form that allows the admin to edit a category, by editing the prefilled form on the edit product page.
+- A form that allows the admin to edit a product/trip, by editing the prefilled form on the product management page.
 
 **CRUD (Create, Read, Update, Delete) functionality**  
 *Create:*  

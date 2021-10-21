@@ -20,8 +20,8 @@ def contact(request):
             message = request.POST['message']
             subject = ('We have receiced your message with subject: ' +
                        request.POST['subject'])
-            body = render_to_string('contact/confirmation_emails/\
-                customer_confirmation_email.txt',
+            body = render_to_string('contact/confirmation_emails/' +
+                'customer_confirmation_email.txt',
                                     {'full_name': full_name,
                                         'subject': subject,
                                         'message': message,

@@ -202,7 +202,7 @@ or by clicking on the 'delete' button on the individual product/trip page.
 See [below](#testing_responsiveness) for responsive testing.
 **Register functionality**  
 Expected:   
-The user can register to the website by filling in the sign up form correctly.
+A user can register to the website by filling in the sign up form correctly.
 
 Testing:
 1. Go to the signup page by clicking 'my account' and then on 'signup' in the navbar.
@@ -225,11 +225,11 @@ Testing:
 18. Confirm that the message 'A user is already registered with this e-mail address.' appears.
 
 Result:  
-The user can register to the website by filling in the register form correctly.
+A user can register to the website by filling in the register form correctly.
 
 **Login functionality**  
 Expected:   
-The user can log in to the website by filling in the login form correctly.
+A user can log in to the website by filling in the login form correctly.
 
 Testing:
 1. Go to the sign in page by clicking 'my account' and then on 'signin' in the navbar.
@@ -246,11 +246,11 @@ Testing:
 12. Confirm a success toast appears with the text 'Successfully signed in as Y.' (Y is your username).
 
 Result:  
-The user can log in to the website by filling in the login form correctly.
+A user can log in to the website by filling in the login form correctly.
 
 **Logout functionality**  
 Expected:   
-The user is logged out when they click on the logout link in the navbar.
+A user is logged out when they click on the logout link in the navbar.
 
 Testing:
 1. Log in.
@@ -264,11 +264,11 @@ Testing:
 9. Confirm you are logged out from the website and a success toast message 'You have signed out.' appears.
 
 Result:  
-The user is logged out when they click on the logout link in the navbar.  
+A user is logged out when they click on the logout link in the navbar.  
 
 **Search bar**  
 Expected:  
-The user can go to the search bar and search products by keyword (name or description).
+A user can go to the search bar and search products by keyword (name or description).
 
 Testing:
 1. On any page, click the search icon at the top of the page.
@@ -283,7 +283,261 @@ Testing:
 10. Confirm that you are redirected to the shop page the message '0 Products found for "banana"' is displayed and no products are shown.  
 
 Result:  
-The user can go to the search bar and search products by keyword (name or description).
+A user can go to the search bar and search products by keyword (name or description).  
+
+**Category buttons**  
+Expected:  
+A user can use the category buttons on the products page to display the products by category.
+
+Testing:
+1. Go to the products page and click on the 'Accessories' button if you're using a large screen or select 'Accessories' from the dropdown button if you're using a small screen.
+2. Confirm that only products with category 'Accessories' are displayed.
+3. Repeat steps 1 and 2 for the other categories.
+4. Click on the 'All Products' button.
+5. Confirm that all recipes are displayed.
+
+Result:  
+A user can use the category buttons on the products page to display the products by category.
+
+**Sort select box**
+Expected:  
+A user can use the sort button on the products page sort products by price, rating, name or category, both ascending and descending.
+
+Testing:
+1. Go to the products page and select 'Price (low to high)' from the 'sort by' dropdown button.
+2. Confirm that all products are displayed lowest price first.
+3. Select 'Price (high to low)' from the 'sort by' dropdown button.
+4. Confirm the all products are displayed highest price first.
+5. Repeat steps 1 to 4 for the rating, name and category.
+
+Result:  
+A user can use the sort button on the products page sort products by price, rating, name or category, both ascending and descending.
+
+**Indication of special offers/deal**  
+Expected:  
+A user can see special offers and is reminded to get that offer during shopping.
+
+Testing:  
+1. Go to any page and confirm that at the top of the page a banner is shown with the text 'FREE DELIVERY ON ORDERS OVER $50!'.  
+2. Go to the shop page, click the image of 'Manta Sleep Mask' to go to that product page.  
+3. Click 'Add to bag'.
+4. Confirm that the success toast message has the text 'Spend $10.01 more to get free delivery!' at the bottom.  
+5. Click on 'Go to secure checkout'.
+6. Confirm that the text 'You could get free delivery by spending just $10.01 more!' appears above the 'secure checkout' button.
+
+Result:  
+A user can see special offers and is reminded to get that offer during shopping.  
+
+**Error handler pages**
+Expected:  
+A user gets a error 404 page when a page can't be displayed and can get back by clicking a button.
+
+Testing:
+1. Go to any page.
+2. In the browser's address bar, remove or add one or more characters at the end and press enter.
+3. Confirm a message '404 page not found' is shown.
+4. Confirm there is a button 'Go back home' at the bottom of the page.
+5. Click the button and confirm you are redirected to the home page of the website.
+
+Result:  
+A user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
+
+**Stripe functionality**  
+Expected:  
+When a user buys a product, the Stripe payment process is secure and working.  
+
+Testing:  
+1. Go to the shop page and select a product and click 'add to bag'. 
+2. Click the 'go to secure checkout' button and then the 'secure checkout' button.
+3. Fill in the delivery information form.
+4. For the credit card payment information use 4242 4242 4242 4242, any date in the future, any cvc number and any postcode and click 'complete order'.  
+5. Confirm you are redirected to the checkout succes page with an overview of your order.
+6. Confirm a success toast message appears with the text 'Order successfully processed! Your order number is #. A confirmation email will be sent to X. Where # = the ordernumber and X your email address. 
+7. Check your email inbox and confirm you have received an email confirmation.
+8. Log in to your stripe account, go to 'Payments' and confirm the payment was succesfull.
+9. Log in to the django admin of the site, go to Orders and confirm the order was created.
+10. Repeat steps 1 to 4 but use 4000 0000 0000 3220 for the credit card payment information.
+11. Confirm a 3D Secure 2 authentication message pops up.
+12. Click 'Fail' and confirm that you are redirected to the checkout page and a message appears with the text 'We cannot verify your payment method. Please select another payment method and try again.'.
+13. Repeat steps 10 and 11 and click 'Confirm' after step 4.
+14. Confirm you can repeat steps 5 to 9.
+15. Repeat steps 1 to 4, but use 4000 0000 0000 9995 for the credit card payment information.
+16. Confirm the payment has failed and a message appears stating that your card has insufficient funds. 
+
+Result:  
+When a user buys a product, the Stripe payment process is secure and working.
+>Note: for extensive testing of Stripe see their guide on [testing](https://stripe.com/docs/testing)
+
+**Confirmation modal**  
+Expected:  
+A modal asking the user to confirm their action pops up, when the user clicks a 'delete' button.
+
+Testing:
+1. Log in as admin.
+2. Go to the shop page and select any product.
+3. Click the 'Delete Product' button.
+4. Confirm a modal pops up that asks 'Are you sure you want to delete this product?'.
+5. Click 'no'.
+
+Result:  
+A modal asking the user to confirm their action pops up, when the user clicks a 'delete' button.
+
+> For confirmation modal of delete review, see below CRUD - User - Delete review.
+
+**Social icons**  
+Expected:  
+The user is redirected to the respective social media page, when they click on a social media icon.
+
+Testing:
+1. Go to the footer of any page.
+2. Click on a social media icon.
+3. Confirm you are redirected to that social media page.
+4. Confirm that the page is opened in a new window.
+5. Repeat steps 2, 3 and 4 for the other icons.
+
+Result:  
+The user is redirected to the respective social media page, when they click on a social media icon.
+
+**Contact form**  
+Expected:  
+The user can send the site owner a message by filling in the contact form.
+
+Testing:
+1. Go to the contact page by clicking on 'About' and then on the 'contact' link in the navbar.
+2. Confirm you are redirected to the contact page.
+3. Don't fill in the contact form and click 'Send'.
+4. Confirm that a warning message appears.
+5. Fill in the contact form except for the full name and click the 'Send' button.
+6. Confirm that a warning message appears.
+7. Repeat steps 5 and 6 for the email address, subject and message inputs.
+8. Fill in the complete contact form and click the 'Send' button.
+9. Confirm that a success toast appears with the message 'Your message was sent successfully!'.
+10. Go to your email inbox and confirm a confirmation email was sent to your email address.
+11. Log in to the django admin of the site, go to Received contact forms and confirm the contact form was created.
+
+Result:  
+The user can send the site owner a message by filling in the contact form.
+
+#### CRUD (Create, Read, Update, Delete) functionality.
+> User:
+**Add Review**  
+Expected:  
+A new review is added when the user fills in the add review form.
+
+Testing:
+1. Log in and go to the shop page.
+2. Select any product and scroll down to Reviews.
+3. Click on the 'Write a review' button.
+4. Confirm a add review form is shown.
+5. Don't fill out the review form and click the 'Submit' button.
+6. Confirm a warning message appears.
+7. Fill in the review form, except the review title.
+8. Confirm a warning message appears.
+9. Repeat steps 6 and 7 for comment and rating.
+10. Fill in the review form and the click the 'Submit' button.
+11. Confirm that a succes toast message appears with the text 'Review succesfully added!'
+12. Confirm you stay at the product page.
+13. Scroll down and confirm that your review is added to the Reviews.
+
+Result:  
+A new recipe is added when the user fills in the add review form.
+
+**Edit review**  
+Expected:  
+An existing review is edited when the user fills in the edit review form.
+
+Testing:
+1. Log in.
+2. Go to your profile page, go to 'My Reviews' and click the 'Go to Product' button.
+3. Confirm you are redirected to the product page and scroll down to Reviews.
+4. Confirm that your review has an 'Edit Review' button.
+5. Click the 'Edit Review' button and confirm you are redirected to the edit review page.
+6. Confirm the form is prefilled with the data of the existing review.
+7. Change any of the input fields.
+8. Click the 'Edit Review' button.
+9. Confirm that a succes toast message appears with the text 'Your review is edited successfully!'
+10. Confirm you are redirected to the product page.
+11. Scroll down to Reviews and confirm that your change is shown in the review.
+
+Result:  
+An existing review is edited when the user fills in the edit review form.
+
+**Delete review**  
+Expected:  
+A review is deleted when the user clicks on the 'DELETE' icon of a review.
+
+Testing:
+1. Log in.
+2. Go to your profile page, go to 'My Reviews' and click the 'Go to Product' button.
+3. Confirm you are redirected to the product page and scroll down to Reviews.
+4. Confirm that your review has a 'Delete' icon.
+3. Click the 'delete' icon and confirm a modal pops up with the message 'Are you sure you want to delete this review?'
+4. Click 'Delete'.
+5. Confirm that a succes toast message appears with the text 'Your review has been deleted.'
+6. Confirm you stay at the product page.
+7. Scroll down to Reviews and confirm the review is deleted.
+
+Result:  
+A review is deleted when the user clicks on the 'DELETE' icon of a review.
+
+> Admin
+**Add Product/trip**  
+Expected:  
+A new product/trip is added when the admin fills in the add product form.
+
+Testing:
+1. Log in as admin.
+2. Click on 'my account' and then on the 'product management' link in the navbar.
+3. Confirm you are redirected to the product management page.
+4. Don't fill out the form and click the 'Add Product' button.
+5. Confirm a warning message appears.
+6. Fill in the form, except the name field.
+7. Confirm a warning message appears.
+8. Repeat steps 6 and 7 for the other fields that are required.
+9. Fill in the review form and the click the 'Add Product' button.
+10. Confirm that a succes toast message appears with the text 'Successfully added product!'
+11. Confirm you are redirected to the product page and the product is added.
+
+Result:  
+A new product/trip is added when the admin fills in the add product form.
+
+**Edit product/trip**  
+Expected:  
+An existing product/trip is edited when the admin fills in the edit product form.
+
+Testing:
+1. Log in as admin.
+2. Go to your shop page and select any product.
+3. Confirm you are redirected to the product page.
+4. Confirm there is an 'Edit Product' button.
+5. Click the 'Edit Review' button and confirm you are redirected to the product management page.
+6. Confirm the form is prefilled with the data of the existing product.
+7. Change any of the input fields.
+8. Click the 'Edit Product' button.
+9. Confirm that a succes toast message appears with the text 'Successfully updated product!'
+10. Confirm you are redirected to the product page.
+11. Confirm that your change is shown on the product page. 
+
+Result:  
+An existing product/trip is edited when the admin fills in the edit product form.
+
+**Delete product/trip**  
+Expected:  
+A product/trip is deleted when the user clicks on the 'DELETE' button of a product/trip.
+
+Testing:
+1. Log in as admin.
+2. Go to your shop page and select any product.
+3. Click the 'DELETE' button of one of your categories (tip: create a new test product first.).
+4. Confirm a modal pops up with the message 'Are you sure you want to delete this category?'
+5. Click 'YES'.
+6. Confirm that a succes toast message appears with the text 'Product deleted!'
+7. Confirm you are redirected to the products page.
+8. Confirm the product is deleted.
+
+Result:  
+A product/trip is deleted when the user clicks on the 'DELETE' button of a product/trip.  
+
 ---
 ## Code validation
 ### HTML
