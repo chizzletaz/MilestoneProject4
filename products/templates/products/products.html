@@ -91,6 +91,7 @@
 
     <!-- Pagination top -->
     <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+    {% if products %}
     <nav aria-label="Page navigation example" class="py-3">
         <ul class="pagination justify-content-center text-center">
             {% if products.has_previous %}
@@ -130,6 +131,7 @@
             {% endif %}
         </ul>
     </nav>
+    {% endif %}
     <!-- end of pagination top -->
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 text-off-black mb-5">
@@ -202,6 +204,7 @@
     </div>
     <!-- Pagination bottom-->
     <!-- Credit: Vitor Freitas @ https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html -->
+    {% if products %}
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center text-center">
             {% if products.has_previous %}
@@ -241,6 +244,7 @@
             {% endif %}
         </ul>
     </nav>
+    {% endif %}
     <!-- end of pagination bottom -->
 </div>
 
