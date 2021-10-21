@@ -39,11 +39,11 @@
                 </div>
                 <div class="carousel-inner">
                     {% for product in products %}
-                    {% if forloop.counter == 1 %}
-                    <div class="carousel-item active mx-3 pb-2" data-bs-interval="5000">
+                        {% if forloop.counter == 1 %}
+                        <div class="carousel-item active ps-2 pb-2" data-bs-interval="5000">
                         {% else %}
-                        <div class="carousel-item mx-3 pb-2" data-bs-interval="5000">
-                            {% endif %}
+                        <div class="carousel-item ps-2 pb-2" data-bs-interval="5000">
+                        {% endif %}
                             <div class="card h-100 rounded-0">
                                 <div class="row g-0">
                                     <div class="col-5 offset-1 my-3">
@@ -71,13 +71,13 @@
                                                     <p class="small my-2">
                                                         <a class="text-muted"
                                                             href="{% url 'products' %}?category={{ product.category.name }}">
-                                                            <i class="fas fa-tag mr-1"></i>{{
-                                                            product.category.friendly_name }}
+                                                            <i class="fas fa-tag mr-1"></i>
+                                                            {{ product.category.friendly_name }}
                                                         </a>
                                                     </p>
                                                     {% if product.rating %}
-                                                    <small class="text-muted"><i class="fas fa-star"></i> {{
-                                                        product.rating }} /
+                                                    <small class="text-muted"><i class="fas fa-star"></i> 
+                                                        {{ product.rating }} /
                                                         5</small>
                                                     {% else %}
                                                     <small class="text-muted">No Rating</small>
