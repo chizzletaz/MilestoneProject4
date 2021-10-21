@@ -1,13 +1,13 @@
-Go to the [README file](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README.md)
+Go back to the [README file](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README.md)
 
 # **Testing**
 ## Table of Contents
 - [Testing User stories](#testing-user-stories)  
-    * [First time users](#first-time-users)
-    * [General users](#general-users)
-    * [Regular users](#regular-users)
-- [Testing Developer stories](#developer-stories)
-    * [Admin/site owner](#adminsite-owner)
+    * [Viewing and navigation](#viewing_and_navigation)
+    * [Registration and User Accounts](#registration_and_user_accounts)
+    * [Sorting and Searching](#sorting_and_searching)
+    * [Purchasing and Checkout](#purchasing_and_checkout)
+    * [Admin and Store Management](#admin_and_store_management)
 - [Manual testing features](#manual-testing-features)
 - [Code Validation](#code-validation)  
     * [HTML](#html)
@@ -78,7 +78,7 @@ or click the link in the footer:
 - There the user can fill in a contact form:  
 ![contact form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-6c.png)
 
-**7. As a traveler/shopper I want to be able to	see reviews on the travels/products so that I can make a better decision which travel/product to buy.**  
+**7. As a traveler/shopper I want to be able to	see reviews on the trips/products so that I can make a better decision which trip/product to buy.**  
 - On the individual trip or product page, the user can scroll down to view reviews:  
 ![product review](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-7a.png)   
 
@@ -150,14 +150,14 @@ For smaller screens the order history and reviews are in accordeons.
 ### Purchasing and Checkout:  
 **18. As a traveler/shopper I want to be able to view items and their details in my shopping bag so that I can see what I will purchase and what the total cost is.**  
 - After a user has enter an item in their shopping bag, they can click on the 'GO TO SECURE CHECKOUT' button in the toast card     
-![checkout succes button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-18a.png) 
+![checkout succes button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-18a.png)   
 or click on the shopping bag icon at the top of the page, to go to their shopping bag.  
 ![shopping bag icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-18b.png) 
 - On the shopping bag page the details of the items are shown, including the total cost.  
 ![shopping bag overview](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-18c.png) 
 
 **19. As a traveler/shopper I want to be able to update items in my bag so that I can easily make changes to my purchase before checkout.**  
-- On the shopping bag page each item has an option to change the quantity. This is done by clicking the + or - buttons and then click 'update'. 
+- On the shopping bag page each item has an option to change the quantity. This is done by clicking the + or - buttons and then click 'update'.   
 ![update quantity buttons](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-19a.png) 
 - The user also has the option to delete an item. This is done by clicking the bin icon and then confirm the delete in the modal popup.  
 
@@ -176,13 +176,13 @@ or click on the shopping bag icon at the top of the page, to go to their shoppin
 ![order confirmation email](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-22a.png)  
 
 ### Admin and Store Management:  
-**23. As an admin I want to be able to add a travel/product so that I can add new items to my store.**  
+**23. As an admin I want to be able to add a trip/product so that I can add new items to my store.**  
 - When logged in, the admin can go the the 'product management' page by clicking 'my account' and then 'product management' in the navbar.  
 ![product management link](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-23a.png)  
 - The product management page has a form where the admin can add new products/trips.  
 ![add product/trip form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-23b.png)  
 
-**24. As an admin I want to be able to edit/update a travel/product so that I can change and update my products.**  
+**24. As an admin I want to be able to edit/update a trip/product so that I can change and update my products.**  
 - The admin can go to the edit product/trip page by clicking the 'edit' button of the item they want to edit on the shop page:  
 ![edit product/trip button shop page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-24a.png)  
 or on the 'edit' button on the indivual product/trip page.  
@@ -190,7 +190,7 @@ or on the 'edit' button on the indivual product/trip page.
 - The edit product page has a prefilled form where the admin can edit the product/trip.  
 ![edit product/trip form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-24c.png)  
 
-**25. As an admin I want to be able to delete a travel/product so that I can remove items that are no longer for sale.**  
+**25. As an admin I want to be able to delete a trip/product so that I can remove items that are no longer for sale.**  
 - The admin can delete product/trip by clicking the 'delete' button of the item they want to delete on the shop page  
 ![add product/trip form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-25a.png)  
 or by clicking on the 'delete' button on the individual product/trip page.  
@@ -198,8 +198,9 @@ or by clicking on the 'delete' button on the individual product/trip page.
 
 
 ## Manual testing features
-**Responsiveness** 
-See [below](#testing_responsiveness) for responsive testing.
+**Responsiveness**   
+See [below](#testing_responsiveness) for responsive testing.  
+
 **Register functionality**  
 Expected:   
 A user can register to the website by filling in the sign up form correctly.
@@ -299,7 +300,7 @@ Testing:
 Result:  
 A user can use the category buttons on the products page to display the products by category.
 
-**Sort select box**
+**Sort select box**  
 Expected:  
 A user can use the sort button on the products page sort products by price, rating, name or category, both ascending and descending.
 
@@ -328,7 +329,7 @@ Testing:
 Result:  
 A user can see special offers and is reminded to get that offer during shopping.  
 
-**Error handler pages**
+**Error handler pages**  
 Expected:  
 A user gets a error 404 page when a page can't be displayed and can get back by clicking a button.
 
@@ -419,7 +420,7 @@ Result:
 The user can send the site owner a message by filling in the contact form.
 
 #### CRUD (Create, Read, Update, Delete) functionality.
-> User:
+> User:  
 **Add Review**  
 Expected:  
 A new review is added when the user fills in the add review form.
@@ -480,7 +481,7 @@ Testing:
 Result:  
 A review is deleted when the user clicks on the 'DELETE' icon of a review.
 
-> Admin
+> Admin  
 **Add Product/trip**  
 Expected:  
 A new product/trip is added when the admin fills in the add product form.
@@ -769,9 +770,9 @@ To test the responsiveness of the  website, I've used Chrome Dev Tools by:
 - right clicking on the page
 - click inspect 
 - click toggle device toolbar  
-![toggle device toolbar button](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/toggle-device-toolbar.png)  
+![toggle device toolbar button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/toggle-device-toolbar.png)  
 - select the different devices.  
-![responsive choices](https://github.com/chizzletaz/BakeAndBinge/blob/master/README/images/responsive.png)
+![responsive choices](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/responsive.png)
 
 The testing was done on widths down to a screen resolution of 280px.  
 All the elements on each page were checked.  
@@ -1045,6 +1046,3 @@ template_name = ('products/' +
         'custom_widget_templates/custom_clearable_file_input.html')
 ```  
 The page works again.  
-
----
-

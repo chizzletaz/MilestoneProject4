@@ -52,7 +52,7 @@ I’ve always been interested in space and inspired by the recent space flights 
 Users can choose from various destinations: a trip around the earth, a space walk, a trip to a space hotel, a trip, to the International Space Station, a trip around the moon and a trip to mars.
 Users can create an account to safe their orders and travel details.
 
-The target audience are people that want to go to outer space, who want to want to travel outside of earth, experience traveling in space or feeling weightlessness. 
+The target audience are people that want to go to outer space, experience traveling in space or feeling weightlessness. 
 These can be first time users, people who have never been to space and want to experience this. Or returning users, for instance people who have been to space and want to go a step further.
 
 The primary goal is to provide an intuitive, interactive web app, which provides users with a platform to book a space trip. 
@@ -66,21 +66,21 @@ See [userstories](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/READ
 Based on the user stories I’ve deducted the following requirements:
 
 #### **Requirements**
-1. A home page with navbar and CTA.
+1. A home page with navbar and footer.
 2. A responsive design.
-3. A page where all travels are displayed.
+3. A page where all trips are displayed.
 4. An option to register and login/logout.
 5. Defensive programming, e.g. confirmation on buying, deleting, logging out, etc.
-6. A profile page where registered users can log in, add and edit personal information.
+6. A profile page where registered users can add and edit personal information, see their orders and reviews.
 7. A shop page.
 8. An about page where users can get more information about the company and/or the trips.
 9. A contact page with contact form where users can contact the site’s owner.
 10. Individual pages for travels and products.
-11. Indication/banner for offers or deals, maybe a discount code.
+11. Indication/banner for offers or deals.
 12. A shopping cart icon with relevant info that is displayed at all times.
-13. An admin page with options to Create, Read, Edit and Delete (CRUD)travels/products.
+13. An admin page with options to Create, Read, Edit and Delete (CRUD)trips/products.
 14. An option to search the site.
-15. An option to filter or sort.
+15. An option to filter and sort.
 16. An indication of search term and numbers of results.
 17. A checkout page with details on the shopping items.
 18. An option to adjust items in the shopping bag.
@@ -121,7 +121,7 @@ The user is given feedback, in order to enhance a pleasant user experience:
 
 ### **The pages**
         FRONTEND  
-The website has 14 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
+The website has 15 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, trips, shop, about, contact, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
@@ -231,6 +231,7 @@ As a contrasting colour I've chosen a darker version of the info colour of Boots
 
 - ![#000000](https://via.placeholder.com/15/000000/000000?text=+) #000 is used as the main background colour.  
 - ![#f1f1f1](https://via.placeholder.com/15/f1f1f1/000000?text=+) #f1f1f1 is main text colour for dark backgrounds. 
+- ![#262626](https://via.placeholder.com/15/262626/000000?text=+) #262626 is main text colour for light backgrounds.  
 - ![#b8bac0](https://via.placeholder.com/15/b8bac0/000000?text=+) #b8bac0 is taken from the Bootstrap grey colour for navbar links with a dark background. I've used this colour as text-muted, for form elements and placeholder text.
 - ![#2b91b3](https://via.placeholder.com/15/2b91b3/000000?text=+) #2b91b3 is a darker shade of the Bootstrap info colour. I've used this for colour accents.   
 - ![#d32f2f](https://via.placeholder.com/15/d32f2f/000000?text=+) #d32f2f is used for the delete and cancel buttons and text.  
@@ -330,7 +331,7 @@ admin to delete a product or trip.
 - [Coolors](https://coolors.co/) to make the colour scheme.
 ---
 # **Testing**
-For testing results, see [TEST.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/TEST.md)
+For testing results, see [TEST.md](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/TEST.md)
 
 ---
 ## **Deployment**
