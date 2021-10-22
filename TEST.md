@@ -85,7 +85,7 @@ or click the link in the footer:
 
 ### Registration and User Accounts:
 **8. As a user I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
-- When a user is logged in they can go to an product or trip page and click the 'Write Review' button. A form will appear where they can add their review.  
+- When a user is logged in they can go to a product or trip page and click the 'Write Review' button. A form will appear where they can add their review.  
 ![add review form](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-8a.png)  
 - When a user is logged in and the review is theirs, an edit button and a delete icon is shown on their review:  
 ![edit review button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/userstory-8b.png)  

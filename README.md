@@ -204,7 +204,8 @@ This page is shown in case of an internal service error.
 During development the Sqlite3 database is used. This is the default database used by Django.
 During production PostgreSQL is used in conjunction with deployment on Heroku.
 
-Chart of the database models used.
+Chart of the database models used.  
+![database schema]((https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/database-schema.png) 
 
 
 ## **Skeleton Level**
