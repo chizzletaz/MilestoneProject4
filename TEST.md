@@ -3,11 +3,11 @@ Go back to the [README file](https://github.com/chizzletaz/SpaceTravelAgency/blo
 # **Testing**
 ## Table of Contents
 - [Testing User stories](#testing-user-stories)  
-    * [Viewing and navigation](#viewing_and_navigation)
-    * [Registration and User Accounts](#registration_and_user_accounts)
-    * [Sorting and Searching](#sorting_and_searching)
-    * [Purchasing and Checkout](#purchasing_and_checkout)
-    * [Admin and Store Management](#admin_and_store_management)
+    * [Viewing and navigation](#viewing-and-navigation)
+    * [Registration and User Accounts](#registration-and-user-accounts)
+    * [Sorting and Searching](#sorting-and-searching)
+    * [Purchasing and Checkout](#purchasing-and-checkout)
+    * [Admin and Store Management](#admin-and-store-management)
 - [Manual testing features](#manual-testing-features)
 - [Code Validation](#code-validation)  
     * [HTML](#html)
@@ -199,7 +199,7 @@ or by clicking on the 'delete' button on the individual product/trip page.
 
 ## Manual testing features
 **Responsiveness**   
-See [below](#testing_responsiveness) for responsive testing.  
+See [below](#testing-responsiveness) for responsive testing.  
 
 **Register functionality**  
 Expected:   
@@ -871,7 +871,7 @@ After checking the code, I realized that in order for stripe webhookhandler to w
 Since I'm working with VSCode, I have to be logged in to Stripe every time I want to be able to listen to messages from Stripe. (After deployment, this isn't necessary and will be done automatically, as was shown in the video with GitPod).
 
 ---  
-Issue: Solved
+Issue: Solved  
 When adding/editing a product, the standard redirect is to the products page. But since I have a different page for trips,
 if the product is a trip. the redirect should be redirected to the individual trip page.  
 
@@ -891,7 +891,7 @@ if product.category.name == 'trip':
 else: 
     return redirect(reverse('product_detail', args=[product.id]))
 ```
-This works! The issue was using the correct name and watch case sensitivity.
+This works! The issue was using the correct name and pay attention to case sensitivity.
 
 ---  
 Issue: Solved.   
@@ -1049,7 +1049,7 @@ made a false line break in the 'template name':
 template_name = ('products/\
         custom_widget_templates/custom_clearable_file_input.html')
 ```  
-I change the line break to:  
+I changed the line break to:  
 ```
 template_name = ('products/' +
         'custom_widget_templates/custom_clearable_file_input.html')
