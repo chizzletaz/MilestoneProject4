@@ -714,7 +714,16 @@ So the to not give the country element a placeholder, the last line should be in
 - No errors or warnings to show.  
 
 #### For signin.html:
-- No errors or warnings to show.   
+- No errors or warnings to show. 
+
+#### For 403.html:
+- No errors or warnings to show. 
+
+#### For 404.html:
+- No errors or warnings to show. 
+
+#### For 500.html:
+- No errors or warnings to show. 
 
 ---
 ### CSS  
@@ -766,7 +775,7 @@ No issues arose during testing.
 
 ---
 ## Testing responsiveness
-To test the responsiveness of the  website, I've used Chrome Dev Tools by:
+To test the responsiveness of the website, I've used Chrome Dev Tools by:
 - right clicking on the page
 - click inspect 
 - click toggle device toolbar  
