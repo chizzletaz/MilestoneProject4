@@ -211,7 +211,7 @@ Chart of the database models used.
 ## **Skeleton Level**
 ### Wireframes
 - [Wireframes for Home Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/home.pdf)  
-- [Wireframes for Trips Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/Trips.pdf)  
+- [Wireframes for Trips Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/trips.pdf)  
 - [Wireframes for Indivual Trip Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/trip.pdf)  
 - [Wireframes for Shop Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/shop.pdf)  
 - [Wireframes for Indivual Product Page](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/wireframes/product.pdf)  

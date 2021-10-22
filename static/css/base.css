@@ -29,7 +29,7 @@ h1, h2 {
 }
 
 .title {
-    letter-spacing: 1rem;
+    letter-spacing: 0.8rem;
 }
 
 #hero-text {
@@ -339,15 +339,15 @@ footer .list-inline-item i {
     }
 
     #topnav a {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     i ~ p {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .nav-link {
-        padding: 0.15rem;
+        padding: 0.1rem;
     }
 
     .nav-link i {
