@@ -46,7 +46,7 @@
                         {% endif %}
                             <div class="card h-100 rounded-0">
                                 <div class="row g-0">
-                                    <div class="col-5 offset-1 my-3">
+                                    <div class="col-md-5 offset-md-1 my-3">
                                         {% if product.image %}
                                         <a href="{% url 'product_detail' product.id %}">
                                             <img class="card-img-top img-fluid" src="{{ product.image.url }}"
@@ -59,7 +59,7 @@
                                         </a>
                                         {% endif %}
                                     </div>
-                                    <div class="col-6 my-3">
+                                    <div class="col-md-6 my-3">
                                         <div class="card-body">
                                             <h5 class="mb-0"><strong>{{ product.name }}</strong></h5>
                                         </div>
