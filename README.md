@@ -328,7 +328,7 @@ admin to delete a product or trip.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
 - [JSHint](https://jshint.com/) to check the Javascript code.
 - [PEP8 checker](http://pep8online.com/) to check the python code for PEP8 requirements. 
-- [Favicon]( http://antifavicon.com/) to make the favicon for the website.
+- [RedKetchup](https://redketchup.io/favicon-generator) to create the favicon for the website.
 - [Coolors](https://coolors.co/) to make the colour scheme.
 ---
 # **Testing**
