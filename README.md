@@ -759,18 +759,31 @@ To achieve this follow these steps:
 - Some text for product review come from the reviews of the same product on Amazon.
 
 
-### Media
-[earthview1.jpg](https://earth.google.com/)  
-[earthview2.jpg](https://besthqwallpapers.com/download/148672/1440x900)  
-[moon3.jpg](https://www.cloudynights.com/topic/640527-34-moon-with-an-old-friend/)  
-[mars.webp](https://www.ad.nl/wetenschap/vanavond-ideaal-weer-om-mars-te-spotten~a230ac057/?referrer=https%3A%2F%2Fwww.google.com%2F)  
-[spacewalk.jpg](https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace)  
-[spacewalk2.jpg](https://www.dawn.com/news/1472001)  
-[space-background.jpg](https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg)  
-[no-image.png](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png)  
-[sleep-mask.jpg](https://m.media-amazon.com/images/I/A1OyV3YHI4L._SY450_.jpg)  
-[clipon-lens.jpg](https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg)  
-
+### Media    
+binoculars - [amazon](https://m.media-amazon.com/images/I/31tx6DfbdQL.jpg)  
+blanket - [amazon](https://m.media-amazon.com/images/I/8121wWMCYaL._AC_SL1500_.jpg)  
+book beyond - [amazon](https://images-na.ssl-images-amazon.com/images/I/31C6CGP4JTL._SY473_BO1,204,203,200_.jpg)  
+book solar system - [amazon](https://m.media-amazon.com/images/I/51USgwwB-HL._SL500_.jpg)  
+book what makes - [bol](https://media.s-bol.com/JyD91JNBrk2D/1200x1200.jpg)   
+clipon lens - [amazon](https://m.media-amazon.com/images/I/71y8Kvz749L._AC_SL1500_.jpg)    
+earth globe - [amazon](https://m.media-amazon.com/images/I/41XWcn7gyhL.jpg)  
+earthview1 - [google earth](https://earth.google.com/)    
+earthview2 - [besthqwallpapers](https://besthqwallpapers.com/download/148672/1440x900)   
+headphones - [pinimg](https://i.pinimg.com/originals/6e/e9/af/6ee9af4f5093b7456b1615bf7821a3b5.jpg)  
+mars - [ad](https://www.ad.nl/wetenschap/vanavond-ideaal-weer-om-mars-te-spotten~a230ac057/?referrer=https%3A%2F%2Fwww.google.com%2F)   
+monopoly - [shld](https://c.shld.net/rpx/i/s/i/spin/image/spin_prod_114059901?)  
+moon lamp - [amazon](https://m.media-amazon.com/images/I/61rXIYvJaPS._AC_SL1000_.jpg)  
+moon - [cloudynights](https://www.cloudynights.com/topic/640527-34-moon-with-an-old-friend/)    
+no image - [wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png)    
+pill botte - [electstore](https://www.electstore.pk/wp-content/uploads/2021/02/PILL-BOTTLE-1-1-600x600.jpg)  
+motion sickness pills - [keystone](https://www.keystoneotcstore.com/images/thumbs/0000342_motion-sickness-tablets-12ct_415.jpeg)  
+sleep mask - [amazon](https://m.media-amazon.com/images/I/A1OyV3YHI4L._SY450_.jpg)  
+spacebackground - [esa](https://blogs.esa.int/space19plus/files/2019/03/nebula.jpg)   
+spacestation - [mos](https://cdn.mos.cms.futurecdn.net/9Q2tgSjC4mHJwNrpthjF5V.jpeg)  
+space hotel - [the spacereview](https://www.thespacereview.com/archive/4136a.jpg)  
+spacewalk - [gospacewalk](https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace)    
+spacewalk2 - [dawn](https://www.dawn.com/news/1472001)   
+zero g pen - [penworld](https://penworld.sirv.com/media/catalog/product/z/g/zgmb_1024x1024_1.jpg?scale.option=ignore&canvas.width=1600&canvas.height=1600&w=1519&h=1600&canvas.opacity=0)  
 ---
 # Acknowledgements
 I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project. For patience when helping me solve some of the challenges I faced.  
