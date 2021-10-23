@@ -205,7 +205,7 @@ During development the Sqlite3 database is used. This is the default database us
 During production PostgreSQL is used in conjunction with deployment on Heroku.
 
 Chart of the database models used.  
-![database schema]((https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/database-schema.png) 
+[database schema]((https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/database-schema.png) 
 
 
 ## **Skeleton Level**
@@ -759,7 +759,8 @@ To achieve this follow these steps:
 - Some text for product review come from the reviews of the same product on Amazon.
 
 
-### Media    
+### Media   
+
 binoculars - [amazon](https://m.media-amazon.com/images/I/31tx6DfbdQL.jpg)  
 blanket - [amazon](https://m.media-amazon.com/images/I/8121wWMCYaL._AC_SL1500_.jpg)  
 book beyond - [amazon](https://images-na.ssl-images-amazon.com/images/I/31C6CGP4JTL._SY473_BO1,204,203,200_.jpg)  
@@ -788,5 +789,5 @@ spacewalk2 - [dawn](https://www.dawn.com/news/1472001)
 zero g pen - [penworld](https://penworld.sirv.com/media/catalog/product/z/g/zgmb_1024x1024_1.jpg?scale.option=ignore&canvas.width=1600&canvas.height=1600&w=1519&h=1600&canvas.opacity=0)  
 ---
 # Acknowledgements
-I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project. For patience when helping me solve some of the challenges I faced.  
+I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project and for his patience when helping me solve some of the challenges I faced.  
 I want to thank Tutor support at CI and my fellow Slack members for answering my questions.
