@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 
 from .forms import ContactForm
+from profiles.models import UserProfile
 
 
 def contact(request):
@@ -21,11 +22,11 @@ def contact(request):
             subject = ('We have receiced your message with subject: ' +
                        request.POST['subject'])
             body = render_to_string('contact/confirmation_emails/' +
-                'customer_confirmation_email.txt',
+                                    'customer_confirmation_email.txt',
                                     {'full_name': full_name,
                                         'subject': subject,
                                         'message': message,
-            })
+                                     })
 
             send_mail(
                 subject,
@@ -38,13 +39,13 @@ def contact(request):
             # send message to admin
             admin_mail = settings.DEFAULT_FROM_EMAIL
             subject = contact_form.cleaned_data['subject']
-            body = render_to_string(
-                    'contact/confirmation_emails/admin_confirmation_email.txt',
-                                   {'full_name': full_name,
-                                    'subject': subject,
-                                    'message': message,
-                                    'cust_email': cust_email,
-                                   })
+            body = render_to_string('contact/confirmation_emails/' +
+                                    'admin_confirmation_email.txt',
+                                    {'full_name': full_name,
+                                        'subject': subject,
+                                        'message': message,
+                                        'cust_email': cust_email,
+                                     })
 
             send_mail(
                 subject,
@@ -61,12 +62,25 @@ def contact(request):
         else:
             messages.error(request, 'Failed to send message. \
                 Please ensure the form is valid.')
+    else:
+        if request.user.is_authenticated:
+            profile = UserProfile.objects.get(user=request.user)
+            try:
+                contact_form = ContactForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'subject': '',
+                    'message': '',
+                })
 
-    contact_form = ContactForm
+            except UserProfile.DoesNotExist:
+                contact_form = ContactForm()
+        else:
+            contact_form = ContactForm()
 
-    context = {
-        'form': contact_form,
-        'on_profile_page': True,
-    }
+        context = {
+            'form': contact_form,
+            'on_profile_page': True,
+        }
 
-    return render(request, 'contact/contact.html', context)
+        return render(request, 'contact/contact.html', context)
