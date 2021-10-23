@@ -11,8 +11,6 @@ from reviews.forms import ReviewForm
 from .models import Product, Category
 from .forms import ProductForm
 
-# Create your views here.
-
 
 def all_products(request):
     """ A view to show all products without space trips """

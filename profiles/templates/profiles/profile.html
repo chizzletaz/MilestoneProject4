@@ -16,7 +16,6 @@
             <hr>
         </div>
     </div>
-    
 
     <!-- for viewports larger than 992px -->
     <div class="row pb-5">
@@ -72,6 +71,7 @@
                 <div class="card h-100 rounded-0 p-2 bg-dark">
                     <div class="row">
                         <div class="col m-1">
+                            <!-- rating stars indication -->
                             {% if review.rating == 1 %}
                             <p class="my-auto"><i class="fas fa-star"></i><i class="far fa-star"></i><i
                                     class="far fa-star"></i>
@@ -136,9 +136,7 @@
     <!-- for viewports smaller than 992px -->
     <div class="row d-flex d-lg-none">
         <div class="col">
-            
-            {% include 'includes/mobile-profile-content.html' %}
-            
+            {% include 'includes/mobile-profile-content.html' %}      
         </div>
     </div>
 </div>

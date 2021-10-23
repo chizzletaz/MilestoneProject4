@@ -31,9 +31,9 @@
                 <p class="mt-3">{{ product.description }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price|intcomma }}</p>
                 {% if product.rating %}
-                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
-                <small class="text-muted">No Rating</small>
+                    <small class="text-muted">No Rating</small>
                 {% endif %}
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
@@ -103,6 +103,7 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+
 <!-- Datepicker js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Datepicker css -->

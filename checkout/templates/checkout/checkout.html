@@ -19,6 +19,7 @@
     </div>
 
     <div class="row">
+        <!-- Order overview -->
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p>Order Summary ({{ product_count }})</p>
             <div class="row">
@@ -63,6 +64,7 @@
                 </div>
             </div>
         </div>
+        <!-- Delivery information and credit card details -->
         <div class="col-12 col-lg-6">
             <p class="text-info">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -128,6 +130,7 @@
         </div>
     </div>
 </div>
+
 <div id="loading-overlay">
     <div class="div loading-spinner">
         <div class="spinner-border text-light my-auto" style="width: 5rem; height: 5rem;" role="status">
