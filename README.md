@@ -759,8 +759,7 @@ To achieve this follow these steps:
 - Some text for product review come from the reviews of the same product on Amazon.
 
 
-### Media   
-
+### Media  
 binoculars - [amazon](https://m.media-amazon.com/images/I/31tx6DfbdQL.jpg)  
 blanket - [amazon](https://m.media-amazon.com/images/I/8121wWMCYaL._AC_SL1500_.jpg)  
 book beyond - [amazon](https://images-na.ssl-images-amazon.com/images/I/31C6CGP4JTL._SY473_BO1,204,203,200_.jpg)  
@@ -790,4 +789,4 @@ zero g pen - [penworld](https://penworld.sirv.com/media/catalog/product/z/g/zgmb
 ---
 # Acknowledgements
 I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project and for his patience when helping me solve some of the challenges I faced.  
-I want to thank Tutor support at CI and my fellow Slack members for answering my questions.
+I want to thank Tutor support at CI for their help and patience and my fellow Slack members for answering my questions.
