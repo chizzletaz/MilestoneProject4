@@ -739,7 +739,10 @@ To achieve this follow these steps:
         
 ---
 # **Credits**
-### code
+### code  
+- This project was heavily based on the Code Intitute walkthrough project 'Boutique Ado'. 
+Part of the code (especially the backen) has been copied and adapted from the tutorials from this project. 
+
 - Text slide in from left and right - [Menucool](http://www.menucool.com/ui/slide-in-when-scrolling)
 
 - Show and hide search bar - [W3schools](https://www.w3schools.com/jquery/eff_toggle.asp)
@@ -758,8 +761,7 @@ To achieve this follow these steps:
 - The text on the landing page and the trips pages is inspired by [space adventures](https://spaceadventures.com/).
 - Some text for product review come from the reviews of the same product on Amazon.
 
-
-### Media  
+### Media 
 binoculars - [amazon](https://m.media-amazon.com/images/I/31tx6DfbdQL.jpg)  
 blanket - [amazon](https://m.media-amazon.com/images/I/8121wWMCYaL._AC_SL1500_.jpg)  
 book beyond - [amazon](https://images-na.ssl-images-amazon.com/images/I/31C6CGP4JTL._SY473_BO1,204,203,200_.jpg)  
@@ -785,8 +787,10 @@ spacestation - [mos](https://cdn.mos.cms.futurecdn.net/9Q2tgSjC4mHJwNrpthjF5V.jp
 space hotel - [the spacereview](https://www.thespacereview.com/archive/4136a.jpg)  
 spacewalk - [gospacewalk](https://gospacewalk.com/blog/introducing-spacewalk-to-the-workplace)    
 spacewalk2 - [dawn](https://www.dawn.com/news/1472001)   
-zero g pen - [penworld](https://penworld.sirv.com/media/catalog/product/z/g/zgmb_1024x1024_1.jpg?scale.option=ignore&canvas.width=1600&canvas.height=1600&w=1519&h=1600&canvas.opacity=0)  
+zero g pen - [penworld](https://penworld.sirv.com/media/catalog/product/z/g/zgmb_1024x1024_1.jpg?scale.option=ignore&canvas.width=1600&canvas.height=1600&w=1519&h=1600&canvas.opacity=0)
+
 ---
 # Acknowledgements
-I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project and for his patience when helping me solve some of the challenges I faced.  
-I want to thank Tutor support at CI for their help and patience and my fellow Slack members for answering my questions.
+- I want to give special thanks my mentor Antonio Rodriguez for helping and guiding me through this project and for his patience when helping me solve some of the challenges I faced.  
+- I want to thank Tutor support at CI for their help and patience.
+- I want to thank my fellow Slack members for answering my questions.
