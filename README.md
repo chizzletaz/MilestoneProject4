@@ -156,7 +156,7 @@ This page has a short description about the website and the background of the tr
 
 - **The contact page:**  
 This page has a contact form, where the user can ask questions or give remarks. 
-A confirmation email is sent to the user’s emailaddress after submitting.
+A confirmation email is sent to the user’s email address after submitting.
 
 - **The sign up page:**  
 This page has a signup form where the user can register and create an account. After registration 
@@ -205,7 +205,7 @@ During development the Sqlite3 database is used. This is the default database us
 During production PostgreSQL is used in conjunction with deployment on Heroku.
 
 Chart of the database models used.  
-[database schema]((https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/database-schema.png) 
+![database schema](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/database-schema.png) 
 
 
 ## **Skeleton Level**
